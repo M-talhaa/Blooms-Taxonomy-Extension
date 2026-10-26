@@ -1,0 +1,1651 @@
+lemma,raw_forms,v1_form,v1_form_rule,v1_accepted,v1_primary,v1_levels,delivered_accepted,delivered_primary,delivered_levels,primary_distance,v1_first_form,v1_first_form_accepted,v1_first_form_primary
+abandon,abandon,abandon,raw form equals the lemma,True,Ev,Ap Ev,True,Ev,Ev,0,abandon,True,Ev
+abbreviate,abbreviate,abbreviate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,abbreviate,True,Sn
+abet,abet,abet,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,abet,True,Cm
+abide,abide,abide,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,abide,True,Ap
+ablate,ablate,ablate,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,ablate,True,Cm
+abort,abort,abort,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,abort,True,Ev
+abound,abound,abound,raw form equals the lemma,False,,,True,Kn,Kn,,abound,False,
+absorb,absorb,absorb,raw form equals the lemma,False,,,True,Ap,Ap,,absorb,False,
+abut,abut,abut,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,abut,True,Cm
+accelerate,accelerate,accelerate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,accelerate,True,Sn
+accentuate,accentuate,accentuate,raw form equals the lemma,True,Cm,Cm,False,,,,accentuate,True,Cm
+accommodate,accommodate,accommodate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,accommodate,True,Sn
+accompany,accompany,accompany,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,accompany,True,Cm
+accomplish,accomplish,accomplish,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,accomplish,True,Ap
+account,accounting,accounting,first kept or lemmatized raw form,True,Cm,Cm Sn,True,Ev,Ev,4,accounting,True,Cm
+accrue,accrue,accrue,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,accrue,True,Sn
+accumulate,accumulate,accumulate,raw form equals the lemma,True,Ap,Ap,True,Ap,Kn Ap,0,accumulate,True,Ap
+accustom,accustom,accustom,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,accustom,True,Sn
+achieve,achieve,achieve,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,achieve,True,Ap
+acidify,acidify,acidify,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,acidify,True,Ap
+acknowledge,acknowledge,acknowledge,raw form equals the lemma,True,Cm,Cm,False,,,,acknowledge,True,Cm
+acquaint,acquaint acquainted,acquaint,raw form equals the lemma,True,Cm,Cm,False,,,,acquaint,True,Cm
+activate,activate,activate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,activate,True,Sn
+actualize,actualize,actualize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,actualize,True,Sn
+actuate,actuate,actuate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,actuate,True,Ap
+address,address,address,raw form equals the lemma,True,Cm,Kn Cm Ap,True,Kn,Kn,1,address,True,Cm
+adhere,adhere,adhere,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,adhere,True,Ev
+adjoin,adjoin,adjoin,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,adjoin,True,Cm
+adjudicate,adjudicate,adjudicate,raw form equals the lemma,True,Ev,Cm Ev,True,Ev,Ev,0,adjudicate,True,Ev
+adjust,adjust,adjust,raw form equals the lemma,True,Sn,Ap An Sn,True,Sn,Sn,0,adjust,True,Sn
+administrate,administrate,administrate,raw form equals the lemma,True,An,Ap An Sn,True,An,An,0,administrate,True,An
+admire,admire,admire,raw form equals the lemma,True,Cm,Cm,False,,,,admire,True,Cm
+admit,admit,admit,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,admit,True,Sn
+adopt,adopt,adopt,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,adopt,True,Sn
+adsorb,adsorb,adsorb,raw form equals the lemma,False,,,False,,,,adsorb,False,
+advect,advect,advect,raw form equals the lemma,True,Cm,Cm,False,,,,advect,True,Cm
+advertise,advertise,advertise,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,advertise,True,Sn
+advocate,advocate,advocate,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,advocate,True,Cm
+aerate,aerate,aerate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,aerate,True,Ap
+affect,affect,affect,raw form equals the lemma,False,,,True,Ap,Ap,,affect,False,
+affirm,affirm,affirm,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,affirm,True,Ev
+affix,affix,affix,raw form equals the lemma,True,Cm,Cm,False,,,,affix,True,Cm
+afford,afford,afford,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,afford,True,Ap
+aggravate,aggravate,aggravate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,aggravate,True,Ap
+aggregate,aggregate,aggregate,raw form equals the lemma,True,Sn,Cm An Sn,True,Sn,Sn,0,aggregate,True,Sn
+agitate,agitate,agitate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,agitate,True,Ap
+agonize,agonizing,agonizing,first kept or lemmatized raw form,False,,,True,An,An,,agonizing,False,
+agree,agree,agree,raw form equals the lemma,False,,,True,Ev,Ev,,agree,False,
+aim,aim,aim,raw form equals the lemma,True,Sn,Sn,False,,,,aim,True,Sn
+align,align aligned,align,raw form equals the lemma,True,Cm,Cm Sn,True,Sn,Sn,3,align,True,Cm
+alleviate,alleviate,alleviate,raw form equals the lemma,False,,,True,Sn,Sn,,alleviate,False,
+allot,allot,allot,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,allot,True,Ap
+allude,allude,allude,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,allude,True,Ap
+alter,alter,alter,raw form equals the lemma,True,Sn,Ap An Sn,True,Sn,Sn,0,alter,True,Sn
+alternate,alternate,alternate,raw form equals the lemma,True,An,An,True,Sn,Sn,1,alternate,True,An
+ameliorate,ameliorate,ameliorate,raw form equals the lemma,False,,,True,Sn,Sn,,ameliorate,False,
+amortize,amortize,amortize,raw form equals the lemma,False,,,True,Ap,Ap,,amortize,False,
+amplify,amplify,amplify,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,amplify,True,Cm
+analogize,analogize,analogize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,analogize,True,Cm
+anneal,anneal,anneal,raw form equals the lemma,True,Cm,Cm,True,An,An Sn,2,anneal,True,Cm
+annihilate,annihilate,annihilate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,annihilate,True,Ap
+annotate,annotate,annotate,raw form equals the lemma,True,Cm,Cm Ap,True,Cm,Cm,0,annotate,True,Cm
+announce,announce,announce,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,announce,True,Sn
+anodize,anodize,anodize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap Sn,0,anodize,True,Ap
+answer,answer,answer,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap An,0,answer,True,Ap
+antagonize,antagonize,antagonize,raw form equals the lemma,True,Ap,Ap An Sn,True,Ev,Ev,3,antagonize,True,Ap
+apologize,apologize,apologize,raw form equals the lemma,False,,,True,Ev,Ev,,apologize,False,
+appeal,appeal,appeal,raw form equals the lemma,True,Ev,Cm Ev,True,Ev,Ev,0,appeal,True,Ev
+appear,appear,appear,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,appear,True,Cm
+append,append,append,raw form equals the lemma,True,Cm,Cm,False,,,,append,True,Cm
+appoint,appoint,appoint,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,appoint,True,Ap
+apportion,apportion,apportion,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,apportion,True,Cm
+appreciate,appreciate,appreciate,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,appreciate,True,Cm
+apprehend,apprehend,apprehend,raw form equals the lemma,True,Cm,Cm,True,An,An,2,apprehend,True,Cm
+approach,approach,approach,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,approach,True,Cm
+appropriate,appropriate,appropriate,raw form equals the lemma,True,Ap,Ap,False,,,,appropriate,True,Ap
+approve,approve,approve,raw form equals the lemma,True,An,An,True,Ev,Ev,2,approve,True,An
+arise,arise,arise,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,arise,True,Sn
+arouse,arouse,arouse,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,arouse,True,Ap
+array,array,array,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,array,True,Sn
+arrest,arrest,arrest,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,arrest,True,Cm
+arrive,arrive,arrive,raw form equals the lemma,True,Cm,Cm,False,,,,arrive,True,Cm
+ascend,ascend,ascend,raw form equals the lemma,True,Ap,Ap,False,,,,ascend,True,Ap
+ascribe,ascribe,ascribe,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,ascribe,True,Ap
+ask,ask,ask,raw form equals the lemma,True,Ap,Ap,True,An,An,1,ask,True,Ap
+aspirate,aspirate,aspirate,raw form equals the lemma,True,Ap,Ap,False,,,,aspirate,True,Ap
+aspire,aspire,aspire,raw form equals the lemma,True,Sn,Ap Sn,True,Ap,Ap,2,aspire,True,Sn
+assert,assert,assert,raw form equals the lemma,False,,,True,Ev,Ev,,assert,False,
+assimilate,assimilate,assimilate,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,assimilate,True,Sn
+assist,assist,assist,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,assist,True,Sn
+assume,assume,assume,raw form equals the lemma,True,Cm,Cm Sn,True,Ev,An Sn Ev,4,assume,True,Cm
+assure,assure,assure,raw form equals the lemma,False,,,True,Ev,Ev,,assure,False,
+astonish,astonished,astonished,first kept or lemmatized raw form,True,Sn,Sn,True,Ap,Ap,2,astonished,True,Sn
+atomize,atomize,atomize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,atomize,True,Sn
+attack,attack,attack,raw form equals the lemma,True,Cm,Cm Ap,True,Ap,Ap,1,attack,True,Cm
+attempt,attempt,attempt,raw form equals the lemma,True,Sn,Sn,False,,,,attempt,True,Sn
+attend,attend,attend,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,attend,True,Cm
+attenuate,attenuate,attenuate,raw form equals the lemma,False,,,True,An,An,,attenuate,False,
+attest,attest,attest,raw form equals the lemma,True,Ap,Ap,True,An,An,1,attest,True,Ap
+attract,attract,attract,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap,0,attract,True,Ap
+attribute,attribute,attribute,raw form equals the lemma,True,Cm,Cm,False,,,,attribute,True,Cm
+augment,augment,augment,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,augment,True,Sn
+authorize,authorize,authorize,raw form equals the lemma,True,An,An,False,,,,authorize,True,An
+autoclave,autoclave,autoclave,raw form equals the lemma,True,Ap,Ap,True,An,An,1,autoclave,True,Ap
+automate,automate,automate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,automate,True,Ap
+automatize,automatize,automatize,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Sn,0,automatize,True,Sn
+avail,avail,avail,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,avail,True,Cm
+average,averaging,averaging,first kept or lemmatized raw form,True,Sn,Sn,True,Ev,Ev,1,averaging,True,Sn
+avert,avert,avert,raw form equals the lemma,False,,,False,,,,avert,False,
+await,await,await,raw form equals the lemma,False,,,True,Sn,Sn,,await,False,
+backscatter,backscatter,backscatter,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,backscatter,True,Cm
+bail,bail,bail,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,bail,True,Ev
+bake,bake,bake,raw form equals the lemma,True,An,An,True,Sn,Sn,1,bake,True,An
+balance,balancing,balancing,first kept or lemmatized raw form,True,Sn,Sn,True,Kn,Kn,4,balancing,True,Sn
+base,based,based,first kept or lemmatized raw form,True,Cm,Cm,True,An,An,2,based,True,Cm
+bate,bate,bate,raw form equals the lemma,True,Ap,Ap,False,,,,bate,True,Ap
+bathe,bathe,bathe,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,bathe,True,Ap
+bear,bear borne,bear,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn Cm Ap An,4,bear,True,Sn
+beat,beat,beat,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,beat,True,Ap
+beautify,beautify,beautify,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,beautify,True,Ap
+become,become,become,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,become,True,Ap
+bed,bedding,bedding,first kept or lemmatized raw form,True,Sn,Ap Sn,True,An,An,1,bedding,True,Sn
+beg,beg,beg,raw form equals the lemma,False,,,False,,,,beg,False,
+begin,begin beginning,begin,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,begin,True,Sn
+behave,behave,behave,raw form equals the lemma,False,,,False,,,,behave,False,
+behold,behold,behold,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,behold,True,Kn
+behoove,behoove,behoove,raw form equals the lemma,False,,,False,,,,behoove,False,
+believe,believe,believe,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,believe,True,Cm
+belong,belong,belong,raw form equals the lemma,False,,,True,Sn,Sn,,belong,False,
+bend,bend bending,bend,raw form equals the lemma,True,Cm,Cm,True,An,Cm Ap An,2,bend,True,Cm
+benefit,benefit,benefit,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,benefit,True,Cm
+bet,bet,bet,raw form equals the lemma,False,,,True,Ev,Ev,,bet,False,
+bevel,bevel,bevel,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,bevel,True,Ap
+bias,bias,bias,raw form equals the lemma,True,Cm,Cm,True,An,An Ev,2,bias,True,Cm
+bicycle,bicycling,bicycling,first kept or lemmatized raw form,True,Ap,Ap,True,An,An,1,bicycling,True,Ap
+bind,bind bound,bind,raw form equals the lemma,True,Ev,Ev,False,,,,bind,True,Ev
+biodegrade,biodegrade,biodegrade,raw form equals the lemma,True,Ap,Ap,True,An,An,1,biodegrade,True,Ap
+bisect,bisect,bisect,raw form equals the lemma,True,Sn,Ap An Sn,True,An,An,1,bisect,True,Sn
+blacklist,blacklist,blacklist,raw form equals the lemma,True,Ap,Ap,True,An,An,1,blacklist,True,Ap
+blame,blame,blame,raw form equals the lemma,False,,,True,Ev,Ap Ev,,blame,False,
+blend,blend,blend,raw form equals the lemma,True,An,An,True,Sn,Sn,1,blend,True,An
+bless,bless,bless,raw form equals the lemma,False,,,False,,,,bless,False,
+blink,blink,blink,raw form equals the lemma,True,Kn,Kn Sn,True,Kn,Kn,0,blink,True,Kn
+bloat,bloat,bloat,raw form equals the lemma,True,Sn,Sn,True,An,An,1,bloat,True,Sn
+block,block,block,raw form equals the lemma,True,Sn,Sn,False,,,,block,True,Sn
+blossom,blossoming,blossoming,first kept or lemmatized raw form,True,Sn,Sn,False,,,,blossoming,True,Sn
+blow,blow,blow,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,blow,True,Ap
+blur,blur blurring,blur,raw form equals the lemma,True,An,An,True,An,An,0,blur,True,An
+boast,boast,boast,raw form equals the lemma,False,,,True,Ap,Ap,,boast,False,
+boil,boil,boil,raw form equals the lemma,False,,,True,Ap,Ap,,boil,False,
+bolster,bolster,bolster,raw form equals the lemma,False,,,True,Ev,Sn Ev,,bolster,False,
+boost,boost,boost,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,boost,True,Sn
+bore,boring,boring,first kept or lemmatized raw form,True,Ap,Ap,True,Ap,Ap,0,boring,True,Ap
+borrow,borrow borrowing,borrow,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,borrow,True,Ap
+bother,bother,bother,raw form equals the lemma,False,,,False,,,,bother,False,
+bounce,bounce,bounce,raw form equals the lemma,False,,,True,Ap,Ap,,bounce,False,
+bow,bow,bow,raw form equals the lemma,False,,,True,An,An,,bow,False,
+brainstorm,brainstorm,brainstorm,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,brainstorm,True,Sn
+breathe,breathe,breathe,raw form equals the lemma,False,,,True,Ap,Ap,,breathe,False,
+brighten,brighten,brighten,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,brighten,True,Sn
+bring,bring,bring,raw form equals the lemma,True,Ap,Ap,False,,,,bring,True,Ap
+broadcast,broadcast,broadcast,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,broadcast,True,Ap
+broaden,broaden,broaden,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,broaden,True,Sn
+brominate,brominate,brominate,raw form equals the lemma,False,,,True,An,An,,brominate,False,
+broom,broom,broom,raw form equals the lemma,True,Ap,Ap An,True,An,An,1,broom,True,Ap
+browse,browse,browse,raw form equals the lemma,True,An,An,True,Kn,Kn,3,browse,True,An
+buckle,buckle,buckle,raw form equals the lemma,True,Ap,Ap,True,An,An,1,buckle,True,Ap
+buffer,buffer,buffer,raw form equals the lemma,False,,,True,An,An,,buffer,False,
+burgeon,burgeon,burgeon,raw form equals the lemma,True,An,An,True,An,An,0,burgeon,True,An
+burn,burn,burn,raw form equals the lemma,True,Ap,Ap,False,,,,burn,True,Ap
+burrow,burrow,burrow,raw form equals the lemma,True,An,An,True,Sn,Sn,1,burrow,True,An
+burst,burst,burst,raw form equals the lemma,True,Sn,Sn,True,An,An,1,burst,True,Sn
+bury,bury,bury,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn Ap,2,bury,True,Ap
+buy,buy,buy,raw form equals the lemma,True,Cm,Cm,False,,,,buy,True,Cm
+bypass,bypass,bypass,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,bypass,True,Ap
+cache,cache,cache,raw form equals the lemma,True,An,An,True,An,An,0,cache,True,An
+calibrate,calibrate,calibrate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,calibrate,True,Sn
+call,call calling,call,raw form equals the lemma,True,Cm,Cm,False,,,,call,True,Cm
+camouflage,camouflage,camouflage,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,camouflage,True,Sn
+cancel,cancel,cancel,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,cancel,True,Cm
+cant,cant,cant,raw form equals the lemma,True,Ap,Ap,False,,,,cant,True,Ap
+capitalize,capitalise capitalize,capitalize,raw form equals the lemma,True,Cm,Cm,False,,,,capitalise,True,Ap
+carboxylate,carboxylate,carboxylate,raw form equals the lemma,True,Sn,Sn,True,An,An,1,carboxylate,True,Sn
+care,care,care,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,care,True,Sn
+carry,carry,carry,raw form equals the lemma,True,Ap,Cm Ap,True,Ap,Ap,0,carry,True,Ap
+carve,carve,carve,raw form equals the lemma,True,An,Ap An,True,Ap,Ap,1,carve,True,An
+cast,cast,cast,raw form equals the lemma,True,Sn,Sn,False,,,,cast,True,Sn
+catalyze,catalyse catalyze,catalyze,raw form equals the lemma,True,Sn,Sn,False,,,,catalyse,True,Sn
+catch,catch catching,catch,raw form equals the lemma,True,Sn,Sn,True,An,An,1,catch,True,Sn
+cater,cater,cater,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,cater,True,Sn
+cause,cause caused,cause,raw form equals the lemma,True,Ap,Ap,True,An,An,1,cause,True,Ap
+caution,caution,caution,raw form equals the lemma,True,Cm,Cm,True,Ev,Ap Ev,4,caution,True,Cm
+cave,cave,cave,raw form equals the lemma,True,Cm,Cm,True,An,An,2,cave,True,Cm
+cease,cease,cease,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,cease,True,Ap
+cede,cede,cede,raw form equals the lemma,True,Sn,Sn,True,An,An,1,cede,True,Sn
+celebrate,celebrate,celebrate,raw form equals the lemma,False,,,False,,,,celebrate,False,
+censor,censor,censor,raw form equals the lemma,True,Ap,Ap An,True,An,An,1,censor,True,Ap
+centralize,centralize,centralize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,centralize,True,Sn
+centrifuge,centrifuge,centrifuge,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,centrifuge,True,Ap
+certify,certify,certify,raw form equals the lemma,True,Sn,Sn,True,An,An,1,certify,True,Sn
+chance,chance,chance,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn Ev,4,chance,True,Sn
+channelize,channelize,channelize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,channelize,True,Ap
+charge,charge,charge,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,charge,True,Sn
+chase,chase,chase,raw form equals the lemma,True,Cm,Cm,True,Ap,Kn Ap,1,chase,True,Cm
+cheat,cheat,cheat,raw form equals the lemma,False,,,True,Ap,Ap,,cheat,False,
+chill,chill,chill,raw form equals the lemma,False,,,False,,,,chill,False,
+chisel,chisel,chisel,raw form equals the lemma,True,Ap,Ap An,True,An,An,1,chisel,True,Ap
+chlorinate,chlorinate,chlorinate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,chlorinate,True,Ap
+choke,choke,choke,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,choke,True,Ev
+churn,churn,churn,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,churn,True,Ev
+circularize,circularize,circularize,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,circularize,True,Cm
+circulate,circulate,circulate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,circulate,True,Ap
+circumscribe,circumscribe,circumscribe,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,circumscribe,True,Ap
+circumvent,circumvent,circumvent,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,circumvent,True,Ap
+claim,claim,claim,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,claim,True,Cm
+clamp,clamped,clamped,first kept or lemmatized raw form,True,Ap,Ap An,True,Ev,Ev,3,clamped,True,Ap
+clap,clap,clap,raw form equals the lemma,False,,,False,,,,clap,False,
+clash,clash,clash,raw form equals the lemma,True,Cm,Cm Sn,True,Ev,Ev,4,clash,True,Cm
+cleave,cleave,cleave,raw form equals the lemma,False,,,True,An,Ap An,,cleave,False,
+click,click,click,raw form equals the lemma,True,An,Ap An Sn,True,An,An,0,click,True,An
+climb,climb,climb,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,climb,True,Ap
+cling,cling,cling,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,cling,True,Ev
+cloak,cloak,cloak,raw form equals the lemma,False,,,False,,,,cloak,False,
+clobber,clobber,clobber,raw form equals the lemma,True,Ap,Ap,True,An,An,1,clobber,True,Ap
+clock,clock,clock,raw form equals the lemma,True,Cm,Cm Ap,True,An,An,2,clock,True,Cm
+clog,clog,clog,raw form equals the lemma,True,An,An,True,An,An,0,clog,True,An
+close,close,close,raw form equals the lemma,True,Cm,Cm An,True,Cm,Cm,0,close,True,Cm
+clump,clump,clump,raw form equals the lemma,True,Cm,Cm,True,An,An,2,clump,True,Cm
+co-occur,co-occur,co-occur,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,co-occur,True,Sn
+coalesce,coalesce,coalesce,raw form equals the lemma,True,Cm,Cm Sn,True,Sn,Sn,3,coalesce,True,Cm
+coarsen,coarsen,coarsen,raw form equals the lemma,True,Sn,Sn,False,,,,coarsen,True,Sn
+codify,codify,codify,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,codify,True,Sn
+coexist,coexist,coexist,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,coexist,True,Sn
+cogitate,cogitate,cogitate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,cogitate,True,Sn
+coincide,coincide,coincide,raw form equals the lemma,True,Sn,Cm Sn,True,Kn,Kn,4,coincide,True,Sn
+collapse,collapse,collapse,raw form equals the lemma,True,Sn,Ap Sn Ev,True,Sn,Sn,0,collapse,True,Sn
+collate,collate,collate,raw form equals the lemma,True,Cm,Cm,False,,,,collate,True,Cm
+collide,collide,collide,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,collide,True,Sn
+collimate,collimate,collimate,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,collimate,True,Sn
+collocate,collocate,collocate,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,collocate,True,Cm
+colorize,colorize,colorize,raw form equals the lemma,True,Sn,Cm Sn,True,Cm,Cm,3,colorize,True,Sn
+comb,comb,comb,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,comb,True,Sn
+combust,combust,combust,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,combust,True,Ap
+come,came come,come,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,came,False,
+commence,commence,commence,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,commence,True,Sn
+commend,commend,commend,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,commend,True,Cm
+comment,comment,comment,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,comment,True,Cm
+commercialize,commercialize,commercialize,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,commercialize,True,Ap
+commit,commit,commit,raw form equals the lemma,False,,,True,Sn,Sn,,commit,False,
+commute,commute,commute,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap Sn,1,commute,True,Cm
+compartmentalize,compartmentalize,compartmentalize,raw form equals the lemma,True,Sn,Sn,True,Sn,An Sn,0,compartmentalize,True,Sn
+compel,compel,compel,raw form equals the lemma,True,Ev,Ap Ev,True,Ev,Ev,0,compel,True,Ev
+compensate,compensate,compensate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,compensate,True,Sn
+compete,compete competing,compete,raw form equals the lemma,True,Sn,Sn,True,Ev,Ap Ev,1,compete,True,Sn
+complain,complain,complain,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,complain,True,Ap
+complement,complement,complement,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,complement,True,Sn
+complicate,complicate,complicate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,complicate,True,Cm
+comprehend,comprehend,comprehend,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,comprehend,True,Cm
+compress,compress,compress,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap An,2,compress,True,Sn
+comprise,comprise,comprise,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,comprise,True,Sn
+compromise,compromise,compromise,raw form equals the lemma,True,Sn,An Sn,True,Ev,An Ev,1,compromise,True,Sn
+computerize,computerize,computerize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,computerize,True,Sn
+con,con,con,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,con,True,Ev
+conceal,conceal,conceal,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,conceal,True,Sn
+conceive,conceive,conceive,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,conceive,True,Sn
+concentrate,concentrate,concentrate,raw form equals the lemma,True,An,An,False,,,,concentrate,True,An
+conceptualize,conceptualize,conceptualize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,conceptualize,True,Cm
+condense,condense,condense,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,condense,True,Sn
+conduce,conduce,conduce,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,conduce,True,Ap
+confer,confer,confer,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,confer,True,Sn
+configure,configure,configure,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,configure,True,Sn
+confine,confine,confine,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,confine,True,Sn
+conform,conform,conform,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,conform,True,Sn
+confound,confound,confound,raw form equals the lemma,True,Sn,Ap Sn,True,An,An,1,confound,True,Sn
+confront,confront,confront,raw form equals the lemma,True,Sn,Sn,False,,,,confront,True,Sn
+confuse,confuse confusing,confuse,raw form equals the lemma,True,Cm,Cm,True,An,Cm An Ev,2,confuse,True,Cm
+congest,congested,congested,first kept or lemmatized raw form,True,Cm,Cm,True,Sn,Sn,3,congested,True,Cm
+congregate,congregate,congregate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,congregate,True,Sn
+conjoin,conjoin,conjoin,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,conjoin,True,Sn
+conjugate,conjugate,conjugate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,conjugate,True,Ap
+conjure,conjure,conjure,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Sn,0,conjure,True,Sn
+connote,connote,connote,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,connote,True,Cm
+conserve,conserve,conserve,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,conserve,True,Ev
+consist,consist,consist,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap Sn,0,consist,True,Sn
+constitute,constitute,constitute,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,constitute,True,Sn
+constrain,constrain,constrain,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,constrain,True,Ev
+constrict,constrict,constrict,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,constrict,True,Ap
+construe,construe,construe,raw form equals the lemma,True,Sn,Sn,False,,,,construe,True,Sn
+consume,consume,consume,raw form equals the lemma,True,Ap,Ap,True,Ap,Kn Ap,0,consume,True,Ap
+contain,contain,contain,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,contain,True,Sn
+containerize,containerize,containerize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,containerize,True,Sn
+contaminate,contaminate,contaminate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,contaminate,True,Ap
+contemplate,contemplate,contemplate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,contemplate,True,Sn
+contend,contend,contend,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,contend,True,Sn
+continue,continue,continue,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,continue,True,Cm
+contradict,contradict,contradict,raw form equals the lemma,True,An,Ap An Sn,True,Ev,Cm Ev,2,contradict,True,An
+contrive,contrive,contrive,raw form equals the lemma,False,,,True,Ev,Ev,,contrive,False,
+convect,convect,convect,raw form equals the lemma,True,Sn,Ap Sn,True,An,An,1,convect,True,Sn
+convene,convene,convene,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,convene,True,Sn
+converge,converge,converge,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,converge,True,Sn
+convolve,convolve,convolve,raw form equals the lemma,True,Cm,Cm,False,,,,convolve,True,Cm
+cook,cook,cook,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,cook,True,Sn
+cooperate,cooperate,cooperate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,cooperate,True,Sn
+corner,corner,corner,raw form equals the lemma,True,Cm,Cm,False,,,,corner,True,Cm
+correct,correct,correct,raw form equals the lemma,True,Sn,Sn,True,An,An,1,correct,True,Sn
+corrode,corrode,corrode,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,corrode,True,Ap
+counteract,counteract,counteract,raw form equals the lemma,False,,,True,Ev,Ev,,counteract,False,
+counterbalance,counterbalance,counterbalance,raw form equals the lemma,True,Sn,Sn,False,,,,counterbalance,True,Sn
+cover,cover,cover,raw form equals the lemma,True,Cm,Kn Cm Ap,True,Ap,Ap,1,cover,True,Cm
+crack,crack,crack,raw form equals the lemma,True,An,An,True,An,An,0,crack,True,An
+crawl,crawl,crawl,raw form equals the lemma,True,An,Ap An,True,Kn,Kn,3,crawl,True,An
+creep,creep,creep,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn An,1,creep,True,Cm
+crowd,crowd,crowd,raw form equals the lemma,False,,,True,Kn,Kn,,crowd,False,
+crumble,crumble,crumble,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,crumble,True,Ev
+crumple,crumple,crumple,raw form equals the lemma,True,An,Cm An Sn,True,An,An,0,crumple,True,An
+crush,crush,crush,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,crush,True,Kn
+cry,cry,cry,raw form equals the lemma,False,,,True,Sn,Sn,,cry,False,
+crystallize,crystallize,crystallize,raw form equals the lemma,False,,,True,Sn,Sn,,crystallize,False,
+cull,cull,cull,raw form equals the lemma,True,An,An,True,Ev,Ev,2,cull,True,An
+culminate,culminate,culminate,raw form equals the lemma,False,,,True,Ev,Ev,,culminate,False,
+curtail,curtail,curtail,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,curtail,True,Sn
+cuss,cuss,cuss,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,cuss,True,Ap
+cut,cut,cut,raw form equals the lemma,True,An,An,True,An,An,0,cut,True,An
+damage,damage,damage,raw form equals the lemma,True,Ap,Ap,False,,,,damage,True,Ap
+damp,damp,damp,raw form equals the lemma,True,Cm,Cm,False,,,,damp,True,Cm
+dangle,dangle,dangle,raw form equals the lemma,True,An,An,True,Kn,Kn,3,dangle,True,An
+dare,dare,dare,raw form equals the lemma,True,Ap,Ap,True,Ap,Kn Ap,0,dare,True,Ap
+darken,darken,darken,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,darken,True,Ap
+de-emphasize,de-emphasize,de-emphasize,raw form equals the lemma,True,Cm,Cm,True,An,An,2,de-emphasize,True,Cm
+deactivate,deactivate,deactivate,raw form equals the lemma,True,An,An,True,Ap,Ap,1,deactivate,True,An
+deal,deal,deal,raw form equals the lemma,False,,,True,Sn,Sn,,deal,False,
+debunk,debunk,debunk,raw form equals the lemma,True,An,An,True,Ev,An Ev,2,debunk,True,An
+decarboxylate,decarboxylate,decarboxylate,raw form equals the lemma,True,Sn,Sn,True,An,An Sn,1,decarboxylate,True,Sn
+deceive,deceive,deceive,raw form equals the lemma,False,,,True,Ev,Ev,,deceive,False,
+decelerate,decelerate,decelerate,raw form equals the lemma,True,Ap,Ap,True,An,An,1,decelerate,True,Ap
+decentralize,decentralize,decentralize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,decentralize,True,Sn
+decimate,decimate,decimate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap An,0,decimate,True,Ap
+decipher,decipher,decipher,raw form equals the lemma,True,Ap,Ap,True,Cm,Cm,1,decipher,True,Ap
+deck,decking,decking,first kept or lemmatized raw form,True,Ap,Ap,False,,,,decking,True,Ap
+declare,declare,declare,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,declare,True,Sn
+decline,decline,decline,raw form equals the lemma,True,Ap,Ap Sn,True,Ev,Ap Ev,3,decline,True,Ap
+decode,decode decoding,decode,raw form equals the lemma,True,Sn,Ap Sn,True,Ap,Ap,2,decode,True,Sn
+decompose,decompose,decompose,raw form equals the lemma,True,An,Ap An,True,An,An,0,decompose,True,An
+deconstruct,deconstruct,deconstruct,raw form equals the lemma,True,Ap,Ap,True,An,An,1,deconstruct,True,Ap
+decorate,decorate,decorate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap Sn,0,decorate,True,Ap
+decouple,decouple,decouple,raw form equals the lemma,True,Sn,Sn,True,An,An,1,decouple,True,Sn
+decrease,decrease,decrease,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,decrease,True,Ap
+decrypt,decrypt,decrypt,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap,0,decrypt,True,Ap
+dedicate,dedicate,dedicate,raw form equals the lemma,False,,,True,Ev,Ev,,dedicate,False,
+deduct,deduct,deduct,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap An,0,deduct,True,Ap
+deem,deem,deem,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,deem,True,Ev
+deepen,deepen deepening,deepen,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,deepen,True,Ap
+default,default,default,raw form equals the lemma,True,An,An,True,An,An,0,default,True,An
+defeat,defeat,defeat,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,defeat,True,Ap
+defect,defect,defect,raw form equals the lemma,False,,,True,An,An,,defect,False,
+defer,defer,defer,raw form equals the lemma,True,Ev,Cm Ev,True,Ev,Ap Sn Ev,0,defer,True,Ev
+deflate,deflate,deflate,raw form equals the lemma,False,,,True,Ap,Ap,,deflate,False,
+deflect,deflect,deflect,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,deflect,True,Sn
+deform,deform,deform,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,deform,True,Sn
+defy,defy,defy,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,defy,True,Ap
+degenerate,degenerate,degenerate,raw form equals the lemma,True,Cm,Cm,True,An,An,2,degenerate,True,Cm
+degrade,degrade,degrade,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,degrade,True,Ap
+deionize,deionize,deionize,raw form equals the lemma,False,,,True,Ap,Ap,,deionize,False,
+delay,delay,delay,raw form equals the lemma,False,,,False,,,,delay,False,
+delete,delete,delete,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,delete,True,Ev
+delimit,delimit,delimit,raw form equals the lemma,False,,,True,An,An,,delimit,False,
+delineate,delineate,delineate,raw form equals the lemma,True,Cm,Cm,True,An,An,2,delineate,True,Cm
+delve,delve,delve,raw form equals the lemma,True,An,An,True,An,An,0,delve,True,An
+demagnetize,demagnetize,demagnetize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,demagnetize,True,Ap
+demand,demand,demand,raw form equals the lemma,True,An,Ap An Sn,True,An,An,0,demand,True,An
+demarcate,demarcate,demarcate,raw form equals the lemma,True,Cm,Cm,True,An,An,2,demarcate,True,Cm
+demodulate,demodulate,demodulate,raw form equals the lemma,True,Ap,Ap,False,,,,demodulate,True,Ap
+demolish,demolish,demolish,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,demolish,True,Ap
+demoralise,demoralise,demoralise,raw form equals the lemma,True,Ap,Ap Ev,True,Ev,Ev,3,demoralise,True,Ap
+demystify,demystify,demystify,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,demystify,True,Sn
+denote,denote,denote,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm Sn,1,denote,True,Cm
+depart,depart,depart,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,depart,True,Ev
+depend,depend,depend,raw form equals the lemma,True,Cm,Cm,True,Ev,Cm Ev,4,depend,True,Cm
+deplete,deplete,deplete,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,deplete,True,Ap
+deploy,deploy,deploy,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,deploy,True,Sn
+depress,depress,depress,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,depress,True,Ap
+deprive,deprive,deprive,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,deprive,True,Ap
+derate,derate,derate,raw form equals the lemma,True,Sn,Sn,True,An,An,1,derate,True,Sn
+deregulate,deregulate,deregulate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,deregulate,True,Sn
+descend,descend,descend,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,descend,True,Ap
+deserve,deserve,deserve,raw form equals the lemma,False,,,True,Ev,Ev,,deserve,False,
+desiccate,desiccate,desiccate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,desiccate,True,Ap
+designate,designate,designate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,designate,True,Sn
+desire,desired,desired,first kept or lemmatized raw form,True,An,An,True,Ap,Ap,1,desired,True,An
+destabilize,destabilize,destabilize,raw form equals the lemma,True,Ap,Ap Sn,False,,,,destabilize,True,Ap
+destine,destine,destine,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,destine,True,Ev
+destroy,destroy,destroy,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,destroy,True,Ap
+detach,detach,detach,raw form equals the lemma,True,Ev,Ev,True,An,An,2,detach,True,Ev
+deter,deter,deter,raw form equals the lemma,True,An,An Sn,True,An,An,0,deter,True,An
+deteriorate,deteriorate,deteriorate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,deteriorate,True,Ap
+detonate,detonate,detonate,raw form equals the lemma,True,Ap,Ap,True,An,An,1,detonate,True,Ap
+detract,detract,detract,raw form equals the lemma,True,Ap,Ap,True,An,Ap An,1,detract,True,Ap
+devastate,devastate devastating,devastate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,devastate,True,Ap
+deviate,deviate,deviate,raw form equals the lemma,True,An,An,True,An,An,0,deviate,True,An
+devote,devote,devote,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,devote,True,Ap
+diagonalize,diagonalize,diagonalize,raw form equals the lemma,True,Sn,Sn,True,An,An,1,diagonalize,True,Sn
+die,die,die,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,die,True,Ap
+differ,differ,differ,raw form equals the lemma,True,An,Cm An Sn,True,An,Cm An Ev,0,differ,True,An
+diffract,diffract,diffract,raw form equals the lemma,True,An,Cm An,True,An,An,0,diffract,True,An
+diffuse,diffuse,diffuse,raw form equals the lemma,True,An,Cm Ap An,True,An,An,0,diffuse,True,An
+dig,dig,dig,raw form equals the lemma,True,An,An,True,An,An,0,dig,True,An
+digest,digest,digest,raw form equals the lemma,True,Sn,Sn,True,An,An,1,digest,True,Sn
+digitize,digitize,digitize,raw form equals the lemma,True,Sn,Cm Ap Sn,False,,,,digitize,True,Sn
+dilate,dilate,dilate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,dilate,True,Sn
+dilute,dilute,dilute,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,dilute,True,Ap
+dip,dip,dip,raw form equals the lemma,True,An,An,True,An,An,0,dip,True,An
+disable,disable,disable,raw form equals the lemma,True,An,An,True,Ap,Ap,1,disable,True,An
+disagree,disagree,disagree,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,disagree,True,Ev
+disallow,disallow,disallow,raw form equals the lemma,True,An,An,True,Ev,Ev,2,disallow,True,An
+disambiguate,disambiguate,disambiguate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,disambiguate,True,Cm
+disappear,disappear,disappear,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,disappear,True,Ap
+disappoint,disappoint,disappoint,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap,0,disappoint,True,Ap
+disassemble,disassemble,disassemble,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,disassemble,True,Ap
+disassociate,disassociate,disassociate,raw form equals the lemma,True,An,An,True,An,An,0,disassociate,True,An
+discard,discard,discard,raw form equals the lemma,True,Ap,Ap An Sn Ev,True,Ap,Ap,0,discard,True,Ap
+discern,discern,discern,raw form equals the lemma,True,An,Cm An,True,An,Cm An,0,discern,True,An
+discipline,disciplined,disciplined,first kept or lemmatized raw form,True,Ev,Ev,True,Ev,Ev,0,disciplined,True,Ev
+disclose,disclose,disclose,raw form equals the lemma,True,Sn,Ap Sn,True,Ap,Ap,2,disclose,True,Sn
+discolor,discolor,discolor,raw form equals the lemma,False,,,True,Cm,Kn Cm An,,discolor,False,
+disconnect,disconnect,disconnect,raw form equals the lemma,True,Ev,Ev,True,An,An,2,disconnect,True,Ev
+discontinue,discontinue,discontinue,raw form equals the lemma,True,An,An,True,An,An Ev,0,discontinue,True,An
+discount,discount,discount,raw form equals the lemma,False,,,False,,,,discount,False,
+discourage,discourage,discourage,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,discourage,True,Sn
+disenfranchise,disenfranchise,disenfranchise,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,disenfranchise,True,Ap
+disengage,disengage,disengage,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,disengage,True,Ev
+disentangle,disentangle,disentangle,raw form equals the lemma,True,An,Cm An Sn,True,An,An,0,disentangle,True,An
+disfigure,disfigure,disfigure,raw form equals the lemma,True,Ap,Ap,True,An,An,1,disfigure,True,Ap
+disguise,disguise,disguise,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,disguise,True,Sn
+disintegrate,disintegrate,disintegrate,raw form equals the lemma,True,Ap,Ap,True,An,An,1,disintegrate,True,Ap
+dislodge,dislodge,dislodge,raw form equals the lemma,True,An,An,True,An,An,0,dislodge,True,An
+dismantle,dismantle,dismantle,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,dismantle,True,Ap
+dismay,dismay,dismay,raw form equals the lemma,True,Ap,Ap,False,,,,dismay,True,Ap
+dismiss,dismiss,dismiss,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,dismiss,True,Ev
+disparage,disparage,disparage,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,disparage,True,Ev
+dispatch,dispatch,dispatch,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,dispatch,True,Ap
+dispel,dispel,dispel,raw form equals the lemma,True,Ap,Ap,True,An,An,1,dispel,True,Ap
+dispense,dispense,dispense,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,dispense,True,Sn
+disperse,disperse,disperse,raw form equals the lemma,False,,,True,Ap,Ap,,disperse,False,
+displace,displace,displace,raw form equals the lemma,True,Ap,Ap An,True,Ap,Ap,0,displace,True,Ap
+display,display,display,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn Cm,4,display,True,Sn
+dispose,dispose,dispose,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,dispose,True,Ap
+disprove,disprove,disprove,raw form equals the lemma,True,An,An,True,Ev,Ev,2,disprove,True,An
+dispute,dispute,dispute,raw form equals the lemma,True,Ev,Cm Ap An Ev,True,Ev,Ev,0,dispute,True,Ev
+disrupt,disrupt,disrupt,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,disrupt,True,Sn
+disseminate,disseminate,disseminate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,disseminate,True,Ap
+dissipate,dissipate,dissipate,raw form equals the lemma,True,An,An,True,Ap,Ap An,1,dissipate,True,An
+dissociate,dissociate,dissociate,raw form equals the lemma,True,An,An,True,An,An,0,dissociate,True,An
+dissolve,dissolve,dissolve,raw form equals the lemma,True,An,An,True,Sn,Sn,1,dissolve,True,An
+dissuade,dissuade,dissuade,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,dissuade,True,Ev
+distil,distil,distil,raw form equals the lemma,False,,,True,An,An,,distil,False,
+distill,distill,distill,raw form equals the lemma,True,Ap,Ap,True,An,An,1,distill,True,Ap
+distort,distort distorted,distort,raw form equals the lemma,True,An,Cm An,True,Ap,Ap,1,distort,True,An
+distract,distract,distract,raw form equals the lemma,False,,,True,An,An,,distract,False,
+distribute,distribute,distribute,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,distribute,True,Ap
+disturb,disturb disturbing,disturb,raw form equals the lemma,True,Ap,Cm Ap An,False,,,,disturb,True,Ap
+dive,dive diving,dive,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,dive,True,Ap
+diverge,diverge,diverge,raw form equals the lemma,True,An,An,True,Cm,Cm,2,diverge,True,An
+diversify,diversify,diversify,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,diversify,True,Sn
+divert,divert,divert,raw form equals the lemma,True,Ap,Ap,True,An,An,1,divert,True,Ap
+divulge,divulge,divulge,raw form equals the lemma,True,Sn,Sn,False,,,,divulge,True,Sn
+dodge,dodge,dodge,raw form equals the lemma,True,Sn,Cm Sn,True,Ap,Ap,2,dodge,True,Sn
+domesticate,domesticate,domesticate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,domesticate,True,Ap
+dominate,dominate,dominate,raw form equals the lemma,False,,,True,Ap,Ap,,dominate,False,
+donate,donate,donate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,donate,True,Ap
+doubt,doubt,doubt,raw form equals the lemma,False,,,True,Ev,Ev,,doubt,False,
+downgrade,downgrade,downgrade,raw form equals the lemma,True,Sn,Sn,False,,,,downgrade,True,Sn
+download,download,download,raw form equals the lemma,True,Ap,Ap,False,,,,download,True,Ap
+downsize,downsize downsizing,downsize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,downsize,True,Sn
+doze,doze,doze,raw form equals the lemma,True,Sn,Sn,False,,,,doze,True,Sn
+draft,draft,draft,raw form equals the lemma,True,Ev,Ev,True,Ev,Sn Ev,0,draft,True,Ev
+drag,drag,drag,raw form equals the lemma,True,An,An,True,An,An,0,drag,True,An
+drain,drain drained,drain,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,drain,True,Ap
+dredge,dredge,dredge,raw form equals the lemma,True,An,An,True,Ap,Ap,1,dredge,True,An
+dress,dress,dress,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,dress,True,Sn
+drink,drink,drink,raw form equals the lemma,False,,,True,Ap,Ap,,drink,False,
+drive,drive driven,drive,raw form equals the lemma,False,,,True,Ap,Ap,,drive,False,
+drop,drop,drop,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,drop,True,Ap
+drown,drown,drown,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,drown,True,Ap
+dry,dry drying,dry,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,dry,True,Ap
+dub,dub,dub,raw form equals the lemma,True,Sn,Sn,False,,,,dub,True,Sn
+dump,dump,dump,raw form equals the lemma,True,Ev,Ap An Ev,True,Ev,Ev,0,dump,True,Ev
+dwell,dwell,dwell,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,dwell,True,Ap
+dye,dyed,dyed,first kept or lemmatized raw form,True,Ap,Ap,True,Kn,Kn,2,dyed,True,Ap
+earn,earn,earn,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,earn,True,Ap
+ease,ease,ease,raw form equals the lemma,False,,,True,Ap,Ap,,ease,False,
+eat,ate eat,eat,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,ate,True,An
+eavesdrop,eavesdrop,eavesdrop,raw form equals the lemma,True,Ap,Ap,True,An,An,1,eavesdrop,True,Ap
+echo,echo,echo,raw form equals the lemma,False,,,True,Kn,Kn,,echo,False,
+edge,edged,edged,first kept or lemmatized raw form,True,Cm,Cm,True,Kn,Kn Cm,1,edged,True,Cm
+educate,educate,educate,raw form equals the lemma,False,,,True,Ap,Ap Sn,,educate,False,
+eject,eject,eject,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,eject,True,Ev
+elapse,elapse,elapse,raw form equals the lemma,True,Ap,Ap Sn,True,An,An Sn,1,elapse,True,Ap
+elect,elect,elect,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,elect,True,Ap
+elevate,elevate,elevate,raw form equals the lemma,False,,,True,Ap,Ap Sn,,elevate,False,
+elicit,elicit,elicit,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,elicit,True,Ap
+eliminate,eliminate,eliminate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,eliminate,True,Ap
+elongate,elongate,elongate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,elongate,True,Sn
+elucidate,elucidate,elucidate,raw form equals the lemma,True,Cm,Cm,True,Ev,An Ev,4,elucidate,True,Cm
+elude,elude,elude,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,elude,True,Ap
+elute,elute,elute,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,elute,True,Cm
+emanate,emanate,emanate,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,emanate,True,Cm
+embark,embark,embark,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,embark,True,Sn
+embed,embed,embed,raw form equals the lemma,True,An,An,True,Ap,Ap,1,embed,True,An
+embody,embody,embody,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,embody,True,Sn
+embrace,embrace,embrace,raw form equals the lemma,False,,,True,Sn,Sn Ev,,embrace,False,
+emerge,emerge emerging,emerge,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,emerge,True,Sn
+emit,emit,emit,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,emit,True,Cm
+empathize,empathize,empathize,raw form equals the lemma,False,,,True,Sn,Sn,,empathize,False,
+emphasize,emphasise emphasize,emphasize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,emphasise,True,Cm
+empower,empower empowering,empower,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap Sn,0,empower,True,Ap
+emulate,emulate,emulate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,emulate,True,Ap
+enable,enable,enable,raw form equals the lemma,True,An,An,True,Sn,Sn,1,enable,True,An
+enact,enact,enact,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Ap Sn,0,enact,True,Sn
+encapsulate,encapsulate,encapsulate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,encapsulate,True,Sn
+encase,encase,encase,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Sn,0,encase,True,Sn
+encircle,encircle,encircle,raw form equals the lemma,False,,,True,Cm,Cm,,encircle,False,
+enclose,enclose,enclose,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,enclose,True,Sn
+encode,encode,encode,raw form equals the lemma,True,Sn,Ap Sn,True,Ap,Ap,2,encode,True,Sn
+encompass,encompass,encompass,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,encompass,True,Sn
+encounter,encounter,encounter,raw form equals the lemma,True,Cm,Cm Sn,False,,,,encounter,True,Cm
+encourage,encourage,encourage,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,encourage,True,Sn
+encrypt,encrypt,encrypt,raw form equals the lemma,True,Sn,Sn,False,,,,encrypt,True,Sn
+encumber,encumber,encumber,raw form equals the lemma,True,Sn,Ap Sn,True,Kn,Kn,4,encumber,True,Sn
+end,ended,ended,first kept or lemmatized raw form,True,Cm,Cm,True,An,An,2,ended,True,Cm
+endanger,endanger,endanger,raw form equals the lemma,True,Cm,Cm Ap An,True,Ap,Ap,1,endanger,True,Cm
+endow,endow,endow,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,endow,True,Ap
+endure,endure,endure,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,endure,True,Ap
+energize,energize,energize,raw form equals the lemma,False,,,True,Sn,Sn,,energize,False,
+engage,engage,engage,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,engage,True,Sn
+engender,engender,engender,raw form equals the lemma,False,,,True,Sn,Sn,,engender,False,
+enjoin,enjoin,enjoin,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,enjoin,True,Sn
+enjoy,enjoy,enjoy,raw form equals the lemma,True,Kn,Kn,True,An,An,3,enjoy,True,Kn
+enlarge,enlarge,enlarge,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,enlarge,True,Cm
+enlighten,enlighten,enlighten,raw form equals the lemma,True,Sn,Sn,False,,,,enlighten,True,Sn
+enlist,enlist,enlist,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,enlist,True,Sn
+enrich,enrich,enrich,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,enrich,True,Ap
+enroll,enroll,enroll,raw form equals the lemma,False,,,True,Ap,Ap,,enroll,False,
+ensue,ensue,ensue,raw form equals the lemma,True,Cm,Cm,False,,,,ensue,True,Cm
+entail,entail,entail,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,entail,True,Cm
+entangle,entangle,entangle,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,entangle,True,Sn
+enter,enter,enter,raw form equals the lemma,False,,,True,Sn,Sn,,enter,False,
+entertain,entertain,entertain,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,entertain,True,Ap
+enthrall,enthrall,enthrall,raw form equals the lemma,False,,,False,,,,enthrall,False,
+entice,entice,entice,raw form equals the lemma,False,,,False,,,,entice,False,
+entitle,entitle,entitle,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,entitle,True,Sn
+entrap,entrap,entrap,raw form equals the lemma,False,,,False,,,,entrap,False,
+entrench,entrench,entrench,raw form equals the lemma,False,,,True,Sn,Ap Sn,,entrench,False,
+entrust,entrust,entrust,raw form equals the lemma,False,,,False,,,,entrust,False,
+enunciate,enunciate,enunciate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,enunciate,True,Sn
+envelop,envelop,envelop,raw form equals the lemma,False,,,True,Ap,Ap,,envelop,False,
+envisage,envisage,envisage,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm Sn,3,envisage,True,Sn
+envision,envision,envision,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,envision,True,Sn
+epitomize,epitomize,epitomize,raw form equals the lemma,False,,,True,Cm,Cm,,epitomize,False,
+equalize,equalize,equalize,raw form equals the lemma,True,Sn,Sn,False,,,,equalize,True,Sn
+equate,equate,equate,raw form equals the lemma,True,Cm,Cm,True,An,Ap An,2,equate,True,Cm
+equilibrate,equilibrate,equilibrate,raw form equals the lemma,True,Sn,Sn,True,An,An,1,equilibrate,True,Sn
+equip,equip,equip,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Ap Sn,0,equip,True,Sn
+eradicate,eradicate,eradicate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,eradicate,True,Ap
+erase,erase,erase,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,erase,True,Ap
+erect,erect,erect,raw form equals the lemma,False,,,True,Ap,Ap,,erect,False,
+erode,erode,erode,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,erode,True,Ap
+escalate,escalate,escalate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,escalate,True,Sn
+escape,escape,escape,raw form equals the lemma,True,Sn,Sn,False,,,,escape,True,Sn
+etch,etch,etch,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,etch,True,Ap
+evacuate,evacuate,evacuate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,evacuate,True,Ap
+evade,evade,evade,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,evade,True,Cm
+evaporate,evaporate,evaporate,raw form equals the lemma,True,Cm,Cm Ap,True,Ap,Ap,1,evaporate,True,Cm
+evoke,evoke,evoke,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,evoke,True,Ap
+evolve,evolve,evolve,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap Sn,0,evolve,True,Sn
+exacerbate,exacerbate,exacerbate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,exacerbate,True,Ap
+exaggerate,exaggerate,exaggerate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,exaggerate,True,Cm
+excavate,excavate,excavate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,excavate,True,Ap
+exceed,exceed,exceed,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,exceed,True,Sn
+excel,excel,excel,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,excel,True,Sn
+excise,excise,excise,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,excise,True,Ap
+excite,excite,excite,raw form equals the lemma,False,,,True,Ap,Ap,,excite,False,
+exclude,exclude,exclude,raw form equals the lemma,True,Ap,Ap,True,An,An,1,exclude,True,Ap
+exert,exert,exert,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,exert,True,Ap
+exfoliate,exfoliate,exfoliate,raw form equals the lemma,True,Sn,Sn,False,,,,exfoliate,True,Sn
+exhaust,exhaust exhausting,exhaust,raw form equals the lemma,True,Ap,Ap,False,,,,exhaust,True,Ap
+exist,exist,exist,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,exist,True,Sn
+expect,expect,expect,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,expect,True,Sn
+expedite,expedite,expedite,raw form equals the lemma,True,Ap,Ap,False,,,,expedite,True,Ap
+expel,expel,expel,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,expel,True,Ap
+expend,expend,expend,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,expend,True,Ap
+expire,expire,expire,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,expire,True,Ap
+explicate,explicate,explicate,raw form equals the lemma,True,Ap,Cm Ap,True,Cm,Cm,1,explicate,True,Ap
+explode,explode,explode,raw form equals the lemma,True,Sn,Sn,True,An,An,1,explode,True,Sn
+exploit,exploit,exploit,raw form equals the lemma,True,An,Ap An,True,Ap,Ap,1,exploit,True,An
+externalize,externalize,externalize,raw form equals the lemma,True,Sn,Sn,False,,,,externalize,True,Sn
+extrude,extrude,extrude,raw form equals the lemma,True,Sn,Ap An Sn,True,Ap,Ap,2,extrude,True,Sn
+fabricate,fabricate,fabricate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,fabricate,True,Ap
+face,face faced facing,face,raw form equals the lemma,True,Cm,Cm Sn,True,Kn,Kn,1,face,True,Cm
+factorize,factorize,factorize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm Ap An,0,factorize,True,Cm
+fade,fade,fade,raw form equals the lemma,False,,,True,Kn,Kn,,fade,False,
+fail,fail,fail,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,fail,True,Sn
+fall,fall,fall,raw form equals the lemma,True,Ap,Ap,False,,,,fall,True,Ap
+falsify,falsify,falsify,raw form equals the lemma,False,,,True,Ev,Ev,,falsify,False,
+familiarize,familiarise familiarize,familiarize,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap Sn,0,familiarise,True,Ap
+fasten,fasten,fasten,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,fasten,True,Ev
+fatten,fatten,fatten,raw form equals the lemma,True,Ev,Ev,False,,,,fatten,True,Ev
+fault,fault,fault,raw form equals the lemma,False,,,False,,,,fault,False,
+favour,favour,favour,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,favour,True,Cm
+fear,fear,fear,raw form equals the lemma,False,,,False,,,,fear,False,
+feather,feathering,feathering,first kept or lemmatized raw form,False,,,True,An,An,,feathering,False,
+feature,feature,feature,raw form equals the lemma,True,Cm,Cm,False,,,,feature,True,Cm
+fee,feed,feed,first kept or lemmatized raw form,False,,,False,,,,feed,False,
+feel,feel,feel,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn Cm Sn,0,feel,True,Kn
+ferret,ferret,ferret,raw form equals the lemma,True,An,An,True,An,An,0,ferret,True,An
+fertilize,fertilize,fertilize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,fertilize,True,Sn
+fetch,fetch fetched,fetch,raw form equals the lemma,True,Ap,Ap,True,Ap,Kn Ap,0,fetch,True,Ap
+fight,fight,fight,raw form equals the lemma,True,Ev,Cm Ap Ev,True,Ev,Ev,0,fight,True,Ev
+fill,fill,fill,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,fill,True,Ap
+film,film,film,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,film,True,Sn
+filter,filter,filter,raw form equals the lemma,False,,,True,An,An,,filter,False,
+finalize,finalize,finalize,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,finalize,True,Ev
+finish,finish,finish,raw form equals the lemma,True,Cm,Cm,False,,,,finish,True,Cm
+fix,fix,fix,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,fix,True,Sn
+fixate,fixate,fixate,raw form equals the lemma,False,,,False,,,,fixate,False,
+fizzle,fizzle,fizzle,raw form equals the lemma,False,,,True,An,Ap An,,fizzle,False,
+flank,flank,flank,raw form equals the lemma,True,Ev,Ev,False,,,,flank,True,Ev
+flash,flash,flash,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,flash,True,Sn
+flatten,flatten,flatten,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,flatten,True,Ap
+flatter,flatter,flatter,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,flatter,True,Ap
+fledge,fledge,fledge,raw form equals the lemma,False,,,False,,,,fledge,False,
+flee,flee,flee,raw form equals the lemma,True,Cm,Cm,False,,,,flee,True,Cm
+flex,flex,flex,raw form equals the lemma,True,Cm,Cm,False,,,,flex,True,Cm
+flicker,flicker,flicker,raw form equals the lemma,False,,,True,An,An Sn,,flicker,False,
+flip,flip,flip,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,flip,True,Ap
+float,float,float,raw form equals the lemma,True,Cm,Cm,True,An,An,2,float,True,Cm
+flocculate,flocculate,flocculate,raw form equals the lemma,False,,,False,,,,flocculate,False,
+flourish,flourish,flourish,raw form equals the lemma,False,,,True,Sn,Sn,,flourish,False,
+flow,flow,flow,raw form equals the lemma,False,,,True,An,An,,flow,False,
+fluctuate,fluctuate,fluctuate,raw form equals the lemma,True,An,Cm An,True,Ap,Ap,1,fluctuate,True,An
+flutter,flutter,flutter,raw form equals the lemma,True,Ap,Ap,True,An,An,1,flutter,True,Ap
+fly,fly,fly,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,fly,True,Ap
+fold,fold,fold,raw form equals the lemma,True,Sn,Sn,True,Sn,An Sn,0,fold,True,Sn
+forbid,forbid,forbid,raw form equals the lemma,True,An,An,True,Ev,Ev,2,forbid,True,An
+force,forced,forced,first kept or lemmatized raw form,True,An,Ap An Ev,True,Ap,Ap,1,forced,True,An
+forego,forego,forego,raw form equals the lemma,True,An,An,True,Sn,Sn,1,forego,True,An
+foreground,foreground,foreground,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn Cm,4,foreground,True,Sn
+foresee,foresee,foresee,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,foresee,True,Sn
+foreshorten,foreshorten,foreshorten,raw form equals the lemma,True,An,An,True,An,An,0,foreshorten,True,An
+forge,forge,forge,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,forge,True,Ap
+forget,forget,forget,raw form equals the lemma,False,,,True,Kn,Kn,,forget,False,
+forgo,forgo,forgo,raw form equals the lemma,True,Ap,Ap,False,,,,forgo,True,Ap
+form,form formed,form,raw form equals the lemma,True,Ap,Cm Ap Sn,True,Sn,Sn,2,form,True,Ap
+formalize,formalise formalize,formalize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,formalise,True,Cm
+fractionate,fractionate,fractionate,raw form equals the lemma,False,,,True,Cm,Cm,,fractionate,False,
+free,freed,freed,first kept or lemmatized raw form,True,Ev,Ev,False,,,,freed,True,Ev
+freeze,freeze,freeze,raw form equals the lemma,True,Cm,Cm An,True,Ev,Ev,4,freeze,True,Cm
+frown,frown,frown,raw form equals the lemma,False,,,False,,,,frown,False,
+frustrate,frustrate,frustrate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,frustrate,True,Ap
+fulfil,fulfil,fulfil,raw form equals the lemma,False,,,True,Ap,Ap,,fulfil,False,
+fulfill,fulfill,fulfill,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,fulfill,True,Ap
+furnish,furnish,furnish,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap Sn,0,furnish,True,Ap
+galvanize,galvanize,galvanize,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,galvanize,True,Ap
+gape,gape,gape,raw form equals the lemma,True,Sn,Sn,True,An,An,1,gape,True,Sn
+gate,gated,gated,first kept or lemmatized raw form,True,An,An,True,An,An,0,gated,True,An
+gauge,gauge,gauge,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,gauge,True,Ap
+gaze,gaze,gaze,raw form equals the lemma,True,Kn,Kn,True,An,Kn Cm An,3,gaze,True,Kn
+get,get,get,raw form equals the lemma,True,Sn,Cm Ap Sn,True,Ap,Ap,2,get,True,Sn
+giggle,giggle,giggle,raw form equals the lemma,False,,,True,Kn,Kn,,giggle,False,
+glaze,glaze,glaze,raw form equals the lemma,True,Ap,Ap,True,An,An,1,glaze,True,Ap
+glean,glean,glean,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,glean,True,Sn
+glide,glide,glide,raw form equals the lemma,True,Ap,Ap,True,An,An,1,glide,True,Ap
+globalize,globalize,globalize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,globalize,True,Sn
+gloss,gloss,gloss,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,gloss,True,Cm
+glow,glow,glow,raw form equals the lemma,False,,,True,Kn,Kn,,glow,False,
+go,go,go,raw form equals the lemma,True,Ap,Cm Ap,True,Ap,Ap,0,go,True,Ap
+govern,govern,govern,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,govern,True,Sn
+grab,grab,grab,raw form equals the lemma,True,Cm,Cm Ap An,True,Ap,Ap,1,grab,True,Cm
+grant,grant,grant,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,grant,True,Ap
+granulate,granulate,granulate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,granulate,True,Sn
+grapple,grapple,grapple,raw form equals the lemma,True,Sn,Sn Ev,True,Sn,Sn,0,grapple,True,Sn
+grasp,grasp,grasp,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap An,0,grasp,True,Ap
+grate,grate,grate,raw form equals the lemma,True,An,An,True,An,An,0,grate,True,An
+gravitate,gravitate,gravitate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,gravitate,True,Sn
+graze,graze,graze,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,graze,True,Ap
+grind,grind ground,grind,raw form equals the lemma,False,,,True,An,An,,grind,False,
+groove,groove,groove,raw form equals the lemma,True,An,An,True,An,An,0,groove,True,An
+grout,grout,grout,raw form equals the lemma,False,,,True,An,An,,grout,False,
+grow,grow,grow,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,grow,True,Sn
+guarantee,guarantee,guarantee,raw form equals the lemma,False,,,True,Ev,Ev,,guarantee,False,
+guard,guard,guard,raw form equals the lemma,True,Cm,Cm Ap Sn,True,Ev,Ev,4,guard,True,Cm
+guess,guess,guess,raw form equals the lemma,True,Sn,Sn,True,An,Kn Cm An Ev,1,guess,True,Sn
+hallucinate,hallucinate,hallucinate,raw form equals the lemma,False,,,True,Sn,Sn,,hallucinate,False,
+halt,halt,halt,raw form equals the lemma,True,An,Ap An,True,An,An,0,halt,True,An
+halve,halve,halve,raw form equals the lemma,False,,,True,Ap,Ap,,halve,False,
+hamper,hamper,hamper,raw form equals the lemma,True,Sn,Sn,True,An,An Sn,1,hamper,True,Sn
+handcraft,handcraft,handcraft,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,handcraft,True,Ap
+handicap,handicapped,handicapped,first kept or lemmatized raw form,True,Ev,Ap An Ev,True,Ev,Ev,0,handicapped,True,Ev
+hang,hang,hang,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,hang,True,Ev
+happen,happen,happen,raw form equals the lemma,False,,,True,Ap,Ap Sn,,happen,False,
+harbor,harbor,harbor,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,harbor,True,Sn
+harden,harden,harden,raw form equals the lemma,False,,,True,Ev,Ev,,harden,False,
+hark,hark,hark,raw form equals the lemma,False,,,True,Kn,Kn Cm,,hark,False,
+harm,harm,harm,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,harm,True,Ap
+harmonise,harmonise,harmonise,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,harmonise,True,Sn
+harness,harness,harness,raw form equals the lemma,True,Ap,Ap,False,,,,harness,True,Ap
+harvest,harvest,harvest,raw form equals the lemma,True,An,An,True,Ap,Ap,1,harvest,True,An
+hate,hate,hate,raw form equals the lemma,False,,,True,Ev,Ev,,hate,False,
+haunt,haunt,haunt,raw form equals the lemma,True,Kn,Kn Cm Ap An,True,Kn,Kn,0,haunt,True,Kn
+heal,heal,heal,raw form equals the lemma,False,,,True,Sn,Sn,,heal,False,
+hear,hear,hear,raw form equals the lemma,False,,,True,Kn,Kn,,hear,False,
+heave,heave,heave,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,heave,True,Ap
+heed,heed,heed,raw form equals the lemma,False,,,True,Kn,Kn,,heed,False,
+heighten,heighten,heighten,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,heighten,True,Sn
+help,help,help,raw form equals the lemma,False,,,False,,,,help,False,
+hesitate,hesitate,hesitate,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,hesitate,True,Sn
+hide,hide,hide,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,hide,True,Cm
+highlight,highlight,highlight,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,highlight,True,Cm
+hinder,hinder,hinder,raw form equals the lemma,False,,,True,Ev,Ev,,hinder,False,
+hit,hit,hit,raw form equals the lemma,True,Cm,Cm Ap,True,Ev,Ev,4,hit,True,Cm
+hoist,hoist,hoist,raw form equals the lemma,True,Ap,Ap,False,,,,hoist,True,Ap
+hold,held hold holding,hold,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,held,True,Ap
+homogenize,homogenize,homogenize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,homogenize,True,Cm
+hone,hone,hone,raw form equals the lemma,False,,,False,,,,hone,False,
+hop,hopping,hopping,first kept or lemmatized raw form,False,,,True,An,An,,hopping,False,
+hope,hope,hope,raw form equals the lemma,False,,,True,Sn,Sn,,hope,False,
+humanize,humanize,humanize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,humanize,True,Sn
+humidify,humidify,humidify,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,humidify,True,Ap
+hurt,hurt,hurt,raw form equals the lemma,True,Ev,Ev,True,Kn,Kn,5,hurt,True,Ev
+hybridize,hybridize,hybridize,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,hybridize,True,Sn
+hydrate,hydrate,hydrate,raw form equals the lemma,False,,,False,,,,hydrate,False,
+hydrogenate,hydrogenate,hydrogenate,raw form equals the lemma,False,,,True,Sn,Sn,,hydrogenate,False,
+hydrolyze,hydrolyze,hydrolyze,raw form equals the lemma,False,,,True,Sn,Sn,,hydrolyze,False,
+idealize,idealize,idealize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,idealize,True,Sn
+ideate,ideate,ideate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,ideate,True,Sn
+ignite,ignite,ignite,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,ignite,True,Ap
+ignore,ignore,ignore,raw form equals the lemma,False,,,True,Sn,Sn,,ignore,False,
+illuminate,illuminate,illuminate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,illuminate,True,Sn
+imbibe,imbibe,imbibe,raw form equals the lemma,False,,,True,Kn,Kn,,imbibe,False,
+imbue,imbue,imbue,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,imbue,True,Sn
+immerse,immerse,immerse,raw form equals the lemma,False,,,True,Sn,Ap Sn,,immerse,False,
+immobilize,immobilize,immobilize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,immobilize,True,Ap
+immunize,immunize,immunize,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,immunize,True,Sn
+impair,impair,impair,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,impair,True,Ap
+impart,impart,impart,raw form equals the lemma,False,,,True,Ap,Ap,,impart,False,
+impede,impede,impede,raw form equals the lemma,False,,,True,Ev,Ev,,impede,False,
+impend,impend,impend,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,impend,True,Ap
+impinge,impinge,impinge,raw form equals the lemma,False,,,True,Ev,Ev,,impinge,False,
+implicate,implicate,implicate,raw form equals the lemma,True,Cm,Cm,True,An,An,2,implicate,True,Cm
+imply,imply,imply,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,imply,True,Cm
+impose,impose,impose,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,impose,True,Ap
+impregnate,impregnate,impregnate,raw form equals the lemma,False,,,False,,,,impregnate,False,
+impress,impress,impress,raw form equals the lemma,False,,,True,Ap,Ap,,impress,False,
+improvise,improvise,improvise,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,improvise,True,Ap
+impute,impute,impute,raw form equals the lemma,True,Ap,Ap,False,,,,impute,True,Ap
+inactivate,inactivate,inactivate,raw form equals the lemma,True,An,An,True,Ap,Ap,1,inactivate,True,An
+inaugurate,inaugurate,inaugurate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,inaugurate,True,Sn
+incise,incise,incise,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,incise,True,Sn
+increase,increase increasing,increase,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Ap Sn,2,increase,True,Ap
+incubate,incubate,incubate,raw form equals the lemma,False,,,True,Sn,Sn,,incubate,False,
+inculcate,inculcate,inculcate,raw form equals the lemma,False,,,True,Sn,Sn,,inculcate,False,
+incur,incur,incur,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,incur,True,Ap
+indict,indict,indict,raw form equals the lemma,False,,,True,Ev,Ev,,indict,False,
+induce,induce,induce,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,induce,True,Sn
+industrialize,industrialize,industrialize,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,industrialize,True,Ap
+infect,infect,infect,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,infect,True,Ap
+inflame,inflame,inflame,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,inflame,True,Ap
+inflate,inflate,inflate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,inflate,True,Sn
+infringe,infringe,infringe,raw form equals the lemma,True,An,An,True,Ev,Kn Ev,2,infringe,True,An
+infuse,infuse,infuse,raw form equals the lemma,True,An,An,True,An,An,0,infuse,True,An
+ingest,ingest,ingest,raw form equals the lemma,False,,,True,Ap,Ap,,ingest,False,
+ingrain,ingrain,ingrain,raw form equals the lemma,False,,,True,An,An,,ingrain,False,
+inhabit,inhabit,inhabit,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,inhabit,True,Ap
+inherit,inherit,inherit,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,inherit,True,Ap
+inhibit,inhibit,inhibit,raw form equals the lemma,False,,,False,,,,inhibit,False,
+initialize,initialise initialize,initialize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,initialise,True,Sn
+inject,inject,inject,raw form equals the lemma,True,An,An,True,Ev,Ap Sn Ev,2,inject,True,An
+injure,injure,injure,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,injure,True,Ap
+innovate,innovate,innovate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,innovate,True,Sn
+inoculate,inoculate,inoculate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,inoculate,True,Sn
+input,input,input,raw form equals the lemma,True,An,Cm An,False,,,,input,True,An
+inscribe,inscribe,inscribe,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,inscribe,True,Sn
+insert,insert,insert,raw form equals the lemma,True,An,An,True,Sn,Sn,1,insert,True,An
+insist,insist,insist,raw form equals the lemma,False,,,True,Ev,Ev,,insist,False,
+inspire,inspire,inspire,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,inspire,True,Sn
+install,install,install,raw form equals the lemma,True,Ev,Ap Ev,False,,,,install,True,Ev
+instantiate,instantiate,instantiate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,instantiate,True,Sn
+instigate,instigate,instigate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn Ev,0,instigate,True,Sn
+instill,instill,instill,raw form equals the lemma,False,,,True,Sn,Sn,,instill,False,
+institutionalize,institutionalize institutionalizing,institutionalize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,institutionalize,True,Sn
+insulate,insulate,insulate,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn Ev,2,insulate,True,Ap
+insure,insure,insure,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,insure,True,Ap
+intend,intend,intend,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,intend,True,Sn
+intensify,intensify,intensify,raw form equals the lemma,False,,,True,Sn,Ap Sn,,intensify,False,
+intercalate,intercalate,intercalate,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,intercalate,True,Cm
+intercept,intercept,intercept,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,intercept,True,Sn
+interchange,interchange,interchange,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,interchange,True,Sn
+intercommunicate,intercommunicate,intercommunicate,raw form equals the lemma,True,Cm,Cm Sn,True,Sn,Sn,3,intercommunicate,True,Cm
+interconnect,interconnect,interconnect,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,interconnect,True,Cm
+interfere,interfere,interfere,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,interfere,True,Sn
+interject,interject,interject,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,interject,True,Cm
+interlace,interlace,interlace,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,interlace,True,Cm
+interleave,interleave,interleave,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,interleave,True,Sn
+interlink,interlink,interlink,raw form equals the lemma,True,Cm,Cm,False,,,,interlink,True,Cm
+interlock,interlock,interlock,raw form equals the lemma,False,,,True,Sn,Sn,,interlock,False,
+intermingle,intermingle,intermingle,raw form equals the lemma,True,Cm,Cm,False,,,,intermingle,True,Cm
+internalize,internalize,internalize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,internalize,True,Sn
+interpenetrate,interpenetrate,interpenetrate,raw form equals the lemma,True,Cm,Cm,False,,,,interpenetrate,True,Cm
+interpose,interpose,interpose,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,interpose,True,Cm
+interrogate,interrogate,interrogate,raw form equals the lemma,True,An,An,True,An,An,0,interrogate,True,An
+intersect,intersect,intersect,raw form equals the lemma,True,Sn,Cm Sn,False,,,,intersect,True,Sn
+intersperse,intersperse,intersperse,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,intersperse,True,Cm
+interstratify,interstratify,interstratify,raw form equals the lemma,True,Cm,Cm,False,,,,interstratify,True,Cm
+intertwine,intertwine,intertwine,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,intertwine,True,Cm
+interweave,interweave interwoven,interweave,raw form equals the lemma,False,,,True,Sn,Sn,,interweave,False,
+intimidate,intimidate,intimidate,raw form equals the lemma,True,Sn,Ap Sn,True,Ev,Ev,1,intimidate,True,Sn
+introduce,introduce,introduce,raw form equals the lemma,True,Cm,Cm Sn,True,Ap,Ap,1,introduce,True,Cm
+inundate,inundate,inundate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,inundate,True,Ap
+invade,invade,invade,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,invade,True,Cm
+invalidate,invalidate,invalidate,raw form equals the lemma,True,Ev,Ap Sn Ev,True,Ev,Ev,0,invalidate,True,Ev
+invert,invert,invert,raw form equals the lemma,False,,,True,Ap,Ap,,invert,False,
+invest,invest,invest,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Ap Sn,0,invest,True,Sn
+invite,invite,invite,raw form equals the lemma,True,Cm,Cm,False,,,,invite,True,Cm
+invoke,invoke,invoke,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,invoke,True,Ap
+involve,involve,involve,raw form equals the lemma,True,Cm,Cm,False,,,,involve,True,Cm
+ionize,ionize,ionize,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap Sn,0,ionize,True,Sn
+irrigate,irrigate,irrigate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,irrigate,True,Ap
+issue,issue,issue,raw form equals the lemma,True,An,An,True,An,An,0,issue,True,An
+italicize,italicize,italicize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,italicize,True,Cm
+iterate,iterate,iterate,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,iterate,True,Kn
+jeopardize,jeopardise jeopardize,jeopardize,raw form equals the lemma,True,Ev,Ev,True,Ev,Ap Ev,0,jeopardise,True,Ev
+jump,jump,jump,raw form equals the lemma,False,,,True,Ap,Ap,,jump,False,
+juxtapose,juxtapose,juxtapose,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,juxtapose,True,Ev
+keep,keep,keep,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,keep,True,Ev
+kick,kick,kick,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,kick,True,Cm
+kill,kill,kill,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,kill,True,Ap
+kink,kink,kink,raw form equals the lemma,True,An,An,True,An,An,0,kink,True,An
+knead,knead,knead,raw form equals the lemma,True,An,An,True,An,An,0,knead,True,An
+knit,knit knitting,knit,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,knit,True,Ap
+knock,knock,knock,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,knock,True,Ap
+lag,lag,lag,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,lag,True,Cm
+laminate,laminate,laminate,raw form equals the lemma,False,,,False,,,,laminate,False,
+latch,latch,latch,raw form equals the lemma,True,Ap,Ap,False,,,,latch,True,Ap
+laud,laud,laud,raw form equals the lemma,False,,,True,Ev,Ev,,laud,False,
+launch,launch,launch,raw form equals the lemma,True,Sn,Sn,False,,,,launch,True,Sn
+lay,lay,lay,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,lay,True,Ap
+leach,leach,leach,raw form equals the lemma,False,,,True,Ap,Ap,,leach,False,
+lead,lead,lead,raw form equals the lemma,True,An,An,True,Kn,Kn,3,lead,True,An
+learn,learn learning,learn,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,learn,True,Ap
+lease,lease,lease,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,lease,True,Ap
+leave,leave left,leave,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,leave,True,Ev
+legitimize,legitimize,legitimize,raw form equals the lemma,False,,,True,Ev,Ev,,legitimize,False,
+lend,lend,lend,raw form equals the lemma,True,An,Ap An,True,Ap,Ap,1,lend,True,An
+lengthen,lengthen,lengthen,raw form equals the lemma,True,Ap,Cm Ap Sn,True,Ap,Ap,0,lengthen,True,Ap
+lessen,lessen,lessen,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,lessen,True,Ap
+let,let,let,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,let,True,Ap
+liberate,liberate,liberate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,liberate,True,Ap
+lie,lain lie,lie,raw form equals the lemma,True,Sn,Sn,False,,,,lain,False,
+lift,lift,lift,raw form equals the lemma,False,,,True,Ap,Ap,,lift,False,
+ligate,ligate,ligate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,ligate,True,Ap
+liken,liken,liken,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Sn Ev,1,liken,True,Cm
+linearize,linearize,linearize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,linearize,True,Sn
+liquefy,liquefy,liquefy,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,liquefy,True,Ap
+liquidize,liquidize,liquidize,raw form equals the lemma,False,,,True,Sn,Sn,,liquidize,False,
+listen,listen,listen,raw form equals the lemma,False,,,True,Kn,Kn,,listen,False,
+live,live,live,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,live,True,Ap
+load,load loaded,load,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,load,True,Ev
+localize,localise localize,localize,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,localise,True,Sn
+lock,lock,lock,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,lock,True,Ev
+locomote,locomote,locomote,raw form equals the lemma,True,An,An,True,An,An,0,locomote,True,An
+look,look,look,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn An,0,look,True,Kn
+loosen,loosen,loosen,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,loosen,True,Ap
+lose,lose,lose,raw form equals the lemma,True,Ev,Cm Ap Ev,True,Ev,Ev,0,lose,True,Ev
+love,love,love,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,love,True,Cm
+lubricate,lubricate,lubricate,raw form equals the lemma,False,,,True,Ap,Ap,,lubricate,False,
+lure,lure,lure,raw form equals the lemma,False,,,True,Kn,Kn,,lure,False,
+lustrate,lustrate,lustrate,raw form equals the lemma,False,,,True,Ev,Ev,,lustrate,False,
+magnetize,magnetize,magnetize,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,magnetize,True,Ap
+magnify,magnify,magnify,raw form equals the lemma,True,Cm,Cm,True,An,An,2,magnify,True,Cm
+mandate,mandate,mandate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,mandate,True,Sn
+manifest,manifest,manifest,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,manifest,True,Sn
+manufacture,manufacture,manufacture,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,manufacture,True,Ap
+map,map,map,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm Ap,1,map,True,Cm
+marginalize,marginalize,marginalize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,marginalize,True,Cm
+marry,marry,marry,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,marry,True,Ev
+marvel,marvel,marvel,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,marvel,True,Sn
+mat,mating,mating,first kept or lemmatized raw form,True,Kn,Kn,True,An,An,3,mating,True,Kn
+mate,mate,mate,raw form equals the lemma,False,,,True,Kn,Kn,,mate,False,
+materialize,materialise materialize,materialize,raw form equals the lemma,False,,,True,Sn,Sn,,materialise,False,
+matter,matter,matter,raw form equals the lemma,True,Sn,Sn,False,,,,matter,True,Sn
+mean,mean means,mean,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,mean,True,Kn
+mechanize,mechanize,mechanize,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,mechanize,True,Ap
+melt,melt,melt,raw form equals the lemma,True,An,An,True,An,An,0,melt,True,An
+mend,mend,mend,raw form equals the lemma,False,,,True,Sn,Sn,,mend,False,
+mention,mention,mention,raw form equals the lemma,True,Kn,Kn Cm,True,Kn,Kn Cm,0,mention,True,Kn
+mentor,mentoring,mentoring,first kept or lemmatized raw form,True,Sn,Sn,True,Sn,Sn,0,mentoring,True,Sn
+merge,merge,merge,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,merge,True,Sn
+metabolize,metabolize,metabolize,raw form equals the lemma,True,Sn,Sn,False,,,,metabolize,True,Sn
+migrate,migrate,migrate,raw form equals the lemma,True,Cm,Cm Ap,True,Ap,Ap,1,migrate,True,Cm
+mimic,mimic,mimic,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,mimic,True,Ap
+mingle,mingle,mingle,raw form equals the lemma,False,,,True,Sn,Sn,,mingle,False,
+miniaturize,miniaturize,miniaturize,raw form equals the lemma,True,Sn,Sn,True,An,An,1,miniaturize,True,Sn
+misalign,misalign,misalign,raw form equals the lemma,True,Sn,Sn,True,Ev,Sn Ev,1,misalign,True,Sn
+misidentify,misidentify,misidentify,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn Cm An,4,misidentify,True,Sn
+misjudge,misjudge,misjudge,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,misjudge,True,Ev
+mislead,mislead,mislead,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,mislead,True,Sn
+misrepresent,misrepresent,misrepresent,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,misrepresent,True,Cm
+miss,miss,miss,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm,1,miss,True,Cm
+mitigate,mitigate mitigating,mitigate,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,mitigate,True,Ap
+mix,mix,mix,raw form equals the lemma,False,,,True,Sn,Sn,,mix,False,
+mobilize,mobilise mobilize,mobilize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,mobilise,False,
+modulate,modulate,modulate,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap Sn,0,modulate,True,Sn
+moisten,moisten,moisten,raw form equals the lemma,False,,,True,Sn,Sn Ev,,moisten,False,
+mold,molding,molding,first kept or lemmatized raw form,False,,,True,An,An,,molding,False,
+monetize,monetize,monetize,raw form equals the lemma,True,An,An Sn,True,Sn,Sn,1,monetize,True,An
+morph,morph,morph,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap An Sn,0,morph,True,Sn
+motorize,motorize,motorize,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Sn,0,motorize,True,Sn
+mould,mould,mould,raw form equals the lemma,True,Sn,Sn,True,An,An,1,mould,True,Sn
+move,move,move,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,move,True,Cm
+mutate,mutate,mutate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,mutate,True,Ap
+nail,nailing,nailing,first kept or lemmatized raw form,False,,,True,Kn,Kn,,nailing,False,
+narrate,narrate,narrate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,narrate,True,Sn
+navigate,navigate,navigate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm Ap,0,navigate,True,Cm
+necessitate,necessitate,necessitate,raw form equals the lemma,False,,,True,Ev,Ev,,necessitate,False,
+need,need,need,raw form equals the lemma,False,,,True,Ev,Ev,,need,False,
+negate,negate,negate,raw form equals the lemma,False,,,True,Ev,Ev,,negate,False,
+neglect,neglect,neglect,raw form equals the lemma,False,,,True,Ev,Ev,,neglect,False,
+neutralize,neutralize,neutralize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,neutralize,True,Sn
+nominate,nominate,nominate,raw form equals the lemma,True,An,An,True,An,Ap An Ev,0,nominate,True,An
+normalize,normalise normalize,normalize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,normalise,True,Sn
+notate,notate,notate,raw form equals the lemma,True,Sn,Cm Ap Sn,True,Kn,Kn,4,notate,True,Sn
+note,note,note,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,note,True,Cm
+notice,notice,notice,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,notice,True,Kn
+notify,notify,notify,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,notify,True,Ap
+nucleate,nucleate,nucleate,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,nucleate,True,Sn
+nudge,nudge,nudge,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,nudge,True,Sn
+nullify,nullify,nullify,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,nullify,True,Sn
+nurture,nurture,nurture,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,nurture,True,Sn
+obey,obey,obey,raw form equals the lemma,False,,,True,Ap,Ap,,obey,False,
+obfuscate,obfuscate,obfuscate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,obfuscate,True,Ap
+object,object,object,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,object,True,Cm
+oblige,oblige,oblige,raw form equals the lemma,False,,,True,Ev,Ev,,oblige,False,
+obstruct,obstruct,obstruct,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,obstruct,True,Ap
+obviate,obviate,obviate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,obviate,True,Ap
+occlude,occlude,occlude,raw form equals the lemma,False,,,True,Ev,Ev,,occlude,False,
+occupy,occupy,occupy,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,occupy,True,Ap
+occur,occur,occur,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,occur,True,Cm
+offer,offer,offer,raw form equals the lemma,True,Cm,Cm,False,,,,offer,True,Cm
+offload,offload,offload,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,offload,True,Ev
+offset,offset,offset,raw form equals the lemma,False,,,True,An,An,,offset,False,
+omit,omit,omit,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,omit,True,Cm
+open,open,open,raw form equals the lemma,True,An,An,True,An,An,0,open,True,An
+oppose,oppose,oppose,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,oppose,True,Ap
+opsonize,opsonize,opsonize,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,opsonize,True,Sn
+opt,opt,opt,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,opt,True,Sn
+orchestrate,orchestrate,orchestrate,raw form equals the lemma,True,Cm,Cm An Sn,True,Sn,Sn,3,orchestrate,True,Cm
+orient,orient,orient,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,orient,True,Cm
+orientate,orientate,orientate,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,orientate,True,Sn
+oscillate,oscillate,oscillate,raw form equals the lemma,True,Cm,Cm An,True,Cm,Cm,0,oscillate,True,Cm
+outlaw,outlaw,outlaw,raw form equals the lemma,False,,,True,Kn,Kn,,outlaw,False,
+outnumber,outnumber,outnumber,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,outnumber,True,Kn
+outpace,outpace,outpace,raw form equals the lemma,True,An,An,True,An,An,0,outpace,True,An
+outperform,outperform,outperform,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,outperform,True,Sn
+outsource,outsource,outsource,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,outsource,True,Ap
+outstrip,outstrip,outstrip,raw form equals the lemma,True,Cm,Cm,False,,,,outstrip,True,Cm
+outweigh,outweigh,outweigh,raw form equals the lemma,True,Cm,Cm,True,Ev,Cm Ev,4,outweigh,True,Cm
+overarch,overarching,overarching,first kept or lemmatized raw form,True,Cm,Cm,True,Kn,Kn Cm,1,overarching,True,Cm
+overcome,overcame overcome,overcome,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn Ev,2,overcame,True,Ap
+overcompensate,overcompensate,overcompensate,raw form equals the lemma,False,,,False,,,,overcompensate,False,
+overemphasize,overemphasize,overemphasize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,overemphasize,True,Cm
+overestimate,overestimate,overestimate,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,overestimate,True,Sn
+overexpose,overexpose,overexpose,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,overexpose,True,Cm
+overflow,overflow,overflow,raw form equals the lemma,True,Cm,Cm,True,An,An,2,overflow,True,Cm
+overhear,overhear,overhear,raw form equals the lemma,True,Kn,Kn,False,,,,overhear,True,Kn
+overlap,overlap overlapping,overlap,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,overlap,True,Cm
+overlay,overlaid,overlaid,first kept or lemmatized raw form,True,Cm,Cm,True,Kn,Kn,1,overlaid,True,Cm
+overlie,overlain overlie,overlie,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,overlain,True,Cm
+overload,overload,overload,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,overload,True,Ap
+overlook,overlook,overlook,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,overlook,True,Cm
+overproduce,overproduce,overproduce,raw form equals the lemma,False,,,True,Ap,Ap,,overproduce,False,
+override,override,override,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,override,True,Cm
+overrun,overrun,overrun,raw form equals the lemma,True,Cm,Cm,False,,,,overrun,True,Cm
+oversee,oversaw oversee overseen,oversee,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,oversaw,True,An
+overshadow,overshadow,overshadow,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm,1,overshadow,True,Cm
+overshoot,overshoot,overshoot,raw form equals the lemma,True,Cm,Cm An,False,,,,overshoot,True,Cm
+overstate,overstate,overstate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,overstate,True,Cm
+overstrain,overstrain,overstrain,raw form equals the lemma,True,Ap,Ap,False,,,,overstrain,True,Ap
+overstress,overstress,overstress,raw form equals the lemma,False,,,True,Ev,Ev,,overstress,False,
+overtake,overtake,overtake,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,overtake,True,Cm
+overturn,overturn,overturn,raw form equals the lemma,True,Cm,Cm,False,,,,overturn,True,Cm
+overwhelm,overwhelm,overwhelm,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,overwhelm,True,Ap
+overwrite,overwrite,overwrite,raw form equals the lemma,True,Ap,Ap,False,,,,overwrite,True,Ap
+owe,owe,owe,raw form equals the lemma,True,Cm,Cm,False,,,,owe,True,Cm
+own,own,own,raw form equals the lemma,True,Kn,Kn,True,Ap,Ap,2,own,True,Kn
+oxidize,oxidize,oxidize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,oxidize,True,Ap
+pack,pack,pack,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,pack,True,Sn
+parallelize,parallelize,parallelize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,parallelize,True,Sn
+paralyse,paralyse,paralyse,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,paralyse,True,Ap
+pare,pare,pare,raw form equals the lemma,True,Sn,Ap Sn,False,,,,pare,True,Sn
+parse,parse,parse,raw form equals the lemma,True,Cm,Cm Ap,True,Cm,Cm An,0,parse,True,Cm
+pass,pass,pass,raw form equals the lemma,True,Ap,Ap,False,,,,pass,True,Ap
+paste,paste,paste,raw form equals the lemma,False,,,True,Kn,Kn,,paste,False,
+patch,patch,patch,raw form equals the lemma,False,,,True,Sn,Sn,,patch,False,
+pause,pause,pause,raw form equals the lemma,True,An,An,True,An,An,0,pause,True,An
+pave,pave paved,pave,raw form equals the lemma,True,Ap,Ap,True,An,An,1,pave,True,Ap
+pay,pay,pay,raw form equals the lemma,True,Cm,Cm,False,,,,pay,True,Cm
+peek,peek,peek,raw form equals the lemma,True,Kn,Kn,True,An,Kn An,3,peek,True,Kn
+peel,peel,peel,raw form equals the lemma,False,,,True,An,An,,peel,False,
+peer,peer,peer,raw form equals the lemma,False,,,False,,,,peer,False,
+penalize,penalize,penalize,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,penalize,True,Ev
+penetrate,penetrate,penetrate,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,penetrate,True,Ap
+perceive,perceive,perceive,raw form equals the lemma,True,Cm,Cm Sn,True,Cm,Kn Cm An,0,perceive,True,Cm
+percolate,percolate,percolate,raw form equals the lemma,True,An,An,True,An,An,0,percolate,True,An
+perforate,perforate,perforate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,perforate,True,Ap
+perish,perish,perish,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,perish,True,Ap
+permeate,permeate,permeate,raw form equals the lemma,True,Ap,Ap,False,,,,permeate,True,Ap
+permit,permit,permit,raw form equals the lemma,True,Cm,Cm,True,An,An,2,permit,True,Cm
+permute,permute,permute,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,permute,True,Cm
+perpetuate,perpetuate,perpetuate,raw form equals the lemma,False,,,False,,,,perpetuate,False,
+persevere,persevere,persevere,raw form equals the lemma,False,,,True,Ev,Ev,,persevere,False,
+persist,persist,persist,raw form equals the lemma,False,,,True,Ap,Ap Sn,,persist,False,
+persuade,persuade,persuade,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,persuade,True,Ev
+pertain,pertain,pertain,raw form equals the lemma,True,Cm,Cm Ev,True,Ev,Ev,4,pertain,True,Cm
+perturb,perturb,perturb,raw form equals the lemma,True,An,An,True,An,An,0,perturb,True,An
+phase,phase,phase,raw form equals the lemma,False,,,True,An,An,,phase,False,
+photograph,photograph,photograph,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm Ap An,1,photograph,True,Cm
+pick,pick,pick,raw form equals the lemma,True,Ev,Kn Cm Ap An Ev,True,Kn,Kn Ap Ev,5,pick,True,Ev
+pile,pile,pile,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,pile,True,Ap
+pinch,pinch,pinch,raw form equals the lemma,True,An,Cm Ap An,True,Kn,Kn An,3,pinch,True,An
+ping,ping,ping,raw form equals the lemma,True,Cm,Cm,False,,,,ping,True,Cm
+pinpoint,pinpoint,pinpoint,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn Cm An,0,pinpoint,True,Kn
+plagiarize,plagiarize,plagiarize,raw form equals the lemma,True,An,An,True,Kn,Kn,3,plagiarize,True,An
+plasticize,plasticise plasticize,plasticize,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,plasticise,True,Ap
+play,play plays,play,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,play,True,Ap
+please,pleasing,pleasing,first kept or lemmatized raw form,False,,,False,,,,pleasing,False,
+plicate,plicate,plicate,raw form equals the lemma,True,Ap,Ap,True,An,An,1,plicate,True,Ap
+plow,plow,plow,raw form equals the lemma,True,An,Ap An,True,Sn,Sn,1,plow,True,An
+pluck,pluck,pluck,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,pluck,True,Ap
+plug,plug,plug,raw form equals the lemma,True,An,Cm An,True,An,An,0,plug,True,An
+plumb,plumb,plumb,raw form equals the lemma,True,An,An,True,An,An,0,plumb,True,An
+plunge,plunge,plunge,raw form equals the lemma,True,An,An,True,Ap,Ap,1,plunge,True,An
+ply,ply,ply,raw form equals the lemma,False,,,True,An,An,,ply,False,
+poke,poke,poke,raw form equals the lemma,True,An,An,True,Kn,Kn,3,poke,True,An
+polarize,polarize,polarize,raw form equals the lemma,True,Cm,Cm,True,An,An,2,polarize,True,Cm
+pollute,pollute,pollute,raw form equals the lemma,True,Ap,Ap,True,Ev,Ap Ev,3,pollute,True,Ap
+polymerize,polymerize,polymerize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,polymerize,True,Ap
+ponder,ponder,ponder,raw form equals the lemma,False,,,True,Ev,Ev,,ponder,False,
+pop,pop,pop,raw form equals the lemma,True,Sn,Sn,False,,,,pop,True,Sn
+popularize,popularize,popularize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,popularize,True,Sn
+populate,populate,populate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,populate,True,Sn
+pore,pore,pore,raw form equals the lemma,False,,,True,An,An,,pore,False,
+port,ported,ported,first kept or lemmatized raw form,True,Ap,Ap,True,Sn,Sn,2,ported,True,Ap
+pose,pose,pose,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap An Sn,0,pose,True,Sn
+posit,posit,posit,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,posit,True,Sn
+position,positioning,positioning,first kept or lemmatized raw form,True,Cm,Cm,True,An,An,2,positioning,True,Cm
+possess,possess,possess,raw form equals the lemma,True,Ap,Kn Ap An,True,Ap,Ap,0,possess,True,Ap
+post,post,post,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,post,True,Sn
+postpone,postpone,postpone,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,postpone,True,Ap
+postulate,postulate,postulate,raw form equals the lemma,False,,,True,An,An Ev,,postulate,False,
+potentiate,potentiate,potentiate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,potentiate,True,Ap
+pour,pour,pour,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,pour,True,Ap
+praise,praise,praise,raw form equals the lemma,False,,,True,Ev,Ev,,praise,False,
+preach,preach,preach,raw form equals the lemma,True,Ap,Ap,False,,,,preach,True,Ap
+precede,precede,precede,raw form equals the lemma,True,Sn,Sn,True,Sn,Kn Sn Ev,0,precede,True,Sn
+precipitate,precipitate,precipitate,raw form equals the lemma,True,An,An,True,Sn,Sn,1,precipitate,True,An
+preclude,preclude,preclude,raw form equals the lemma,True,Sn,An Sn,True,Ev,Ev,1,preclude,True,Sn
+predetermine,predetermine,predetermine,raw form equals the lemma,True,An,An,True,Ev,Ev,2,predetermine,True,An
+predispose,predisposed,predisposed,first kept or lemmatized raw form,True,An,An,True,Sn,Sn,1,predisposed,True,An
+predominate,predominate,predominate,raw form equals the lemma,False,,,False,,,,predominate,False,
+prefabricate,prefabricate,prefabricate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,prefabricate,True,Ap
+prefer,prefer,prefer,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,prefer,True,Cm
+preform,preform,preform,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,preform,True,Sn
+preheat,preheat,preheat,raw form equals the lemma,True,An,An,True,Sn,Sn,1,preheat,True,An
+preoccupy,preoccupy,preoccupy,raw form equals the lemma,True,An,An,True,An,An,0,preoccupy,True,An
+present,present,present,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm Ap,1,present,True,Cm
+pressure,pressured,pressured,first kept or lemmatized raw form,True,Ev,Ev,True,Ap,Ap,3,pressured,True,Ev
+pressurize,pressurize,pressurize,raw form equals the lemma,True,Sn,Ap An Sn,True,Ap,Ap,2,pressurize,True,Sn
+presume,presume,presume,raw form equals the lemma,True,Ev,Cm Sn Ev,True,Ev,An Ev,0,presume,True,Ev
+presuppose,presuppose,presuppose,raw form equals the lemma,True,Sn,Sn,True,Ev,Sn Ev,1,presuppose,True,Sn
+prevail,prevail,prevail,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,prevail,True,Ev
+prevent,prevent,prevent,raw form equals the lemma,False,,,True,Ev,Ev,,prevent,False,
+print,printing,printing,first kept or lemmatized raw form,True,Sn,Sn,True,An,Kn An Sn,1,printing,True,Sn
+prise,prise,prise,raw form equals the lemma,True,Cm,Cm An,True,An,An,2,prise,True,Cm
+proceed,proceed,proceed,raw form equals the lemma,True,Ap,Ap An,True,Sn,Ap Sn,2,proceed,True,Ap
+prod,prod,prod,raw form equals the lemma,False,,,True,Ap,Ap,,prod,False,
+profess,profess,profess,raw form equals the lemma,False,,,True,Sn,Sn,,profess,False,
+prohibit,prohibit,prohibit,raw form equals the lemma,True,An,An,True,Ev,Ev,2,prohibit,True,An
+proliferate,proliferate,proliferate,raw form equals the lemma,False,,,True,Sn,Sn,,proliferate,False,
+prolong,prolong,prolong,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,prolong,True,Cm
+promise,promise,promise,raw form equals the lemma,False,,,False,,,,promise,False,
+promote,promote,promote,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,promote,True,Sn
+prompt,prompt,prompt,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn Ev,0,prompt,True,Sn
+pronounce,pronounce,pronounce,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,pronounce,True,Cm
+propagate,propagate,propagate,raw form equals the lemma,False,,,True,Ap,Ap,,propagate,False,
+propel,propel,propel,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,propel,True,Ap
+prosper,prosper,prosper,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,prosper,True,Cm
+protest,protest,protest,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,protest,True,Ap
+protrude,protrude,protrude,raw form equals the lemma,True,Cm,Cm An,True,Kn,Kn Cm Ap An,1,protrude,True,Cm
+provoke,provoke,provoke,raw form equals the lemma,True,Ap,Ap An,True,Ev,Ev,3,provoke,True,Ap
+prune,prune pruning,prune,raw form equals the lemma,True,Ap,Ap An,True,Ap,Ap,0,prune,True,Ap
+pry,pry,pry,raw form equals the lemma,True,Ap,Ap,False,,,,pry,True,Ap
+publicize,publicize,publicize,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap,0,publicize,True,Ap
+publish,publish,publish,raw form equals the lemma,True,An,An,True,Ap,Ap,1,publish,True,An
+pull,pull,pull,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,pull,True,Ap
+pulsate,pulsate,pulsate,raw form equals the lemma,False,,,True,Ap,Ap,,pulsate,False,
+pulverize,pulverize,pulverize,raw form equals the lemma,True,An,An,True,Ap,Ap Sn,1,pulverize,True,An
+pump,pump,pump,raw form equals the lemma,False,,,True,Ap,Ap,,pump,False,
+punch,punch,punch,raw form equals the lemma,True,Ap,Ap,False,,,,punch,True,Ap
+purchase,purchase,purchase,raw form equals the lemma,True,Cm,Cm,False,,,,purchase,True,Cm
+purge,purge,purge,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,purge,True,Ap
+purify,purify,purify,raw form equals the lemma,True,Ap,Ap,True,An,An,1,purify,True,Ap
+pursue,pursue,pursue,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,pursue,True,Ap
+push,push,push,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,push,True,Ap
+put,put putting,put,raw form equals the lemma,True,Ap,Ap An,True,Ap,Ap,0,put,True,Ap
+quadruple,quadruple,quadruple,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,quadruple,True,Ap
+qualify,qualify,qualify,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,qualify,True,Ev
+quantify,quantify,quantify,raw form equals the lemma,True,Cm,Cm Ev,True,Ev,Cm An Ev,4,quantify,True,Cm
+quantize,quantize,quantize,raw form equals the lemma,True,Sn,Sn,True,An,An,1,quantize,True,Sn
+quarantine,quarantine,quarantine,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,quarantine,True,Ap
+quench,quench,quench,raw form equals the lemma,True,An,An,True,An,An,0,quench,True,An
+quit,quit,quit,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,quit,True,Ev
+radiate,radiate,radiate,raw form equals the lemma,False,,,True,Ap,Ap,,radiate,False,
+raise,raise,raise,raw form equals the lemma,True,An,An,True,Sn,Sn,1,raise,True,An
+ramp,ramp,ramp,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,ramp,True,Ap
+randomize,randomize,randomize,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Sn,0,randomize,True,Sn
+rasterize,rasterize,rasterize,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,rasterize,True,Sn
+rationalize,rationalize,rationalize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm Ap An,0,rationalize,True,Cm
+ravel,ravel,ravel,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,ravel,True,Cm
+re-create,re-create,re-create,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,re-create,True,Sn
+re-examine,re-examine,re-examine,raw form equals the lemma,False,,,True,Ev,Ev,,re-examine,False,
+re-introduce,re-introduce,re-introduce,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,re-introduce,True,Sn
+reach,reach,reach,raw form equals the lemma,False,,,False,,,,reach,False,
+react,react,react,raw form equals the lemma,True,Sn,Sn,True,Sn,Ap Sn,0,react,True,Sn
+reactivate,reactivate,reactivate,raw form equals the lemma,False,,,True,Ev,Sn Ev,,reactivate,False,
+readjust,readjust,readjust,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,readjust,True,Sn
+realign,realign,realign,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn Ev,0,realign,True,Sn
+realize,realise realize,realize,raw form equals the lemma,False,,,True,Kn,Kn,,realise,False,
+reallocate,reallocate,reallocate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,reallocate,True,Ap
+ream,ream,ream,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,ream,True,Sn
+reap,reap,reap,raw form equals the lemma,True,An,An,True,Kn,Kn,3,reap,True,An
+reappear,reappear,reappear,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,reappear,True,Cm
+rear,rear,rear,raw form equals the lemma,True,Sn,Sn,False,,,,rear,True,Sn
+reassemble,reassemble,reassemble,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reassemble,True,Sn
+reassert,reassert,reassert,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reassert,True,Sn
+reassure,reassure,reassure,raw form equals the lemma,True,Sn,Sn,True,Ev,Sn Ev,1,reassure,True,Sn
+rebound,rebound,rebound,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,rebound,True,Cm
+rebuild,rebuild,rebuild,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,rebuild,True,Ap
+recalculate,recalculate,recalculate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,recalculate,True,Sn
+recapitulate,recapitulate,recapitulate,raw form equals the lemma,True,Cm,Cm,False,,,,recapitulate,True,Cm
+recapture,recapture,recapture,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,recapture,True,Ap
+recast,recast,recast,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,recast,True,Sn
+recede,recede,recede,raw form equals the lemma,False,,,False,,,,recede,False,
+receive,receive,receive,raw form equals the lemma,True,Ap,Cm Ap,True,Ap,Ap,0,receive,True,Ap
+recharge,recharge,recharge,raw form equals the lemma,True,Ap,Ap,False,,,,recharge,True,Ap
+reciprocate,reciprocate,reciprocate,raw form equals the lemma,True,Cm,Cm,False,,,,reciprocate,True,Cm
+reckon,reckon,reckon,raw form equals the lemma,True,Sn,Sn Ev,True,Ev,Ev,1,reckon,True,Sn
+reclaim,reclaim,reclaim,raw form equals the lemma,True,Ap,Ap,False,,,,reclaim,True,Ap
+reclassify,reclassify,reclassify,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,reclassify,True,Sn
+recode,recode,recode,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,recode,True,Sn
+recollect,recollect,recollect,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,recollect,True,Kn
+recombine,recombine,recombine,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,recombine,True,Ap
+recondition,recondition,recondition,raw form equals the lemma,True,Ap,Ap,False,,,,recondition,True,Ap
+reconsider,reconsider,reconsider,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,reconsider,True,Cm
+reconstitute,reconstitute,reconstitute,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,reconstitute,True,Ap
+recopy,recopy,recopy,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,recopy,True,Ap
+recount,recount,recount,raw form equals the lemma,False,,,True,Kn,Kn,,recount,False,
+recover,recover,recover,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,recover,True,Ev
+recreate,recreate,recreate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,recreate,True,Sn
+recruit,recruit recruiting,recruit,raw form equals the lemma,False,,,True,Ap,Ap,,recruit,False,
+rectify,rectify,rectify,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,rectify,True,Sn
+recur,recur,recur,raw form equals the lemma,False,,,True,Kn,Kn,,recur,False,
+recycle,recycle,recycle,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,recycle,True,Ap
+redefine,redefine,redefine,raw form equals the lemma,True,Sn,Sn,False,,,,redefine,True,Sn
+redeposit,redeposit,redeposit,raw form equals the lemma,True,Cm,Cm,False,,,,redeposit,True,Cm
+redesign,redesign,redesign,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,redesign,True,Sn
+redevelop,redevelop,redevelop,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,redevelop,True,Sn
+redirect,redirect,redirect,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,redirect,True,Ap
+rediscover,rediscover,rediscover,raw form equals the lemma,False,,,True,Kn,Kn,,rediscover,False,
+redistribute,redistribute,redistribute,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,redistribute,True,Ap
+redo,redone,redone,first kept or lemmatized raw form,False,,,True,Sn,Sn,,redone,False,
+reduce,reduce reduced,reduce,raw form equals the lemma,True,Ap,Ap,False,,,,reduce,True,Ap
+reestablish,reestablish,reestablish,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reestablish,True,Sn
+reevaluate,reevaluate,reevaluate,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,reevaluate,True,Sn
+reexamine,reexamine,reexamine,raw form equals the lemma,False,,,False,,,,reexamine,False,
+refine,refine,refine,raw form equals the lemma,False,,,True,Ev,Sn Ev,,refine,False,
+reflect,reflect,reflect,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,reflect,True,Cm
+refocus,refocus,refocus,raw form equals the lemma,False,,,False,,,,refocus,False,
+reformulate,reformulate,reformulate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reformulate,True,Sn
+refract,refract,refract,raw form equals the lemma,False,,,False,,,,refract,False,
+refrain,refrain,refrain,raw form equals the lemma,False,,,True,Kn,Kn,,refrain,False,
+refresh,refresh,refresh,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,refresh,True,Sn
+refrigerate,refrigerate,refrigerate,raw form equals the lemma,True,An,An,True,Ap,Ap,1,refrigerate,True,An
+refuel,refuel,refuel,raw form equals the lemma,False,,,True,Ap,Ap,,refuel,False,
+refurbish,refurbish,refurbish,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,refurbish,True,Ap
+refuse,refuse,refuse,raw form equals the lemma,True,Ev,Ap Sn Ev,True,Ev,Ev,0,refuse,True,Ev
+refute,refute,refute,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,refute,True,Ev
+regain,regain,regain,raw form equals the lemma,True,Ev,Ev,False,,,,regain,True,Ev
+regard,regard,regard,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,regard,True,Cm
+regenerate,regenerate,regenerate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,regenerate,True,Sn
+register,register,register,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,register,True,Sn
+regret,regret,regret,raw form equals the lemma,True,Kn,Kn,True,Ev,Kn Ev,5,regret,True,Kn
+regroup,regroup,regroup,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,regroup,True,Sn
+regularize,regularize,regularize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,regularize,True,Ap
+regulate,regulate,regulate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,regulate,True,Sn
+rehabilitate,rehabilitate,rehabilitate,raw form equals the lemma,False,,,True,Ev,Ev,,rehabilitate,False,
+reify,reify,reify,raw form equals the lemma,False,,,False,,,,reify,False,
+reignite,reignite,reignite,raw form equals the lemma,False,,,True,Kn,Kn,,reignite,False,
+reimpose,reimpose,reimpose,raw form equals the lemma,True,Ap,Ap,False,,,,reimpose,True,Ap
+reintroduce,reintroduce,reintroduce,raw form equals the lemma,False,,,False,,,,reintroduce,False,
+reinvent,reinvent,reinvent,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reinvent,True,Sn
+reinvigorate,reinvigorate,reinvigorate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reinvigorate,True,Sn
+reiterate,reiterate,reiterate,raw form equals the lemma,True,Cm,Cm,False,,,,reiterate,True,Cm
+reject,reject,reject,raw form equals the lemma,True,An,Ap An,True,Ev,Ev,2,reject,True,An
+rejoin,rejoin,rejoin,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,rejoin,True,Ev
+rejuvenate,rejuvenate,rejuvenate,raw form equals the lemma,False,,,True,Sn,Sn,,rejuvenate,False,
+relax,relax,relax,raw form equals the lemma,False,,,False,,,,relax,False,
+relegate,relegate,relegate,raw form equals the lemma,False,,,False,,,,relegate,False,
+relieve,relieve,relieve,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,relieve,True,Ev
+reload,reload,reload,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reload,True,Sn
+relocate,relocate,relocate,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,relocate,True,Cm
+rely,relied rely,rely,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,relied,True,Ev
+remain,remain,remain,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,remain,True,Ev
+remake,remake,remake,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,remake,True,Sn
+remediate,remediate,remediate,raw form equals the lemma,False,,,True,Ev,Ev,,remediate,False,
+remember,remember,remember,raw form equals the lemma,False,,,True,Kn,Kn,,remember,False,
+remind,remind,remind,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,remind,True,Ap
+remodel,remodel,remodel,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,remodel,True,Ap
+remold,remold,remold,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,remold,True,Ap
+remove,remove,remove,raw form equals the lemma,True,Ap,Ap,True,An,An,1,remove,True,Ap
+rename,rename,rename,raw form equals the lemma,True,Ap,Ap Sn,False,,,,rename,True,Ap
+render,render rendering,render,raw form equals the lemma,True,Sn,Sn,False,,,,render,True,Sn
+renew,renew,renew,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,renew,True,Ap
+renormalize,renormalize,renormalize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,renormalize,True,Sn
+renounce,renounce,renounce,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,renounce,True,Ev
+renovate,renovate,renovate,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,renovate,True,Ap
+reorder,reorder,reorder,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,reorder,True,Cm
+reorient,reorient,reorient,raw form equals the lemma,False,,,True,Sn,Sn,,reorient,False,
+repaint,repaint,repaint,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,repaint,True,Ap
+repay,repaid,repaid,first kept or lemmatized raw form,False,,,False,,,,repaid,False,
+repel,repel,repel,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,repel,True,Ap
+rephrase,rephrase,rephrase,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,rephrase,True,Cm
+replace,replace,replace,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,replace,True,Ap
+replant,replant,replant,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,replant,True,Ap
+replenish,replenish,replenish,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,replenish,True,Ap
+replicate,replicate,replicate,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,replicate,True,Ap
+reposition,reposition,reposition,raw form equals the lemma,True,Cm,Cm,True,Ev,Sn Ev,4,reposition,True,Cm
+repress,repress,repress,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,repress,True,Ap
+reprint,reprint,reprint,raw form equals the lemma,False,,,True,Kn,Kn,,reprint,False,
+republish,republish,republish,raw form equals the lemma,False,,,True,Kn,Kn,,republish,False,
+request,request,request,raw form equals the lemma,True,Ap,Ap An,True,An,An,1,request,True,Ap
+require,require,require,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap,0,require,True,Ap
+reread,reread,reread,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,reread,True,Cm
+rescale,rescale,rescale,raw form equals the lemma,True,Sn,Cm Sn,True,Ap,Ap,2,rescale,True,Sn
+reschedule,reschedule,reschedule,raw form equals the lemma,True,Ap,Cm Ap,True,Sn,Sn,2,reschedule,True,Ap
+reseed,reseed,reseed,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reseed,True,Sn
+resemble,resemble,resemble,raw form equals the lemma,True,Kn,Kn Cm Sn,True,Kn,Kn Sn,0,resemble,True,Kn
+resent,resent,resent,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,resent,True,Cm
+reserve,reserve,reserve,raw form equals the lemma,True,Ev,Ap An Ev,True,Ev,Ev,0,reserve,True,Ev
+reset,reset,reset,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,reset,True,Sn
+reshape,reshape,reshape,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,reshape,True,Sn
+reside,reside,reside,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,reside,True,Ap
+resist,resist,resist,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,resist,True,Ap
+resize,resize,resize,raw form equals the lemma,True,Sn,Cm Sn,True,Sn,Sn,0,resize,True,Sn
+resonate,resonate,resonate,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,resonate,True,Ev
+rest,resting,resting,first kept or lemmatized raw form,True,Cm,Cm,False,,,,resting,True,Cm
+restart,restart,restart,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,restart,True,Sn
+restore,restore,restore,raw form equals the lemma,False,,,True,Sn,Sn,,restore,False,
+restrain,restrain,restrain,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,restrain,True,Ev
+restrict,restrict,restrict,raw form equals the lemma,True,An,An Ev,True,Ev,Ev,2,restrict,True,An
+result,result,result,raw form equals the lemma,True,Cm,Cm Ev,False,,,,result,True,Cm
+resume,resume,resume,raw form equals the lemma,True,An,An,True,An,An,0,resume,True,An
+resuspend,resuspend,resuspend,raw form equals the lemma,False,,,True,Sn,Sn,,resuspend,False,
+retain,retain,retain,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,retain,True,Ev
+rethink,rethink,rethink,raw form equals the lemma,False,,,True,Ev,Ev,,rethink,False,
+retire,retire,retire,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,retire,True,Ev
+retrace,retrace,retrace,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,retrace,True,Cm
+retract,retract,retract,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,retract,True,Ap
+retrain,retrain,retrain,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Ap Sn,2,retrain,True,Ap
+retreat,retreating,retreating,first kept or lemmatized raw form,True,Cm,Cm,True,Ev,Ev,4,retreating,True,Cm
+retry,retry,retry,raw form equals the lemma,True,Cm,Cm,False,,,,retry,True,Cm
+return,return,return,raw form equals the lemma,True,Cm,Cm,False,,,,return,True,Cm
+reunify,reunify,reunify,raw form equals the lemma,False,,,True,Sn,Sn,,reunify,False,
+reunite,reunite,reunite,raw form equals the lemma,False,,,False,,,,reunite,False,
+reuse,reuse,reuse,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,reuse,True,Ap
+reveal,reveal,reveal,raw form equals the lemma,True,Ap,Ap An Sn,True,Kn,Kn,2,reveal,True,Ap
+reverse,reverse,reverse,raw form equals the lemma,True,Ap,Ap An,True,An,An,1,reverse,True,Ap
+revert,revert,revert,raw form equals the lemma,False,,,False,,,,revert,False,
+revisit,revisit revisited,revisit,raw form equals the lemma,False,,,True,Sn,Sn,,revisit,False,
+revive,revive,revive,raw form equals the lemma,False,,,True,Sn,Sn,,revive,False,
+revolutionize,revolutionize,revolutionize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,revolutionize,True,Sn
+revolve,revolve,revolve,raw form equals the lemma,True,Cm,Cm,True,Sn,Ap Sn,3,revolve,True,Cm
+rewire,rewire,rewire,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,rewire,True,Ap
+reword,reword,reword,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,reword,True,Cm
+rework,rework,rework,raw form equals the lemma,False,,,True,Sn,Sn,,rework,False,
+ride,ride,ride,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,ride,True,Ap
+ring,rang,rang,first kept or lemmatized raw form,False,,,False,,,,rang,False,
+rinse,rinse,rinse,raw form equals the lemma,False,,,True,Ev,Ev,,rinse,False,
+rip,rip,rip,raw form equals the lemma,True,Ap,Ap,True,An,An,1,rip,True,Ap
+ripple,ripple,ripple,raw form equals the lemma,True,An,An,True,Ap,Ap,1,ripple,True,An
+rise,rise,rise,raw form equals the lemma,False,,,True,Ev,Sn Ev,,rise,False,
+roam,roam,roam,raw form equals the lemma,False,,,True,Ap,Ap,,roam,False,
+rob,rob,rob,raw form equals the lemma,True,Ap,Ap,False,,,,rob,True,Ap
+roll,roll,roll,raw form equals the lemma,True,Cm,Cm,True,An,An,2,roll,True,Cm
+rotate,rotate,rotate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,rotate,True,Cm
+roughen,roughen,roughen,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,roughen,True,Ap
+round,round,round,raw form equals the lemma,True,Cm,Cm,False,,,,round,True,Cm
+rout,rout,rout,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,rout,True,Cm
+rove,rove,rove,raw form equals the lemma,True,An,An,True,An,An,0,rove,True,An
+rub,rub,rub,raw form equals the lemma,False,,,False,,,,rub,False,
+ruin,ruin,ruin,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,ruin,True,Ap
+rule,rule,rule,raw form equals the lemma,False,,,True,Ev,Ev,,rule,False,
+run,ran run,run,raw form equals the lemma,True,Cm,Cm Ap,True,Ap,Ap,1,ran,True,Cm
+rupture,rupture,rupture,raw form equals the lemma,True,Ap,Ap,False,,,,rupture,True,Ap
+safeguard,safeguard,safeguard,raw form equals the lemma,True,Ap,Ap,False,,,,safeguard,True,Ap
+sail,sail,sail,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap Sn,0,sail,True,Ap
+satisfy,satisfy,satisfy,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,satisfy,True,Ap
+saturate,saturate,saturate,raw form equals the lemma,False,,,False,,,,saturate,False,
+save,save,save,raw form equals the lemma,True,Ev,Ev,True,Sn,Sn,1,save,True,Ev
+saw,saw sawn,saw,raw form equals the lemma,True,Kn,Kn An,True,Kn,Kn,0,saw,True,Kn
+say,said say,say,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,said,False,
+scale,scaling,scaling,first kept or lemmatized raw form,True,Sn,Sn,True,Ev,Ev,1,scaling,True,Sn
+scan,scan,scan,raw form equals the lemma,True,An,An,True,An,An,0,scan,True,An
+scarify,scarify,scarify,raw form equals the lemma,True,Ap,Ap,False,,,,scarify,True,Ap
+scatter,scatter,scatter,raw form equals the lemma,True,An,An,True,An,An,0,scatter,True,An
+scavenge,scavenge,scavenge,raw form equals the lemma,True,An,An,True,Ap,Ap,1,scavenge,True,An
+scour,scour,scour,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,scour,True,Ap
+scramble,scramble,scramble,raw form equals the lemma,True,An,An,True,Sn,Sn,1,scramble,True,An
+scrape,scrape,scrape,raw form equals the lemma,True,Kn,Kn Ap An,True,Ap,Ap,2,scrape,True,Kn
+scratch,scratch,scratch,raw form equals the lemma,True,Kn,Kn Ap,True,Kn,Kn,0,scratch,True,Kn
+screw,screw,screw,raw form equals the lemma,True,Ap,Ap,False,,,,screw,True,Ap
+scribe,scribe,scribe,raw form equals the lemma,True,Kn,Kn Ap An Sn,True,Kn,Kn,0,scribe,True,Kn
+scroll,scroll,scroll,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,scroll,True,Ap
+sculpt,sculpt,sculpt,raw form equals the lemma,True,An,An,True,Cm,Cm Ap An,2,sculpt,True,An
+seal,seal,seal,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,seal,True,Ev
+seat,seating,seating,first kept or lemmatized raw form,True,Ap,Cm Ap Sn,True,Kn,Kn,2,seating,True,Ap
+secrete,secrete,secrete,raw form equals the lemma,False,,,True,Kn,Kn,,secrete,False,
+sectionalize,sectionalize,sectionalize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,sectionalize,True,Sn
+secure,secure,secure,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,secure,True,Ev
+sediment,sediment,sediment,raw form equals the lemma,True,An,Ap An,True,An,An,0,sediment,True,An
+see,see seen,see,raw form equals the lemma,True,Kn,Kn Cm An,True,Kn,Kn Cm An,0,see,True,Kn
+seek,seek,seek,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,seek,True,Kn
+seem,seem,seem,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,seem,True,Cm
+seep,seep,seep,raw form equals the lemma,True,An,An,True,Kn,Kn An,3,seep,True,An
+segregate,segregate,segregate,raw form equals the lemma,True,Sn,Sn,True,An,An,1,segregate,True,Sn
+sell,sell,sell,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,sell,True,Ap
+send,send sent,send,raw form equals the lemma,True,Cm,Cm,False,,,,send,True,Cm
+sensitize,sensitize,sensitize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,sensitize,True,Sn
+sequester,sequester,sequester,raw form equals the lemma,True,Ev,Ev,True,An,An,2,sequester,True,Ev
+serve,serve,serve,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,serve,True,Ap
+set,set,set,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,set,True,Ap
+settle,settle,settle,raw form equals the lemma,True,An,An,True,Ev,Ev,2,settle,True,An
+shadow,shadow,shadow,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Cm An,1,shadow,True,Cm
+shake,shake,shake,raw form equals the lemma,True,Sn,Sn,False,,,,shake,True,Sn
+share,share,share,raw form equals the lemma,True,Ap,Ap,False,,,,share,True,Ap
+sharpen,sharpen,sharpen,raw form equals the lemma,True,An,An,True,Ap,Ap,1,sharpen,True,An
+shatter,shattered,shattered,first kept or lemmatized raw form,True,An,An,True,An,An,0,shattered,True,An
+shave,shave,shave,raw form equals the lemma,True,Sn,Sn,False,,,,shave,True,Sn
+shear,shear,shear,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,shear,True,Ap
+shed,shed,shed,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,shed,True,Ap
+shield,shield,shield,raw form equals the lemma,True,Cm,Cm Sn,True,Ev,Ev,4,shield,True,Cm
+shift,shift,shift,raw form equals the lemma,True,An,An,True,An,An,0,shift,True,An
+shine,shine,shine,raw form equals the lemma,False,,,True,Ap,Ap,,shine,False,
+ship,shipping,shipping,first kept or lemmatized raw form,True,Sn,Cm Ap Sn,True,Ap,Ap,2,shipping,True,Sn
+shoot,shoot,shoot,raw form equals the lemma,False,,,True,Ev,Ev,,shoot,False,
+shorten,shorten,shorten,raw form equals the lemma,True,Sn,Sn,False,,,,shorten,True,Sn
+shove,shove,shove,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,shove,True,Ap
+shovel,shovel,shovel,raw form equals the lemma,True,An,Ap An,True,An,Ap An,0,shovel,True,An
+shrink,shrink,shrink,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,shrink,True,Sn
+shuffle,shuffle,shuffle,raw form equals the lemma,True,Sn,Sn,True,An,An,1,shuffle,True,Sn
+shut,shut,shut,raw form equals the lemma,True,Ap,Ap,True,Ev,Ap An Ev,3,shut,True,Ap
+side,sided,sided,first kept or lemmatized raw form,True,Cm,Cm Ap,True,An,An,2,sided,True,Cm
+sidestep,sidestep,sidestep,raw form equals the lemma,False,,,True,An,An,,sidestep,False,
+sign,sign,sign,raw form equals the lemma,True,Cm,Cm Ap An Sn,True,Kn,Kn,1,sign,True,Cm
+signal,signal,signal,raw form equals the lemma,True,An,An,False,,,,signal,True,An
+signify,signify,signify,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm,3,signify,True,Sn
+silt,silt,silt,raw form equals the lemma,False,,,True,An,An,,silt,False,
+sin,sin,sin,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,sin,True,Ev
+sing,sing,sing,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,sing,True,Sn
+sink,sink,sink,raw form equals the lemma,True,An,An,True,An,An,0,sink,True,An
+siphon,siphon,siphon,raw form equals the lemma,True,Ap,Ap An,True,Ap,Ap,0,siphon,True,Ap
+sit,sit,sit,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,sit,True,Ap
+situate,situate,situate,raw form equals the lemma,True,Cm,Cm Sn,True,Sn,Sn,3,situate,True,Cm
+skew,skew,skew,raw form equals the lemma,True,An,Cm An,True,An,An,0,skew,True,An
+skip,skip,skip,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,skip,True,Kn
+slap,slap,slap,raw form equals the lemma,True,An,An,True,Sn,Sn,1,slap,True,An
+slice,slice,slice,raw form equals the lemma,True,An,An,True,An,An,0,slice,True,An
+slide,slide,slide,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,slide,True,Ap
+slip,slip,slip,raw form equals the lemma,True,Ap,Ap,False,,,,slip,True,Ap
+slither,slither,slither,raw form equals the lemma,True,An,An,True,An,An,0,slither,True,An
+slosh,slosh,slosh,raw form equals the lemma,True,Cm,Cm,True,An,An,2,slosh,True,Cm
+slow,slow slowing,slow,raw form equals the lemma,True,An,An,False,,,,slow,True,An
+smear,smear,smear,raw form equals the lemma,True,An,Cm An,True,An,An,0,smear,True,An
+smile,smile,smile,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,smile,True,Sn
+smoke,smoke,smoke,raw form equals the lemma,True,Ap,Ap,True,Ap,Kn Ap An,0,smoke,True,Ap
+smooth,smooth,smooth,raw form equals the lemma,True,An,An,False,,,,smooth,True,An
+smoothen,smoothen,smoothen,raw form equals the lemma,False,,,True,Sn,Sn,,smoothen,False,
+smudge,smudge,smudge,raw form equals the lemma,True,An,An,True,Cm,Kn Cm An,2,smudge,True,An
+snap,snap,snap,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,snap,True,Ev
+soak,soak,soak,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,soak,True,Ap
+soar,soar,soar,raw form equals the lemma,False,,,False,,,,soar,False,
+socialize,socialize,socialize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,socialize,True,Cm
+soften,soften,soften,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,soften,True,Sn
+solicit,solicit,solicit,raw form equals the lemma,False,,,False,,,,solicit,False,
+solidify,solidify,solidify,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,solidify,True,Ap
+sound,sound,sound,raw form equals the lemma,True,Sn,Sn,False,,,,sound,True,Sn
+sow,sow,sow,raw form equals the lemma,True,An,Ap An,True,An,An,0,sow,True,An
+sparge,sparge,sparge,raw form equals the lemma,False,,,False,,,,sparge,False,
+spark,spark,spark,raw form equals the lemma,False,,,True,An,An,,spark,False,
+spawn,spawn,spawn,raw form equals the lemma,False,,,True,Sn,Sn,,spawn,False,
+speak,speak,speak,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,speak,True,Sn
+spearhead,spearhead,spearhead,raw form equals the lemma,True,An,An,True,An,An,0,spearhead,True,An
+specialize,specialise specialize,specialize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,specialise,True,Sn
+spell,spell,spell,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,spell,True,Cm
+spend,spend,spend,raw form equals the lemma,True,Cm,Cm Ap,True,Ap,Ap,1,spend,True,Cm
+spin,spun,spun,first kept or lemmatized raw form,False,,,True,Ap,Ap,,spun,False,
+splash,splash,splash,raw form equals the lemma,False,,,True,Kn,Kn,,splash,False,
+splice,splice,splice,raw form equals the lemma,True,Cm,Cm,True,Sn,An Sn,3,splice,True,Cm
+split,split,split,raw form equals the lemma,True,An,An,True,An,An,0,split,True,An
+spoil,spoil,spoil,raw form equals the lemma,True,An,Ap An,True,An,Ap An,0,spoil,True,An
+sponsor,sponsor,sponsor,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,sponsor,True,Cm
+sporulate,sporulate,sporulate,raw form equals the lemma,True,Cm,Cm Sn,False,,,,sporulate,True,Cm
+spray,spray,spray,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,spray,True,Ap
+spread,spread,spread,raw form equals the lemma,False,,,True,Ap,Ap,,spread,False,
+sprinkle,sprinkle,sprinkle,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,sprinkle,True,Cm
+sputter,sputter,sputter,raw form equals the lemma,False,,,False,,,,sputter,False,
+squander,squander,squander,raw form equals the lemma,True,Ap,Ap An,True,Ap,Ap,0,squander,True,Ap
+squash,squash,squash,raw form equals the lemma,True,Sn,Sn,True,An,An,1,squash,True,Sn
+squeeze,squeeze,squeeze,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,squeeze,True,Cm
+squirt,squirt,squirt,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,squirt,True,Cm
+stabilize,stabilise stabilize,stabilize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,stabilise,True,Sn
+stack,stack,stack,raw form equals the lemma,False,,,True,Sn,Sn,,stack,False,
+stagger,stagger staggering,stagger,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,stagger,True,Ap
+stagnate,stagnate,stagnate,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap Sn,2,stagnate,True,Sn
+stall,stall,stall,raw form equals the lemma,False,,,False,,,,stall,False,
+stamp,stamp,stamp,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,stamp,True,Kn
+stand,stand,stand,raw form equals the lemma,True,Sn,Kn Cm Sn,True,Kn,Kn,4,stand,True,Sn
+standardize,standardise standardize,standardize,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,standardise,True,Sn
+start,start starting,start,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,start,True,Sn
+starve,starve,starve,raw form equals the lemma,True,Ap,Ap Ev,True,Sn,Sn,2,starve,True,Ap
+stay,stay,stay,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,stay,True,Ev
+steal,steal,steal,raw form equals the lemma,True,Kn,Kn,True,Ap,Ap,2,steal,True,Kn
+steer,steer steering,steer,raw form equals the lemma,True,An,An,True,Ap,Ap Sn,1,steer,True,An
+stick,stick,stick,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,stick,True,Ap
+stiffen,stiffen,stiffen,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,stiffen,True,Sn
+stifle,stifle,stifle,raw form equals the lemma,True,Ap,Ap,False,,,,stifle,True,Ap
+stimulate,stimulate,stimulate,raw form equals the lemma,False,,,True,Sn,Sn,,stimulate,False,
+stipulate,stipulate,stipulate,raw form equals the lemma,False,,,False,,,,stipulate,False,
+stir,stir,stir,raw form equals the lemma,True,An,An,True,Sn,Sn,1,stir,True,An
+stitch,stitch,stitch,raw form equals the lemma,True,Ap,Kn Ap,True,Kn,Kn,2,stitch,True,Ap
+stockpile,stockpile,stockpile,raw form equals the lemma,True,An,An,True,Ap,Ap,1,stockpile,True,An
+stomp,stomp,stomp,raw form equals the lemma,True,Ap,Ap,True,Cm,Cm,1,stomp,True,Ap
+stoop,stoop,stoop,raw form equals the lemma,True,Ap,Ap,False,,,,stoop,True,Ap
+stop,stop,stop,raw form equals the lemma,False,,,True,Kn,Kn,,stop,False,
+store,stored,stored,first kept or lemmatized raw form,True,Ap,Ap,True,Ap,Ap,0,stored,True,Ap
+straddle,straddle,straddle,raw form equals the lemma,True,Ap,Ap,False,,,,straddle,True,Ap
+straighten,straighten,straighten,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,straighten,True,Sn
+stratify,stratify,stratify,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,stratify,True,Ap
+stray,stray,stray,raw form equals the lemma,True,An,An,True,An,An,0,stray,True,An
+streamline,streamline,streamline,raw form equals the lemma,False,,,True,Kn,Kn,,streamline,False,
+strengthen,strengthen,strengthen,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,strengthen,True,Sn
+stretch,stretch,stretch,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,stretch,True,Cm
+strike,strike,strike,raw form equals the lemma,True,Ap,Ap An,True,Ev,Ev,3,strike,True,Ap
+strive,strive,strive,raw form equals the lemma,False,,,True,Ap,Ap,,strive,False,
+struggle,struggle,struggle,raw form equals the lemma,True,Ap,Ap,True,Ev,Ap An Sn Ev,3,struggle,True,Ap
+stutter,stutter,stutter,raw form equals the lemma,True,Sn,Sn,True,Kn,Kn,4,stutter,True,Sn
+stylize,stylize,stylize,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,stylize,True,Ap
+stymy,stymy,stymy,raw form equals the lemma,True,Ap,Ap,True,An,An,1,stymy,True,Ap
+subdue,subdued,subdued,first kept or lemmatized raw form,True,An,An,True,Sn,Sn,1,subdued,True,An
+submerge,submerge,submerge,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,submerge,True,Ap
+submit,submit,submit,raw form equals the lemma,True,Ap,Ap An Sn,True,Ev,Ev,3,submit,True,Ap
+subside,subside,subside,raw form equals the lemma,True,Cm,Cm,False,,,,subside,True,Cm
+substantiate,substantiate,substantiate,raw form equals the lemma,True,An,An,True,Ev,Ev,2,substantiate,True,An
+subsume,subsume,subsume,raw form equals the lemma,True,Sn,Sn,False,,,,subsume,True,Sn
+subtend,subtend,subtend,raw form equals the lemma,False,,,False,,,,subtend,False,
+succeed,succeed,succeed,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,succeed,True,Sn
+sue,sue,sue,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,sue,True,Ap
+suffer,suffer,suffer,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,suffer,True,Ap
+suffice,suffice,suffice,raw form equals the lemma,False,,,False,,,,suffice,False,
+superimpose,superimpose,superimpose,raw form equals the lemma,False,,,False,,,,superimpose,False,
+supersede,supersede,supersede,raw form equals the lemma,False,,,True,Cm,Cm,,supersede,False,
+supplant,supplant,supplant,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,supplant,True,Ap
+suppose,suppose,suppose,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,suppose,True,Sn
+suppress,suppress,suppress,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,suppress,True,Ap
+surpass,surpass,surpass,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm Ap Sn,3,surpass,True,Sn
+surround,surround,surround,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,surround,True,Sn
+survive,survive,survive,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn Ev,2,survive,True,Ap
+suspect,suspect,suspect,raw form equals the lemma,True,Cm,Cm,True,An,An Ev,2,suspect,True,Cm
+suspend,suspend,suspend,raw form equals the lemma,False,,,False,,,,suspend,False,
+sustain,sustain,sustain,raw form equals the lemma,False,,,True,Ev,Ap Sn Ev,,sustain,False,
+sway,sway,sway,raw form equals the lemma,False,,,True,Sn,Sn,,sway,False,
+sweep,sweep,sweep,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,sweep,True,Ap
+swell,swell,swell,raw form equals the lemma,True,Sn,Sn,False,,,,swell,True,Sn
+switch,switch,switch,raw form equals the lemma,True,An,An Sn,True,An,An,0,switch,True,An
+swivel,swivel,swivel,raw form equals the lemma,True,Cm,Cm,True,An,An,2,swivel,True,Cm
+symbolize,symbolize,symbolize,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,symbolize,True,Cm
+symmetrize,symmetrize,symmetrize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,symmetrize,True,Cm
+synchronize,synchronise synchronize,synchronize,raw form equals the lemma,True,Sn,Sn,False,,,,synchronise,True,Sn
+systematize,systematize,systematize,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,systematize,True,Sn
+tackle,tackle,tackle,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,tackle,True,Cm
+take,take,take,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,take,True,Cm
+talk,talk,talk,raw form equals the lemma,True,Sn,Sn,True,Ev,Sn Ev,1,talk,True,Sn
+tame,tame,tame,raw form equals the lemma,True,Sn,An Sn,True,Ev,Ev,1,tame,True,Sn
+tamper,tamper,tamper,raw form equals the lemma,True,Ap,Ap An,True,An,An,1,tamper,True,Ap
+taper,taper,taper,raw form equals the lemma,False,,,False,,,,taper,False,
+target,target,target,raw form equals the lemma,True,Ap,Ap,False,,,,target,True,Ap
+tear,tear tore,tear,raw form equals the lemma,False,,,True,An,An,,tear,False,
+tease,tease,tease,raw form equals the lemma,False,,,False,,,,tease,False,
+teleport,teleport,teleport,raw form equals the lemma,False,,,False,,,,teleport,False,
+tempt,tempt,tempt,raw form equals the lemma,True,Ap,Ap An,True,Ap,Ap,0,tempt,True,Ap
+tend,tend,tend,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,tend,True,Sn
+terminate,terminate,terminate,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,terminate,True,Ev
+terrorize,terrorize,terrorize,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,terrorize,True,Ap
+testify,testify,testify,raw form equals the lemma,False,,,True,Ev,Ev,,testify,False,
+thank,thank,thank,raw form equals the lemma,False,,,True,Ev,An Ev,,thank,False,
+thaw,thaw,thaw,raw form equals the lemma,True,Cm,Cm,False,,,,thaw,True,Cm
+theorize,theorize,theorize,raw form equals the lemma,True,Sn,Sn,True,Cm,Cm An,3,theorize,True,Sn
+thicken,thicken,thicken,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,thicken,True,Sn
+think,think thinking,think,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,think,True,Sn
+threaten,threaten,threaten,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,threaten,True,Ap
+thrive,thrive,thrive,raw form equals the lemma,False,,,True,Sn,Sn,,thrive,False,
+throttle,throttle,throttle,raw form equals the lemma,False,,,False,,,,throttle,False,
+throw,throw,throw,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,throw,True,Ap
+thumb,thumb,thumb,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn Ap An,1,thumb,True,Cm
+thwart,thwart,thwart,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,thwart,True,Ap
+tick,tick,tick,raw form equals the lemma,True,Kn,Kn An,True,Kn,Kn,0,tick,True,Kn
+tie,tie,tie,raw form equals the lemma,True,Cm,Cm Ap An Ev,True,Kn,Kn,1,tie,True,Cm
+tighten,tighten,tighten,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,tighten,True,Ev
+tile,tiling,tiling,first kept or lemmatized raw form,False,,,True,An,An,,tiling,False,
+tilt,tilt,tilt,raw form equals the lemma,False,,,True,An,An,,tilt,False,
+tink,tink,tink,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,tink,True,Ap
+tinker,tinker,tinker,raw form equals the lemma,True,Ap,Ap,True,An,An,1,tinker,True,Ap
+tint,tint,tint,raw form equals the lemma,True,Cm,Cm,True,An,An,2,tint,True,Cm
+titrate,titrate,titrate,raw form equals the lemma,False,,,False,,,,titrate,False,
+toggle,toggle,toggle,raw form equals the lemma,True,An,An,True,Kn,Kn,3,toggle,True,An
+tolerate,tolerate,tolerate,raw form equals the lemma,True,An,An,True,Ev,Ev,2,tolerate,True,An
+toss,toss,toss,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,toss,True,Ap
+total,total,total,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,total,True,Ev
+touch,touch,touch,raw form equals the lemma,True,Cm,Kn Cm,False,,,,touch,True,Cm
+toughen,toughen,toughen,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,toughen,True,Ev
+tour,tour,tour,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,tour,True,Ap
+track,track tracking,track,raw form equals the lemma,True,Cm,Cm Ap,True,Kn,Kn,1,track,True,Cm
+transcend,transcend,transcend,raw form equals the lemma,False,,,True,Ap,Ap,,transcend,False,
+transect,transect,transect,raw form equals the lemma,True,Cm,Cm,True,An,An,2,transect,True,Cm
+transgress,transgress,transgress,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,transgress,True,Ap
+transistorize,transistorize,transistorize,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,transistorize,True,Cm
+transmit,transmit,transmit,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,transmit,True,Ap
+transport,transport,transport,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,transport,True,Ap
+transpose,transpose,transpose,raw form equals the lemma,True,Ap,Ap Sn,True,Ap,Ap,0,transpose,True,Ap
+travel,travel,travel,raw form equals the lemma,True,Cm,Cm Ap,True,Ap,Ap,1,travel,True,Cm
+traverse,traverse,traverse,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap,1,traverse,True,Cm
+treat,treat,treat,raw form equals the lemma,False,,,True,Ap,Ap Ev,,treat,False,
+triangulate,triangulate,triangulate,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm Ap An,0,triangulate,True,Cm
+trick,trick,trick,raw form equals the lemma,True,Ap,Ap,True,An,An,1,trick,True,Ap
+trigger,trigger,trigger,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,trigger,True,Kn
+trim,trim,trim,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,trim,True,Sn
+truncate,truncate,truncate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,truncate,True,Ap
+trust,trust,trust,raw form equals the lemma,True,Ev,Ev,True,Ev,Ev,0,trust,True,Ev
+try,try,try,raw form equals the lemma,False,,,True,Ev,Ev,,try,False,
+tuck,tuck,tuck,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,tuck,True,Ap
+tumble,tumble,tumble,raw form equals the lemma,True,Ap,Ap,False,,,,tumble,True,Ap
+tune,tuning,tuning,first kept or lemmatized raw form,True,Ap,Ap,True,Sn,Sn,2,tuning,True,Ap
+turn,turn,turn,raw form equals the lemma,True,Cm,Cm,True,Ap,Ap An,1,turn,True,Cm
+tweak,tweak,tweak,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,tweak,True,Sn
+twist,twist,twist,raw form equals the lemma,True,An,An,True,Kn,Kn,3,twist,True,An
+typify,typify,typify,raw form equals the lemma,True,Cm,Cm,True,Sn,Sn,3,typify,True,Cm
+unblock,unblock,unblock,raw form equals the lemma,True,An,An,False,,,,unblock,True,An
+uncouple,uncouple,uncouple,raw form equals the lemma,True,An,An,True,Sn,An Sn,1,uncouple,True,An
+uncover,uncover,uncover,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn Cm Ap An,0,uncover,True,Kn
+underdevelop,underdevelop,underdevelop,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,underdevelop,True,Sn
+underestimate,underestimate,underestimate,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,underestimate,True,Sn
+undergird,undergird,undergird,raw form equals the lemma,False,,,True,An,An,,undergird,False,
+undergo,undergo undergone underwent,undergo,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,undergo,True,Sn
+underlie,underlain underlie,underlie,raw form equals the lemma,False,,,False,,,,underlain,True,Cm
+undermine,undermine,undermine,raw form equals the lemma,True,An,An,True,Ap,Ap,1,undermine,True,An
+underperform,underperform,underperform,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,underperform,True,Sn
+underpin,underpin,underpin,raw form equals the lemma,False,,,True,Kn,Kn,,underpin,False,
+underscore,underscore,underscore,raw form equals the lemma,False,,,True,Kn,Kn,,underscore,False,
+undertake,undertake,undertake,raw form equals the lemma,True,Sn,Ap Sn,True,Sn,Sn,0,undertake,True,Sn
+undo,undo undoing undone,undo,raw form equals the lemma,False,,,False,,,,undo,False,
+undulate,undulate,undulate,raw form equals the lemma,True,Ap,Ap,True,Sn,Ap Sn,2,undulate,True,Ap
+unfold,unfold,unfold,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,unfold,True,Sn
+unite,unite,unite,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,unite,True,Sn
+unitize,unitize,unitize,raw form equals the lemma,True,Sn,Cm Sn,True,Cm,Cm,3,unitize,True,Sn
+unleash,unleash,unleash,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,unleash,True,Ap
+unload,unload,unload,raw form equals the lemma,True,Ev,Ev,True,Ap,Ap,3,unload,True,Ev
+unlock,unlock,unlock,raw form equals the lemma,True,Ev,Ev,True,An,An,2,unlock,True,Ev
+unpack,unpack,unpack,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,unpack,True,Sn
+unravel,unravel,unravel,raw form equals the lemma,True,An,An,True,An,An,0,unravel,True,An
+unroll,unroll,unroll,raw form equals the lemma,True,Ap,Ap An Sn,True,Sn,Sn,2,unroll,True,Ap
+unveil,unveil,unveil,raw form equals the lemma,True,An,Ap An Sn,True,Ap,Ap,1,unveil,True,An
+unwrap,unwrap,unwrap,raw form equals the lemma,True,Sn,Ap Sn,False,,,,unwrap,True,Sn
+upgrade,upgrade,upgrade,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,upgrade,True,Sn
+uplift,uplift,uplift,raw form equals the lemma,False,,,True,Sn,Sn,,uplift,False,
+upload,upload,upload,raw form equals the lemma,True,Sn,Sn,False,,,,upload,True,Sn
+upset,upset,upset,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,upset,True,Ap
+urge,urge,urge,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,urge,True,Sn
+usher,usher,usher,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,usher,True,Ap
+vaccinate,vaccinate,vaccinate,raw form equals the lemma,True,Ap,Ap Sn,True,Sn,Sn,2,vaccinate,True,Ap
+vanish,vanish,vanish,raw form equals the lemma,True,Cm,Cm,False,,,,vanish,True,Cm
+vaporize,vaporize,vaporize,raw form equals the lemma,True,Ap,Ap,False,,,,vaporize,True,Ap
+vary,vary,vary,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,vary,True,Cm
+vascularize,vascularize,vascularize,raw form equals the lemma,False,,,True,Sn,Sn,,vascularize,False,
+veer,veer,veer,raw form equals the lemma,True,Cm,Cm,True,Cm,Cm,0,veer,True,Cm
+vegetate,vegetate,vegetate,raw form equals the lemma,True,Sn,Sn,True,An,An,1,vegetate,True,Sn
+vent,vent,vent,raw form equals the lemma,True,Ap,Ap,True,Ev,Ap Sn Ev,3,vent,True,Ap
+ventilate,ventilate,ventilate,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap Sn,0,ventilate,True,Ap
+verbalize,verbalize,verbalize,raw form equals the lemma,True,Sn,Cm Sn,True,Cm,Cm,3,verbalize,True,Sn
+verge,verge,verge,raw form equals the lemma,True,An,An,False,,,,verge,True,An
+vest,vested,vested,first kept or lemmatized raw form,False,,,True,Ap,Ap,,vested,False,
+vibrate,vibrate,vibrate,raw form equals the lemma,False,,,True,Sn,Sn,,vibrate,False,
+violate,violate,violate,raw form equals the lemma,True,An,An,True,Ev,Ev,2,violate,True,An
+visit,visit,visit,raw form equals the lemma,True,Cm,Cm,True,Kn,Kn,1,visit,True,Cm
+void,void,void,raw form equals the lemma,True,Ap,Ap,True,An,An,1,void,True,Ap
+vote,vote,vote,raw form equals the lemma,True,Cm,Cm,True,Ev,Ev,4,vote,True,Cm
+vow,vow,vow,raw form equals the lemma,False,,,True,Ev,Ev,,vow,False,
+wait,wait,wait,raw form equals the lemma,True,An,An,True,Kn,Kn,3,wait,True,An
+wake,wake,wake,raw form equals the lemma,False,,,True,Ev,Ev,,wake,False,
+walk,walk,walk,raw form equals the lemma,True,Ap,Cm Ap,True,Ap,Ap,0,walk,True,Ap
+want,want,want,raw form equals the lemma,False,,,False,,,,want,False,
+warn,warn,warn,raw form equals the lemma,True,Sn,Ap Sn,True,Ap,Ap,2,warn,True,Sn
+warp,warp warping,warp,raw form equals the lemma,True,An,An,True,Sn,Sn,1,warp,True,An
+wash,wash,wash,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,wash,True,Ap
+watch,watch,watch,raw form equals the lemma,True,Kn,Kn,True,Kn,Kn,0,watch,True,Kn
+weaken,weaken,weaken,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,weaken,True,Ap
+wear,wear,wear,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,wear,True,Ap
+weave,weave wove,weave,raw form equals the lemma,True,Sn,Sn,False,,,,weave,True,Sn
+weep,weep,weep,raw form equals the lemma,False,,,True,Kn,Kn Sn,,weep,False,
+welcome,welcoming,welcoming,first kept or lemmatized raw form,True,Cm,Cm,False,,,,welcoming,True,Cm
+weld,weld,weld,raw form equals the lemma,False,,,True,Ap,Ap,,weld,False,
+wend,wend,wend,raw form equals the lemma,True,Ap,Ap,True,Kn,Kn,2,wend,True,Ap
+whiten,whiten,whiten,raw form equals the lemma,True,Sn,Sn,True,Ev,Ev,1,whiten,True,Sn
+widen,widen,widen,raw form equals the lemma,False,,,True,Ap,Ap Sn,,widen,False,
+wield,wield,wield,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,wield,True,Ap
+wiggle,wiggle,wiggle,raw form equals the lemma,False,,,True,Ap,Ap,,wiggle,False,
+will,will,will,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,will,True,Ap
+win,win won,win,raw form equals the lemma,True,Ap,Ap,True,Ev,Ev,3,win,True,Ap
+winnow,winnow,winnow,raw form equals the lemma,True,An,An,True,Sn,Sn,1,winnow,True,An
+wipe,wipe,wipe,raw form equals the lemma,True,Ap,Ap,True,An,An,1,wipe,True,Ap
+wish,wish,wish,raw form equals the lemma,True,Sn,Sn,False,,,,wish,True,Sn
+withdraw,withdraw,withdraw,raw form equals the lemma,True,An,An,True,An,An,0,withdraw,True,An
+withhold,withhold,withhold,raw form equals the lemma,True,An,An,True,Ap,Ap,1,withhold,True,An
+withstand,withstand,withstand,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,withstand,True,Ap
+witness,witness,witness,raw form equals the lemma,True,Sn,Sn,False,,,,witness,True,Sn
+wonder,wonder,wonder,raw form equals the lemma,True,Sn,Ap An Sn,True,An,An,1,wonder,True,Sn
+work,work works,work,raw form equals the lemma,True,Ap,Ap,True,Ap,Ap,0,work,True,Ap
+worry,worry,worry,raw form equals the lemma,False,,,True,Sn,Sn,,worry,False,
+worsen,worsen,worsen,raw form equals the lemma,True,Ap,Ap,True,Sn,Sn,2,worsen,True,Ap
+wrap,wrap,wrap,raw form equals the lemma,True,Sn,Sn,True,Sn,Sn,0,wrap,True,Sn
+wring,wring,wring,raw form equals the lemma,True,Ap,Ap,False,,,,wring,True,Ap
+yield,yield,yield,raw form equals the lemma,True,Sn,Sn,True,Ap,Ap,2,yield,True,Sn
+zoom,zoom zoomed,zoom,raw form equals the lemma,True,Sn,Sn,False,,,,zoom,True,Sn
