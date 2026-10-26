@@ -1,8 +1,11 @@
 """Merge published Bloom verb lists into the training core (plan item 17).
 
 Sources:
-  core_published.csv   Sharunova et al. 2019 Table 9 appendix, transcribed verbatim
-                       (379 verbs, 580 assignments; verified by dual independent passes)
+  core_published.csv   Sharunova et al. 2019, appendix Table 9, transcribed verbatim
+                       (379 verbs, 580 assignments). The transcription passes are
+                       table9_pass1.csv and table9_pass2.csv (AI-assisted transcription; the
+                       two files are byte-identical, so they are not independent checks);
+                       reconcile_table9.py compares them with the original 358-verb core.
   stanny_extracted.csv Stanny 2016, Table 1 (176 unique words, 263 pairs, f = lists nominating)
   newton_extracted.csv Newton, Da Silva and Peters 2020, Table 1 master list (original taxonomy names)
 
@@ -17,15 +20,27 @@ Rules (all documented for the methods section):
   4. Labels are unioned (multi-label by design).
   5. Any NEW core verb is removed from the candidate pool (it is training data now).
 
-Outputs: core_merged.csv, merge_audit.csv, candidates_final.txt, printed summary.
+Inputs also include cleaned_candidates.txt (normalize.py) and, for the final check, the expert
+vote workbook legacy/Final File(with model & Expert Classification).xlsx.
+
+Outputs: core_merged.csv, merge_audit.csv, candidates_final.txt, printed summary. By default
+they are written next to this script, which reproduces the committed files exactly; --outdir
+writes them elsewhere.
+
+Run: python merge_core.py [--outdir DIR]
 """
+import argparse
 import csv
 import os
-_HERE = os.path.dirname(os.path.abspath(__file__))
-_REPO = os.path.dirname(_HERE)
 from collections import defaultdict
 
-DIR = _HERE
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(HERE)
+_ap = argparse.ArgumentParser(description="Merge published Bloom verb lists into the training core.")
+_ap.add_argument("--outdir", default=HERE, help="where to write the outputs (default: this folder)")
+OUTDIR = _ap.parse_args().outdir
+os.makedirs(OUTDIR, exist_ok=True)
+DIR = HERE
 CROSS = {"Knowledge": "Kn", "Remember": "Kn", "Understand": "Cm", "Comprehension": "Cm",
          "Apply": "Ap", "Application": "Ap", "Analyze": "An", "Analysis": "An",
          "Evaluate": "Ev", "Evaluation": "Ev", "Create": "Sn", "Synthesis": "Sn"}
@@ -35,14 +50,14 @@ freq = defaultdict(int)          # (verb, level) -> combined freq
 sources = defaultdict(set)      # (verb, level) -> source names
 excluded = []
 
-with open(DIR + r"\core_published.csv", encoding="utf-8") as f:
+with open(os.path.join(DIR, "core_published.csv"), encoding="utf-8") as f:
     for r in csv.DictReader(f):
         key = (r["verb"], r["level"])
         freq[key] = max(freq[key], int(float(r["freq"])))
         sources[key].add("sharunova")
 
 for src_name, fn in [("stanny2016", "stanny_extracted.csv"), ("newton2020", "newton_extracted.csv")]:
-    with open(DIR + "\\" + fn, encoding="utf-8") as f:
+    with open(os.path.join(DIR, fn), encoding="utf-8") as f:
         for r in csv.DictReader(f):
             verb = r["verb"].strip().lower()
             if " " in verb or "/" in verb:
@@ -64,22 +79,22 @@ new_verbs = sorted(set(all_verbs) - core_verbs_old)
 new_assignments_existing = [(v, l) for (v, l) in freq
                             if v in core_verbs_old and "sharunova" not in sources[(v, l)]]
 
-with open(DIR + r"\core_merged.csv", "w", newline="", encoding="utf-8") as f:
+with open(os.path.join(OUTDIR, "core_merged.csv"), "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
     w.writerow(["verb", "level", "freq", "sources"])
     for (v, l) in sorted(freq, key=lambda k: (k[0], LEVELS.index(k[1]))):
         w.writerow([v, l, freq[(v, l)], "+".join(sorted(sources[(v, l)]))])
 
-with open(DIR + r"\merge_audit.csv", "w", newline="", encoding="utf-8") as f:
+with open(os.path.join(OUTDIR, "merge_audit.csv"), "w", newline="", encoding="utf-8") as f:
     w = csv.writer(f)
     w.writerow(["source", "entry", "reason_excluded"])
     w.writerows(excluded)
 
 # Remove new core verbs from the candidate pool
-cands = open(DIR + r"\cleaned_candidates.txt", encoding="utf-8").read().split()
+cands = open(os.path.join(DIR, "cleaned_candidates.txt"), encoding="utf-8").read().split()
 promoted = sorted(set(cands) & set(new_verbs))
 final_cands = [c for c in cands if c not in set(new_verbs)]
-with open(DIR + r"\candidates_final.txt", "w", encoding="utf-8") as f:
+with open(os.path.join(OUTDIR, "candidates_final.txt"), "w", encoding="utf-8") as f:
     f.write("\n".join(final_cands))
 
 per_level = {l: sum(1 for (v, ll) in freq if ll == l) for l in LEVELS}
@@ -93,8 +108,7 @@ print(f"final candidate pool: {len(final_cands)} (was {len(cands)})")
 
 # expert-sample implications (load the real rated verbs, clean lemma form)
 import pandas as pd
-REPO = _REPO
 sample30 = [str(v).strip().lower() for v in
-            pd.read_excel(REPO + r"\results\Final File(with model & Expert Classification).xlsx")["Verb_clean"]]
+            pd.read_excel(os.path.join(REPO, "legacy", "Final File(with model & Expert Classification).xlsx"))["Verb_clean"]]
 hit = [v for v in sample30 if v in set(new_verbs)]
 print(f"expert-sample verbs newly promoted to core: {hit if hit else 'none'}")

@@ -1,8 +1,10 @@
-"""Reconcile the dual transcriptions of Sharunova Table 9 and compare against
-the notebook's core transcription (core_current.csv, 358 verbs / 559 assignments).
+"""Reconcile the two transcription passes of Sharunova et al. (2019) appendix Table 9 and
+compare them with the original submission's core (core_notebook_original.csv, 358 verbs /
+559 assignments).
 
-Input: table9_pass1.csv and table9_pass2.csv (verb, level, freq), produced from
-the workflow output.
+Input: table9_pass1.csv and table9_pass2.csv (verb, level, freq). Both passes were produced
+by AI-assisted transcription and the two files are byte-identical, so report A below can
+only confirm that they agree; it is not an independent check against the printed table.
 
 Reports:
   A. Disagreements between the two independent transcription passes (must be
@@ -31,7 +33,7 @@ def load(path, cross=True):
 
 p1 = load(os.path.join(HERE, "table9_pass1.csv"))
 p2 = load(os.path.join(HERE, "table9_pass2.csv"))
-nb = load(os.path.join(HERE, "core_current.csv"))
+nb = load(os.path.join(HERE, "core_notebook_original.csv"))
 
 print("=" * 70)
 print("A. TRANSCRIPTION AGREEMENT (pass 1 vs pass 2)")
