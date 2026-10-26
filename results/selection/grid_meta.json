@@ -1,0 +1,741 @@
+{
+ "script": "revision_pipeline/supervised_eval.py grid",
+ "workers": 8,
+ "runtime_total_s": 151.22399163246155,
+ "n_configs": 30,
+ "percentiles": [
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  55,
+  60
+ ],
+ "seeds": [
+  13,
+  14,
+  15,
+  16,
+  17
+ ],
+ "inner_seed": 13,
+ "top2_margin": 0.06,
+ "suggest_alpha": 0.85,
+ "lda_qda_projection": "LDA/QDA primary rows: retrain.make_estimator -> PCA(whiten=True, random_state=13, n_components=retrain._pca_dim_for_lda_qda(X_fit, n_classes=2)) -> estimator, the projection of the structural scan; supplementary rows '|PCA24': PCA(24, whiten=True, random_state=13) of round-2 cv_metrics.py",
+ "lda_qda_structural_pca_dim_full_core": 2,
+ "row_weights": "cv_metrics.row_weights; weighted OvR fit attempted, falls back to unweighted on ValueError/TypeError",
+ "weighted_fit_fallbacks": {
+  "LinearSVC|{\"C\": 0.1}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LinearSVC|{\"C\": 0.5}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LinearSVC|{\"C\": 1.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LinearSVC|{\"C\": 2.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "CalibratedSVC|{\"C\": 0.5}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "CalibratedSVC|{\"C\": 1.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "CalibratedSVC|{\"C\": 2.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LogisticRegression|{\"C\": 0.1}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LogisticRegression|{\"C\": 0.5}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LogisticRegression|{\"C\": 1.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "RidgeClassifier|{\"alpha\": 1.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "RidgeClassifier|{\"alpha\": 5.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "RidgeClassifier|{\"alpha\": 10.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "SGDClassifier|{\"alpha\": 0.0001, \"loss\": \"hinge\"}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "SGDClassifier|{\"alpha\": 1e-05, \"loss\": \"hinge\"}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "SGDClassifier|{\"alpha\": 1e-05, \"loss\": \"log_loss\"}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "PassiveAggressive|{\"C\": 0.5}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "PassiveAggressive|{\"C\": 1.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "PassiveAggressive|{\"C\": 2.0}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LDA|{\"shrinkage\": \"auto\"}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "LDA|{\"shrinkage\": \"auto\"}|PCA24": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "QDA|{\"reg_param\": 0.05}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "QDA|{\"reg_param\": 0.05}|PCA24": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "QDA|{\"reg_param\": 0.1}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "QDA|{\"reg_param\": 0.1}|PCA24": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "GaussianNB|{\"var_smoothing\": 1e-09}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "GaussianNB|{\"var_smoothing\": 1e-08}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "NearestCentroid|{}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "KNeighborsClassifier|{\"n_neighbors\": 11}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  },
+  "KNeighborsClassifier|{\"n_neighbors\": 21}": {
+   "weighted_fit_ok": 0,
+   "weighted_fit_fallback_unweighted": 150
+  }
+ },
+ "warnings": {},
+ "errors": [],
+ "runtime_s": {
+  "LinearSVC|{\"C\": 0.1}": 25.425352334976196,
+  "LinearSVC|{\"C\": 0.5}": 38.725507736206055,
+  "LinearSVC|{\"C\": 1.0}": 46.30073881149292,
+  "LinearSVC|{\"C\": 2.0}": 57.84681463241577,
+  "CalibratedSVC|{\"C\": 0.5}": 80.56322264671326,
+  "CalibratedSVC|{\"C\": 1.0}": 77.37319159507751,
+  "CalibratedSVC|{\"C\": 2.0}": 76.07056140899658,
+  "LogisticRegression|{\"C\": 0.1}": 31.216243505477905,
+  "LogisticRegression|{\"C\": 0.5}": 31.273290872573853,
+  "LogisticRegression|{\"C\": 1.0}": 33.31976127624512,
+  "RidgeClassifier|{\"alpha\": 1.0}": 24.543980598449707,
+  "RidgeClassifier|{\"alpha\": 5.0}": 24.58584761619568,
+  "RidgeClassifier|{\"alpha\": 10.0}": 22.301923751831055,
+  "SGDClassifier|{\"alpha\": 0.0001, \"loss\": \"hinge\"}": 29.862597703933716,
+  "SGDClassifier|{\"alpha\": 1e-05, \"loss\": \"hinge\"}": 35.98588180541992,
+  "SGDClassifier|{\"alpha\": 1e-05, \"loss\": \"log_loss\"}": 83.39562463760376,
+  "PassiveAggressive|{\"C\": 0.5}": 37.3496789932251,
+  "PassiveAggressive|{\"C\": 1.0}": 31.633222818374634,
+  "PassiveAggressive|{\"C\": 2.0}": 28.994195461273193,
+  "LDA|{\"shrinkage\": \"auto\"}": 32.03725481033325,
+  "LDA|{\"shrinkage\": \"auto\"}|PCA24": 38.596320390701294,
+  "QDA|{\"reg_param\": 0.05}": 29.532390117645264,
+  "QDA|{\"reg_param\": 0.05}|PCA24": 36.033122062683105,
+  "QDA|{\"reg_param\": 0.1}": 30.373676776885986,
+  "QDA|{\"reg_param\": 0.1}|PCA24": 36.48098659515381,
+  "GaussianNB|{\"var_smoothing\": 1e-09}": 16.296546697616577,
+  "GaussianNB|{\"var_smoothing\": 1e-08}": 16.789424180984497,
+  "NearestCentroid|{}": 18.0221004486084,
+  "KNeighborsClassifier|{\"n_neighbors\": 11}": 14.385580062866211,
+  "KNeighborsClassifier|{\"n_neighbors\": 21}": 13.507636070251465
+ },
+ "configs": [
+  {
+   "cfg_id": "LinearSVC|{\"C\": 0.1}",
+   "family": "LinearSVC",
+   "params": {
+    "C": 0.1,
+    "class_weight": "balanced",
+    "max_iter": 5000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 0.1}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LinearSVC|{\"C\": 0.5}",
+   "family": "LinearSVC",
+   "params": {
+    "C": 0.5,
+    "class_weight": "balanced",
+    "max_iter": 5000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 0.5}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LinearSVC|{\"C\": 1.0}",
+   "family": "LinearSVC",
+   "params": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 5000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 1.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "LinearSVC-C1"
+  },
+  {
+   "cfg_id": "LinearSVC|{\"C\": 2.0}",
+   "family": "LinearSVC",
+   "params": {
+    "C": 2.0,
+    "class_weight": "balanced",
+    "max_iter": 5000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 2.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "CalibratedSVC|{\"C\": 0.5}",
+   "family": "CalibratedSVC",
+   "params": {
+    "C": 0.5
+   },
+   "params_short": "{\"C\": 0.5}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "CalibratedSVC"
+  },
+  {
+   "cfg_id": "CalibratedSVC|{\"C\": 1.0}",
+   "family": "CalibratedSVC",
+   "params": {
+    "C": 1.0
+   },
+   "params_short": "{\"C\": 1.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "CalibratedSVC|{\"C\": 2.0}",
+   "family": "CalibratedSVC",
+   "params": {
+    "C": 2.0
+   },
+   "params_short": "{\"C\": 2.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LogisticRegression|{\"C\": 0.1}",
+   "family": "LogisticRegression",
+   "params": {
+    "C": 0.1,
+    "solver": "liblinear",
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 0.1}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LogisticRegression|{\"C\": 0.5}",
+   "family": "LogisticRegression",
+   "params": {
+    "C": 0.5,
+    "solver": "liblinear",
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 0.5}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LogisticRegression|{\"C\": 1.0}",
+   "family": "LogisticRegression",
+   "params": {
+    "C": 1.0,
+    "solver": "liblinear",
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 1.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "LogReg-C1"
+  },
+  {
+   "cfg_id": "RidgeClassifier|{\"alpha\": 1.0}",
+   "family": "RidgeClassifier",
+   "params": {
+    "alpha": 1.0
+   },
+   "params_short": "{\"alpha\": 1.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "Ridge-a1"
+  },
+  {
+   "cfg_id": "RidgeClassifier|{\"alpha\": 5.0}",
+   "family": "RidgeClassifier",
+   "params": {
+    "alpha": 5.0
+   },
+   "params_short": "{\"alpha\": 5.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "RidgeClassifier|{\"alpha\": 10.0}",
+   "family": "RidgeClassifier",
+   "params": {
+    "alpha": 10.0
+   },
+   "params_short": "{\"alpha\": 10.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "SGDClassifier|{\"alpha\": 0.0001, \"loss\": \"hinge\"}",
+   "family": "SGDClassifier",
+   "params": {
+    "loss": "hinge",
+    "alpha": 0.0001,
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"alpha\": 0.0001, \"loss\": \"hinge\"}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "SGD-hinge-1e4"
+  },
+  {
+   "cfg_id": "SGDClassifier|{\"alpha\": 1e-05, \"loss\": \"hinge\"}",
+   "family": "SGDClassifier",
+   "params": {
+    "loss": "hinge",
+    "alpha": 1e-05,
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"alpha\": 1e-05, \"loss\": \"hinge\"}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "SGD-hinge-1e5"
+  },
+  {
+   "cfg_id": "SGDClassifier|{\"alpha\": 1e-05, \"loss\": \"log_loss\"}",
+   "family": "SGDClassifier",
+   "params": {
+    "loss": "log_loss",
+    "alpha": 1e-05,
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"alpha\": 1e-05, \"loss\": \"log_loss\"}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "SGD-log-1e5"
+  },
+  {
+   "cfg_id": "PassiveAggressive|{\"C\": 0.5}",
+   "family": "PassiveAggressive",
+   "params": {
+    "C": 0.5,
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 0.5}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "PassiveAggressive|{\"C\": 1.0}",
+   "family": "PassiveAggressive",
+   "params": {
+    "C": 1.0,
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 1.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "PassiveAggressive-C1"
+  },
+  {
+   "cfg_id": "PassiveAggressive|{\"C\": 2.0}",
+   "family": "PassiveAggressive",
+   "params": {
+    "C": 2.0,
+    "class_weight": "balanced",
+    "max_iter": 4000,
+    "tol": 0.0001,
+    "random_state": 13
+   },
+   "params_short": "{\"C\": 2.0}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LDA|{\"shrinkage\": \"auto\"}",
+   "family": "LDA",
+   "params": {
+    "solver": "lsqr",
+    "shrinkage": "auto"
+   },
+   "params_short": "{\"shrinkage\": \"auto\"}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "LDA|{\"shrinkage\": \"auto\"}|PCA24",
+   "family": "LDA",
+   "params": {
+    "solver": "lsqr",
+    "shrinkage": "auto"
+   },
+   "params_short": "{\"shrinkage\": \"auto\"}",
+   "variant": "PCA24",
+   "supplementary": true,
+   "v2_cv_name": "LDA"
+  },
+  {
+   "cfg_id": "QDA|{\"reg_param\": 0.05}",
+   "family": "QDA",
+   "params": {
+    "reg_param": 0.05
+   },
+   "params_short": "{\"reg_param\": 0.05}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "QDA|{\"reg_param\": 0.05}|PCA24",
+   "family": "QDA",
+   "params": {
+    "reg_param": 0.05
+   },
+   "params_short": "{\"reg_param\": 0.05}",
+   "variant": "PCA24",
+   "supplementary": true,
+   "v2_cv_name": "QDA"
+  },
+  {
+   "cfg_id": "QDA|{\"reg_param\": 0.1}",
+   "family": "QDA",
+   "params": {
+    "reg_param": 0.1
+   },
+   "params_short": "{\"reg_param\": 0.1}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "QDA|{\"reg_param\": 0.1}|PCA24",
+   "family": "QDA",
+   "params": {
+    "reg_param": 0.1
+   },
+   "params_short": "{\"reg_param\": 0.1}",
+   "variant": "PCA24",
+   "supplementary": true,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "GaussianNB|{\"var_smoothing\": 1e-09}",
+   "family": "GaussianNB",
+   "params": {
+    "var_smoothing": 1e-09
+   },
+   "params_short": "{\"var_smoothing\": 1e-09}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "GaussianNB"
+  },
+  {
+   "cfg_id": "GaussianNB|{\"var_smoothing\": 1e-08}",
+   "family": "GaussianNB",
+   "params": {
+    "var_smoothing": 1e-08
+   },
+   "params_short": "{\"var_smoothing\": 1e-08}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": null
+  },
+  {
+   "cfg_id": "NearestCentroid|{}",
+   "family": "NearestCentroid",
+   "params": {
+    "metric": "euclidean"
+   },
+   "params_short": "{}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "NearestCentroid"
+  },
+  {
+   "cfg_id": "KNeighborsClassifier|{\"n_neighbors\": 11}",
+   "family": "KNeighborsClassifier",
+   "params": {
+    "n_neighbors": 11,
+    "metric": "cosine",
+    "weights": "distance",
+    "algorithm": "brute"
+   },
+   "params_short": "{\"n_neighbors\": 11}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "kNN-11"
+  },
+  {
+   "cfg_id": "KNeighborsClassifier|{\"n_neighbors\": 21}",
+   "family": "KNeighborsClassifier",
+   "params": {
+    "n_neighbors": 21,
+    "metric": "cosine",
+    "weights": "distance",
+    "algorithm": "brute"
+   },
+   "params_short": "{\"n_neighbors\": 21}",
+   "variant": "",
+   "supplementary": false,
+   "v2_cv_name": "kNN-21"
+  }
+ ],
+ "versions": {
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "numpy": "2.5.1",
+  "pandas": "3.0.5",
+  "sklearn": "1.9.0"
+ },
+ "analysis": {
+  "runtime_s": 283.15216588974,
+  "bootstrap_check": {
+   "cv_metrics_bootstrap_ci": [
+    0.47015406266529586,
+    0.5370211024714822
+   ],
+   "vectorized": [
+    0.47015406266529586,
+    0.5370211024714822
+   ],
+   "max_abs_auc_first5": 1.1102230246251565e-16,
+   "max_abs_f1_first5": 0.0
+  },
+  "bootstrap_method": "95% percentile bootstrap, 10000 resamples of the 381 verbs with replacement, numpy default_rng(13), identical resamples for every configuration and repeat (paired); avg5 = statistic averaged over the 5 repeats inside each resample",
+  "structural_best": {
+   "LinearSVC": {
+    "params": {
+     "C": 2.0,
+     "class_weight": "balanced",
+     "max_iter": 5000,
+     "tol": 0.0001,
+     "random_state": 13
+    },
+    "percentile": 45,
+    "PenalizedObj": 0.898488237418063,
+    "SCS_eval": 0.8993169300866429,
+    "Eval_acceptance": 0.8557575757575757,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "CalibratedSVC": {
+    "params": {
+     "C": 1.0
+    },
+    "percentile": 45,
+    "PenalizedObj": 0.86604148836395,
+    "SCS_eval": 0.8958968602647764,
+    "Eval_acceptance": 0.7727272727272727,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "LogisticRegression": {
+    "params": {
+     "C": 0.5,
+     "solver": "liblinear",
+     "penalty": "l2",
+     "class_weight": "balanced",
+     "max_iter": 4000,
+     "random_state": 13
+    },
+    "percentile": 45,
+    "PenalizedObj": 0.8573469755897714,
+    "SCS_eval": 0.8944491282172035,
+    "Eval_acceptance": 0.7642424242424243,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "RidgeClassifier": {
+    "params": {
+     "alpha": 5.0
+    },
+    "percentile": 40,
+    "PenalizedObj": 0.8148788593484873,
+    "SCS_eval": 0.8160763684783371,
+    "Eval_acceptance": 0.8569696969696969,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "SGDClassifier": {
+    "params": {
+     "loss": "hinge",
+     "alpha": 1e-05,
+     "class_weight": "balanced",
+     "max_iter": 4000,
+     "tol": 0.0001,
+     "random_state": 13
+    },
+    "percentile": 55,
+    "PenalizedObj": 0.9834924300741436,
+    "SCS_eval": 0.9976565381472376,
+    "Eval_acceptance": 0.8042424242424242,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "PassiveAggressive": {
+    "params": {
+     "C": 0.5,
+     "class_weight": "balanced",
+     "max_iter": 4000,
+     "tol": 0.0001,
+     "random_state": 13
+    },
+    "percentile": 50,
+    "PenalizedObj": 0.9200580480884032,
+    "SCS_eval": 0.921446936977292,
+    "Eval_acceptance": 0.8333333333333334,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "LDA": {
+    "params": {
+     "solver": "lsqr",
+     "shrinkage": "auto"
+    },
+    "percentile": 60,
+    "PenalizedObj": 0.0108244394568215,
+    "SCS_eval": 0.5431698820623245,
+    "Eval_acceptance": 0.6460606060606061,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "QDA": {
+    "params": {
+     "reg_param": 0.05
+    },
+    "percentile": 60,
+    "PenalizedObj": 0.1660650870954934,
+    "SCS_eval": 0.5540583294110225,
+    "Eval_acceptance": 0.703030303030303,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "GaussianNB": {
+    "params": {
+     "var_smoothing": 1e-09
+    },
+    "percentile": 40,
+    "PenalizedObj": 0.7213176460181447,
+    "SCS_eval": 0.7860566861005589,
+    "Eval_acceptance": 0.8684848484848485,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "NearestCentroid": {
+    "params": {
+     "metric": "euclidean"
+    },
+    "percentile": 40,
+    "PenalizedObj": 0.8599854428285661,
+    "SCS_eval": 0.862997839522781,
+    "Eval_acceptance": 0.8254545454545454,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   },
+   "KNeighborsClassifier": {
+    "params": {
+     "n_neighbors": 21,
+     "metric": "cosine",
+     "weights": "distance",
+     "algorithm": "brute"
+    },
+    "percentile": 50,
+    "PenalizedObj": 0.9083599881185412,
+    "SCS_eval": 0.9090075940670614,
+    "Eval_acceptance": 0.8606060606060606,
+    "source": "results/structural_scan_components.csv (max PenalizedObj_eval; ties SCS_eval, Eval_acceptance)"
+   }
+  }
+ }
+}

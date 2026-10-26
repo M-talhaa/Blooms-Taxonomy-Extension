@@ -1,0 +1,44 @@
+{
+ "script": "revision_pipeline/supervised_eval.py encoders",
+ "workers": 8,
+ "runtime_total_s": 300.8575339317322,
+ "encoders": {
+  "mpnet": {
+   "model": "sentence-transformers/all-mpnet-base-v2",
+   "dim": 768,
+   "seconds": 22.473609447479248,
+   "maxabs_per_word_vs_batch": 1.6391277313232422e-07,
+   "maxabs_live_per_word_vs_all_embeddings_npz": 1.6391277313232422e-07
+  },
+  "minilm": {
+   "model": "sentence-transformers/all-MiniLM-L6-v2",
+   "dim": 384,
+   "seconds": 4.5230934619903564,
+   "maxabs_per_word_vs_batch": 2.2351741790771484e-07
+  },
+  "droberta": {
+   "model": "sentence-transformers/all-distilroberta-v1",
+   "dim": 768,
+   "seconds": 11.440267086029053,
+   "maxabs_per_word_vs_batch": 2.0116567611694336e-07
+  },
+  "versions": {
+   "sentence_transformers": "5.6.1",
+   "torch": "2.13.0+cpu"
+  }
+ },
+ "floor_families": [
+  "LinearSVC",
+  "CalibratedSVC",
+  "LogisticRegression",
+  "RidgeClassifier",
+  "SGDClassifier",
+  "PassiveAggressive",
+  "GaussianNB",
+  "NearestCentroid",
+  "KNeighborsClassifier"
+ ],
+ "maxabs_mpnet_rows_vs_main_grid": 0.0,
+ "errors": [],
+ "warnings": {}
+}
