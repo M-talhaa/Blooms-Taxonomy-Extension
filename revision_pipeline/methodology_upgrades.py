@@ -1,4 +1,31 @@
-"""Three candidate methodology upgrades, tested with zero new human data.
+"""methodology_upgrades.py - ROUND-2 held-out full-pipeline protocol, kept for traceability.
+
+STATUS IN ROUND 3
+  This is the round-2 DEFAULT-CONFIGURATION protocol: five families at one fixed configuration
+  each (MODELS below), all at P50, one outer split (MultilabelStratifiedKFold seed 13), plus a
+  three-member ensemble. For model selection it is superseded by supervised_eval.py (the same
+  held-out protocol for every configuration of the model zoo at every percentile, outer seeds 13
+  to 17, matched to each family's structural best; outputs in results/selection/). It is kept
+  because round-2 Table 11 and the round-2 two-stage selection read its output; the round-2
+  reference of select_model.py asserts that its exact seed-13 values round to heldout_results.csv.
+
+  Outputs (--out-dir, default revision_pipeline/):
+    methodology_upgrades.md   the round-2 table
+    heldout_results.csv       the same numbers as a table, rounded as printed (3 decimals; mean
+                              ordinal distance 2 decimals). Before round 3 this file had no
+                              producing script in the repository: the committed copy (written
+                              2026-08-13 20:21, between methup_v4.log and methup_v5.log) had a
+                              different ensemble row (gate 0.911, within-one 0.778) than
+                              methodology_upgrades.md and no LinearSVC-C1 row. This script now
+                              writes it; the four single-model rows read by the round-2 code
+                              (kNN-21, LogReg-C1, NearestCentroid, CalibratedSVC) are unchanged.
+  Row weights: the weighted one-vs-rest fit is attempted as in retrain.py; scikit-learn 1.9.0
+  rejects sample_weight and the fit falls back to the unweighted fit, so the row weights reach
+  only the threshold percentiles.
+
+  USAGE (from the repository root):  python -I -B revision_pipeline/methodology_upgrades.py
+
+Three candidate methodology upgrades, tested with zero new human data.
 
 A. Held-out FULL-PIPELINE evaluation. The existing CV scores the classifier, but the
    delivered bank is produced by classifier + calibration + thresholds + top-2 margin
@@ -15,7 +42,9 @@ C. Score-averaging ensemble of the top families (kNN-21, LogisticRegression,
    NearestCentroid). If their errors decorrelate, the ensemble should beat each member
    on CV while keeping structure; tested on both axes.
 """
+import argparse
 import os
+import sys
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -26,9 +55,14 @@ from sklearn.neighbors import KNeighborsClassifier, NearestCentroid
 from sklearn.svm import SVC, LinearSVC
 from sklearn.calibration import CalibratedClassifierCV
 from sklearn.metrics import f1_score, roc_auc_score
+HERE = os.path.dirname(os.path.abspath(__file__))
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)   # python -I does not put the script directory on sys.path
 from retrain import _fit_cdf_per_class, _apply_cdf_per_class, thresholds_from_percentile_weighted
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+_ap = argparse.ArgumentParser(description="Round-2 held-out full-pipeline protocol (kept for traceability).")
+_ap.add_argument("--out-dir", default=HERE, help="folder for methodology_upgrades.md and heldout_results.csv")
+ARGS = _ap.parse_args()
 LEVELS = ["Kn", "Cm", "Ap", "An", "Sn", "Ev"]
 TOP2_MARGIN = 0.060
 np.random.seed(13)
@@ -157,5 +191,20 @@ w("the acceptance gate; this is the first labeled test of the gate. 'Primary-in-
 w("scores the primary domain against the verb's published level set. 'Within-1-level'")
 w("credits adjacent-level predictions, reflecting the ordinal nature of the taxonomy.")
 
-open(os.path.join(HERE, "methodology_upgrades.md"), "w", encoding="utf-8").write("\n".join(out))
-print("\nsaved:", os.path.join(HERE, "methodology_upgrades.md"))
+os.makedirs(ARGS.out_dir, exist_ok=True)
+open(os.path.join(ARGS.out_dir, "methodology_upgrades.md"), "w", encoding="utf-8").write("\n".join(out))
+print("\nsaved:", os.path.join(ARGS.out_dir, "methodology_upgrades.md"))
+
+# heldout_results.csv: the table above, rounded exactly as printed (read by the round-2 selection
+# code and by select_model.v2_reference, which checks it against the unrounded seed-13 values).
+ho = pd.DataFrame({
+    "model": df.index.astype(str),
+    "gate_recall": [f"{v:.3f}" for v in df["gate"]],
+    "primary_in_labels": [f"{v:.3f}" for v in df["prim"]],
+    "within1": [f"{v:.3f}" for v in df["within1"]],
+    "mean_ordinal_dist": [f"{v:.2f}" for v in df["mdist"]],
+    "macro_F1": [f"{v:.3f}" for v in df["f1"]],
+    "macro_AUC": [f"{v:.3f}" for v in df["auc"]],
+})
+ho.to_csv(os.path.join(ARGS.out_dir, "heldout_results.csv"), index=False)
+print("saved:", os.path.join(ARGS.out_dir, "heldout_results.csv"))

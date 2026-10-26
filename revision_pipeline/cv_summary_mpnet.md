@@ -19,24 +19,24 @@
 | majority-level | nan | 0.090 | [0.081, 0.098] | 0.283 | 0.150 |
 | freq-random | nan | 0.271 | [0.243, 0.311] | 0.297 | 0.043 |
 
-Per-level F1 (winner SGD-hinge-1e4, mean over 5 repeats):
+Per-level F1 (reference kNN-21, mean over 5 repeats):
 | Kn | Cm | Ap | An | Sn | Ev |
 |---|---|---|---|---|---|
-| 0.452 | 0.434 | 0.455 | 0.479 | 0.466 | 0.393 |
+| 0.476 | 0.499 | 0.486 | 0.524 | 0.510 | 0.458 |
 
-Paired exact McNemar (winner vs competitor, per verb-level decision, seed-13 repeat):
-- vs SGD-log-1e5: winner-only correct 92, competitor-only correct 94, exact p = 0.9416
-- vs SGD-hinge-1e5: winner-only correct 161, competitor-only correct 126, exact p = 0.04457
-- vs LinearSVC-C1: winner-only correct 106, competitor-only correct 151, exact p = 0.00595
-- vs LogReg-C1: winner-only correct 157, competitor-only correct 270, exact p = 5.013e-08
-- vs Ridge-a1: winner-only correct 129, competitor-only correct 221, exact p = 1.003e-06
-- vs PassiveAggressive-C1: winner-only correct 103, competitor-only correct 89, exact p = 0.3482
-- vs kNN-21: winner-only correct 228, competitor-only correct 321, exact p = 8.315e-05
-- vs kNN-11: winner-only correct 249, competitor-only correct 305, exact p = 0.01937
-- vs NearestCentroid: winner-only correct 203, competitor-only correct 313, exact p = 1.466e-06
-- vs GaussianNB: winner-only correct 209, competitor-only correct 318, exact p = 2.352e-06
-- vs LDA: winner-only correct 282, competitor-only correct 348, exact p = 0.009552
-- vs QDA: winner-only correct 317, competitor-only correct 322, exact p = 0.8743
-- vs CalibratedSVC: winner-only correct 168, competitor-only correct 295, exact p = 3.821e-09
-- vs majority-level: winner-only correct 397, competitor-only correct 401, exact p = 0.9154
-- vs freq-random: winner-only correct 523, competitor-only correct 391, exact p = 1.424e-05
+Paired exact McNemar (reference kNN-21 vs competitor, per verb-level decision, seed-13 repeat):
+- vs SGD-hinge-1e4: reference-only correct 321, competitor-only correct 228, exact p = 8.315e-05
+- vs SGD-log-1e5: reference-only correct 302, competitor-only correct 211, exact p = 6.798e-05
+- vs SGD-hinge-1e5: reference-only correct 345, competitor-only correct 217, exact p = 7.466e-08
+- vs LinearSVC-C1: reference-only correct 236, competitor-only correct 188, exact p = 0.02235
+- vs LogReg-C1: reference-only correct 157, competitor-only correct 177, exact p = 0.2985
+- vs Ridge-a1: reference-only correct 186, competitor-only correct 185, exact p = 1
+- vs PassiveAggressive-C1: reference-only correct 314, competitor-only correct 207, exact p = 3.17e-06
+- vs kNN-11: reference-only correct 171, competitor-only correct 134, exact p = 0.03909
+- vs NearestCentroid: reference-only correct 163, competitor-only correct 180, exact p = 0.3877
+- vs GaussianNB: reference-only correct 161, competitor-only correct 177, exact p = 0.4146
+- vs LDA: reference-only correct 222, competitor-only correct 195, exact p = 0.2029
+- vs QDA: reference-only correct 264, competitor-only correct 176, exact p = 3.176e-05
+- vs CalibratedSVC: reference-only correct 152, competitor-only correct 186, exact p = 0.0725
+- vs majority-level: reference-only correct 418, competitor-only correct 329, exact p = 0.001268
+- vs freq-random: reference-only correct 557, competitor-only correct 332, exact p = 4.264e-14

@@ -1,17 +1,48 @@
-"""Cross-validated supervised evaluation on the merged core (plan item 10, R1.4).
+"""cv_metrics.py - ROUND-2 cross-validation protocol, kept for traceability.
+
+STATUS IN ROUND 3
+  This is the round-2 DEFAULT-CONFIGURATION protocol: each family is evaluated at one fixed
+  configuration (the `zoo` entries in main(), mostly library defaults) and at the scan winner's
+  percentile (P50), while the structural objective uses each family's own best configuration and
+  percentile. For model selection it is superseded by supervised_eval.py (every configuration of
+  the model zoo at every percentile, matched to each family's structural best; outputs in
+  results/selection/). It is kept because the round-2 manuscript (Tables 6 and 7) and the round-2
+  reference of select_model.py (v2_default_config_reference.csv) were computed from its outputs:
+    cv_results_mpnet.csv, cv_results_minilm.csv, cv_results_droberta.csv  (model x repeat rows)
+    cv_summary_mpnet.md, cv_summary_minilm.md, cv_summary_droberta.md    (summaries)
+  supervised_eval.py reproduces cv_results_mpnet.csv at these configurations to 5.6e-17, except
+  SGD-hinge-1e4 (seed 15), SGD-log-1e5 and PassiveAggressive-C1, which react to the 1.6e-7
+  difference between one-batch and per-word encodings (results/selection/v2_reproduction_check.csv).
+  Rerunning this script reproduces the committed cv_results_<tag>.csv rows exactly; the MiniLM and
+  DistilRoBERTa files gained the four families added in round 2 after their first run
+  (CalibratedSVC, GaussianNB, LDA, QDA; results/selection/RUN_LOG.md). supervised_eval.py and robustness.py import
+  load_core, row_weights, decision_scores, baselines, bootstrap_ci and mcnemar_exact from this
+  file, so these functions must stay unchanged.
+
+  Summary reference (--reference): the per-level F1 block and the paired McNemar tests of
+  cv_summary_<tag>.md compare every model with the reference configuration, by default kNN-21
+  (the production model). Round 2 hard-coded SGD-hinge-1e4, the structural-only winner of an
+  interim run, as the "winner".
 
 Protocol: repeated multi-label stratified 5-fold CV (5 repeats, seeds 13..17).
-Inside each fold the FULL production decision rule is mirrored: fit OvR on the
-train fold with row weights, fit per-level empirical CDFs on train-fold scores,
-set per-level thresholds at the winner percentile of train-fold positives
-(weighted), then threshold the held-out fold's calibrated scores.
+Inside each fold the production decision rule is mirrored: fit OvR on the train fold, fit
+per-level empirical CDFs on inner out-of-fold train scores (KFold 5, shuffle, seed 13), set
+per-level thresholds at the winner percentile of train-fold positives (row-weighted), then
+threshold the held-out fold's calibrated scores (no top-2 collapse). Row weights: the weighted
+one-vs-rest fit is attempted as in retrain.py; scikit-learn 1.9.0 rejects sample_weight and the
+fit falls back to the unweighted fit, so the row weights reach only the threshold percentiles.
 
-Models: the winner configuration plus key zoo competitors (their scan-selected
-hyperparameters) plus majority-level and frequency-weighted random baselines.
-Optional encoder ablation for the winner configuration.
+Models: the zoo below (default configurations) plus majority-level and frequency-weighted
+random baselines. The verbs are encoded live in one batch with --encoder (production uses
+per-word vectors from all_embeddings.npz; the two differ by at most 1.6e-7, which changes only
+stochastic-gradient families).
 
-Outputs: cv_results.csv (per model x repeat x fold per-level and aggregate
-metrics), cv_summary.md, paired test results.
+USAGE (from the repository root; encoders are read from the local Hugging Face cache)
+  python -I -B revision_pipeline/cv_metrics.py
+  python -I -B revision_pipeline/cv_metrics.py --encoder sentence-transformers/all-MiniLM-L6-v2 --tag minilm
+  python -I -B revision_pipeline/cv_metrics.py --encoder sentence-transformers/all-distilroberta-v1 --tag droberta
+Outputs: <out-prefix>_results_<tag>.csv and <out-prefix>_summary_<tag>.md
+(default out-prefix revision_pipeline/cv).
 """
 import argparse, json, math, os, sys
 import numpy as np
@@ -29,10 +60,12 @@ from sklearn.pipeline import make_pipeline
 from sklearn.decomposition import PCA
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, hamming_loss, roc_auc_score
 # Use the pipeline's own calibration and thresholding, not re-implementations
+PIPE = os.path.dirname(os.path.abspath(__file__))
+if PIPE not in sys.path:
+    sys.path.insert(0, PIPE)   # python -I does not put the script directory on sys.path
 from retrain import _fit_cdf_per_class, _apply_cdf_per_class, thresholds_from_percentile_weighted
 
 LEVELS = ["Kn", "Cm", "Ap", "An", "Sn", "Ev"]
-PIPE = os.path.dirname(os.path.abspath(__file__))
 
 def load_core(path):
     df = pd.read_csv(path)
@@ -153,11 +186,15 @@ def mcnemar_exact(correct_a, correct_b):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--core-csv", default=os.path.join(PIPE, "core_merged.csv"))
-    ap.add_argument("--winner-json", default=os.path.join(PIPE, "realrun", "results", "winner_and_constants.json"))
+    ap.add_argument("--winner-json", default=os.path.join(os.path.dirname(PIPE), "results", "winner_and_constants.json"),
+                    help="retrain.py winner summary; its percentile sets the CV threshold percentile")
     ap.add_argument("--encoder", default="sentence-transformers/all-mpnet-base-v2")
     ap.add_argument("--tag", default="mpnet")
     ap.add_argument("--out-prefix", default=os.path.join(PIPE, "cv"))
+    ap.add_argument("--reference", default="kNN-21",
+                    help="zoo model used as the reference of the summary (default kNN-21, the production model)")
     args = ap.parse_args()
+    ref = args.reference
 
     verbs, Y, freq = load_core(args.core_csv)
     w = row_weights(freq)
@@ -198,6 +235,9 @@ def main():
                                      class_weight="balanced"), method="sigmoid", cv=3),
     }
 
+    if ref not in zoo:
+        raise SystemExit(f"--reference {ref!r} is not a zoo model: {sorted(zoo)}")
+
     all_recs = []
     for name, mk in zoo.items():
         print("CV:", name, flush=True)
@@ -213,32 +253,32 @@ def main():
     lines = [f"# CV summary ({args.tag}, {len(verbs)} core verbs, repeated 5x5 stratified CV, winner percentile P{pct})", ""]
     lines.append("| Model | macro AUC | macro F1 (mean over repeats) | 95% CI (seed 13 repeat) | micro F1 | subset acc |")
     lines.append("|---|---|---|---|---|---|")
-    winner_oof = None
+    ref_oof = None
     for name in list(zoo) + ["majority-level", "freq-random"]:
         sub = [r for r in all_recs if r["model"] == name]
         m = np.mean([r["macro_F1"] for r in sub])
         first = sub[0]
         lo, hi = bootstrap_ci(Y, first["_oof"])
-        if name == "SGD-hinge-1e4":  # pipeline winner configuration (SGDClassifier P50)
-            winner_oof = first["_oof"]
+        if name == ref:  # reference configuration (default kNN-21, the production model)
+            ref_oof = first["_oof"]
         auc_m = np.mean([r.get('macro_AUC', float('nan')) for r in sub])
         lines.append(f"| {name} | {auc_m:.3f} | {m:.3f} | [{lo:.3f}, {hi:.3f}] | {np.mean([r['micro_F1'] for r in sub]):.3f} | {np.mean([r['subset_acc'] for r in sub]):.3f} |")
     lines.append("")
-    lines.append("Per-level F1 (winner SGD-hinge-1e4, mean over 5 repeats):")
-    sub = [r for r in all_recs if r["model"] == "SGD-hinge-1e4"]
+    lines.append(f"Per-level F1 (reference {ref}, mean over 5 repeats):")
+    sub = [r for r in all_recs if r["model"] == ref]
     lines.append("| " + " | ".join(LEVELS) + " |")
     lines.append("|" + "---|" * 6)
     lines.append("| " + " | ".join(f"{np.mean([r[f'F1_{lv}'] for r in sub]):.3f}" for lv in LEVELS) + " |")
     lines.append("")
-    lines.append("Paired exact McNemar (winner vs competitor, per verb-level decision, seed-13 repeat):")
-    ycorr_w = (winner_oof == Y).ravel()
+    lines.append(f"Paired exact McNemar (reference {ref} vs competitor, per verb-level decision, seed-13 repeat):")
+    ycorr_w = (ref_oof == Y).ravel()
     for name in list(zoo) + ["majority-level", "freq-random"]:
-        if name == "SGD-hinge-1e4":
+        if name == ref:
             continue
         first = [r for r in all_recs if r["model"] == name][0]
         ycorr_c = (first["_oof"] == Y).ravel()
         b, c, p = mcnemar_exact(ycorr_w, ycorr_c)
-        lines.append(f"- vs {name}: winner-only correct {b}, competitor-only correct {c}, exact p = {p:.4g}")
+        lines.append(f"- vs {name}: reference-only correct {b}, competitor-only correct {c}, exact p = {p:.4g}")
     open(f"{args.out_prefix}_summary_{args.tag}.md", "w", encoding="utf-8").write("\n".join(lines))
     print("\n".join(lines[:12]))
     print("saved:", f"{args.out_prefix}_summary_{args.tag}.md")
