@@ -1,0 +1,18 @@
+              family  eligible  floor_pass  PenalizedObj  CV_macro_AUC_mean5  HO_within1_mean5    score  selected
+           LinearSVC      True        True      0.898488            0.689769          0.706867 0.337730     False
+       CalibratedSVC      True        True      0.866041            0.719221          0.722491 0.552013     False
+  LogisticRegression      True        True      0.857347            0.721132          0.725807 0.518850     False
+     RidgeClassifier      True        True      0.814879            0.722216          0.725456 0.356866     False
+       SGDClassifier      True        True      0.983492            0.664503          0.689155 0.000000     False
+   PassiveAggressive      True        True      0.920058            0.669648          0.700799 0.089146     False
+                 LDA      True       False      0.010824            0.627969          0.559733      NaN     False
+                 QDA      True       False      0.166065            0.619350          0.554193      NaN     False
+          GaussianNB      True        True      0.721318            0.711224          0.705823 0.000000     False
+     NearestCentroid      True        True      0.859985            0.715830          0.700994 0.225747     False
+KNeighborsClassifier      True        True      0.908360            0.713486          0.741599 0.713426      True
+          Legacy kNN     False        True      1.003666                 NaN               NaN      NaN     False
+
+[balanced_maximin] winner KNeighborsClassifier score 0.7134261320129299; runner-up CalibratedSVC 0.5520128217780591; margin 0.16141331023487082
+[v2_two_stage, HO seed 13] winner CalibratedSVC 0.1704371559957412 (stage two, positive score)
+[table5 check] identical
+[supervised_eval matched_supervised.csv check] identical configurations, values within 2.2e-16

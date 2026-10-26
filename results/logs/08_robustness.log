@@ -1,0 +1,3 @@
+[proposed rule, menu A] KNeighborsClassifier 0.7134261320129299; runner-up CalibratedSVC 0.5520128217780591
+[SCS joint draws] proposed A: {'KNeighborsClassifier': 486, 'CalibratedSVC': 1, nan: 2, 'LogisticRegression': 8, 'SGDClassifier': 3} | structural A: {'SGDClassifier': 500}
+[guardrails] proposed A: {'KNeighborsClassifier': 18, 'LogisticRegression': 1}

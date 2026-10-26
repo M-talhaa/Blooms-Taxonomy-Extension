@@ -1,0 +1,82 @@
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights:  15%|#4        | 29/199 [00:00<00:00, 256.11it/s]
+Loading weights:  30%|###       | 60/199 [00:00<00:00, 280.98it/s]
+Loading weights:  57%|#####7    | 114/199 [00:00<00:00, 372.13it/s]
+Loading weights:  76%|#######5  | 151/199 [00:00<00:00, 328.86it/s]
+Loading weights:  93%|#########2| 185/199 [00:00<00:00, 296.35it/s]
+Loading weights: 100%|##########| 199/199 [00:00<00:00, 329.92it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights:  50%|#####     | 52/103 [00:00<00:00, 491.26it/s]
+Loading weights: 100%|##########| 103/103 [00:00<00:00, 607.03it/s]
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights:  37%|###6      | 38/103 [00:00<00:00, 378.44it/s]
+Loading weights:  74%|#######3  | 76/103 [00:00<00:00, 303.07it/s]
+Loading weights: 100%|##########| 103/103 [00:00<00:00, 376.84it/s]
+encoders: wrote results\selection\encoder_vectors.npz {"mpnet": {"model": "sentence-transformers/all-mpnet-base-v2", "dim": 768, "seconds": 30.085628509521484, "maxabs_per_word_vs_batch": 1.6391277313232422e-07, "maxabs_live_per_word_vs_all_embeddings_npz": 1.6391277313232422e-07}, "minilm": {"model": "sentence-transformers/all-MiniLM-L6-v2", "dim": 384, "seconds": 6.965378522872925, "maxabs_per_word_vs_batch": 2.2351741790771484e-07}, "droberta": {"model": "sentence-transformers/all-distilroberta-v1", "dim": 768, "seconds": 17.46376085281372, "maxabs_per_word_vs_batch": 2.0116567611694336e-07}, "versions": {"sentence_transformers": "5.6.1", "torch": "2.13.0+cpu"}}
+encoders: 9 floor-passing families ['LinearSVC', 'CalibratedSVC', 'LogisticRegression', 'RidgeClassifier', 'SGDClassifier', 'PassiveAggressive', 'GaussianNB', 'NearestCentroid', 'KNeighborsClassifier']; 30 jobs
+  encoders done mpnet|per_word::GaussianNB|{"var_smoothing": 1e-09}::P40: 9.3s, errors=0 (elapsed 14s)
+  encoders done mpnet|per_word::NearestCentroid|{}::P40: 10.9s, errors=0 (elapsed 16s)
+  encoders done mpnet|per_word::RidgeClassifier|{"alpha": 5.0}::P40: 15.0s, errors=0 (elapsed 20s)
+  encoders done mpnet|per_word::KNeighborsClassifier|{"n_neighbors": 21}::P50: 9.5s, errors=0 (elapsed 24s)
+  encoders done mpnet|per_word::LogisticRegression|{"C": 0.5}::P45: 21.8s, errors=0 (elapsed 27s)
+  encoders done mpnet|per_word::SGDClassifier|{"alpha": 1e-05, "loss": "hinge"}::P55: 29.2s, errors=0 (elapsed 34s)
+  encoders done minilm|per_word::LogisticRegression|{"C": 0.5}::P45: 10.9s, errors=0 (elapsed 35s)
+  encoders done minilm|per_word::RidgeClassifier|{"alpha": 5.0}::P40: 9.9s, errors=0 (elapsed 37s)
+  encoders done mpnet|per_word::PassiveAggressive|{"C": 0.5}::P50: 34.5s, errors=0 (elapsed 40s)
+  encoders done minilm|per_word::LinearSVC|{"C": 2.0}::P45: 24.2s, errors=0 (elapsed 40s)
+  encoders done minilm|per_word::GaussianNB|{"var_smoothing": 1e-09}::P40: 5.3s, errors=0 (elapsed 42s)
+  encoders done minilm|per_word::NearestCentroid|{}::P40: 6.2s, errors=0 (elapsed 46s)
+  encoders done minilm|per_word::KNeighborsClassifier|{"n_neighbors": 21}::P50: 6.5s, errors=0 (elapsed 47s)
+  encoders done minilm|per_word::SGDClassifier|{"alpha": 1e-05, "loss": "hinge"}::P55: 15.4s, errors=0 (elapsed 50s)
+  encoders done mpnet|per_word::LinearSVC|{"C": 2.0}::P45: 47.5s, errors=0 (elapsed 53s)
+  encoders done minilm|per_word::PassiveAggressive|{"C": 0.5}::P50: 19.8s, errors=0 (elapsed 55s)
+  encoders done droberta|per_word::RidgeClassifier|{"alpha": 5.0}::P40: 14.3s, errors=0 (elapsed 64s)
+  encoders done droberta|per_word::LogisticRegression|{"C": 0.5}::P45: 19.5s, errors=0 (elapsed 66s)
+  encoders done minilm|per_word::CalibratedSVC|{"C": 1.0}::P45: 50.5s, errors=0 (elapsed 71s)
+  encoders done mpnet|per_word::CalibratedSVC|{"C": 1.0}::P45: 66.7s, errors=0 (elapsed 72s)
+  encoders done droberta|per_word::GaussianNB|{"var_smoothing": 1e-09}::P40: 8.8s, errors=0 (elapsed 73s)
+  encoders done droberta|per_word::NearestCentroid|{}::P40: 10.3s, errors=0 (elapsed 77s)
+  encoders done minilm|batch::KNeighborsClassifier|{"n_neighbors": 21}::P50: 6.9s, errors=0 (elapsed 80s)
+  encoders done droberta|per_word::KNeighborsClassifier|{"n_neighbors": 21}::P50: 9.8s, errors=0 (elapsed 80s)
+  encoders done droberta|per_word::SGDClassifier|{"alpha": 1e-05, "loss": "hinge"}::P55: 28.4s, errors=0 (elapsed 81s)
+  encoders done mpnet|batch::KNeighborsClassifier|{"n_neighbors": 21}::P50: 9.4s, errors=0 (elapsed 81s)
+  encoders done droberta|batch::KNeighborsClassifier|{"n_neighbors": 21}::P50: 7.9s, errors=0 (elapsed 85s)
+  encoders done droberta|per_word::PassiveAggressive|{"C": 0.5}::P50: 31.3s, errors=0 (elapsed 86s)
+  encoders done droberta|per_word::LinearSVC|{"C": 2.0}::P45: 44.2s, errors=0 (elapsed 86s)
+  encoders done droberta|per_word::CalibratedSVC|{"C": 1.0}::P45: 53.2s, errors=0 (elapsed 99s)
+encoder_tag                                   encoding               family  percentile  CV_macro_AUC_mean5  HO_within1_mean5
+      mpnet per word (production; retrain._embed_once)            LinearSVC          45            0.689769          0.706867
+      mpnet per word (production; retrain._embed_once)        CalibratedSVC          45            0.719221          0.722491
+      mpnet per word (production; retrain._embed_once)   LogisticRegression          45            0.721132          0.725807
+      mpnet per word (production; retrain._embed_once)      RidgeClassifier          40            0.722216          0.725456
+      mpnet per word (production; retrain._embed_once)        SGDClassifier          55            0.664503          0.689155
+      mpnet per word (production; retrain._embed_once)    PassiveAggressive          50            0.669648          0.700799
+      mpnet per word (production; retrain._embed_once)           GaussianNB          40            0.711224          0.705823
+      mpnet per word (production; retrain._embed_once)      NearestCentroid          40            0.715830          0.700994
+      mpnet per word (production; retrain._embed_once) KNeighborsClassifier          50            0.713486          0.741599
+     minilm per word (production; retrain._embed_once)            LinearSVC          45            0.662619          0.698824
+     minilm per word (production; retrain._embed_once)        CalibratedSVC          45            0.694684          0.702315
+     minilm per word (production; retrain._embed_once)   LogisticRegression          45            0.701485          0.703104
+     minilm per word (production; retrain._embed_once)      RidgeClassifier          40            0.700967          0.704862
+     minilm per word (production; retrain._embed_once)        SGDClassifier          55            0.634030          0.682464
+     minilm per word (production; retrain._embed_once)    PassiveAggressive          50            0.646234          0.703692
+     minilm per word (production; retrain._embed_once)           GaussianNB          40            0.689975          0.679683
+     minilm per word (production; retrain._embed_once)      NearestCentroid          40            0.701673          0.693428
+     minilm per word (production; retrain._embed_once) KNeighborsClassifier          50            0.703321          0.723080
+   droberta per word (production; retrain._embed_once)            LinearSVC          45            0.662767          0.695480
+   droberta per word (production; retrain._embed_once)        CalibratedSVC          45            0.677558          0.702855
+   droberta per word (production; retrain._embed_once)   LogisticRegression          45            0.684260          0.722492
+   droberta per word (production; retrain._embed_once)      RidgeClassifier          40            0.685639          0.712510
+   droberta per word (production; retrain._embed_once)        SGDClassifier          55            0.640193          0.686576
+   droberta per word (production; retrain._embed_once)    PassiveAggressive          50            0.653114          0.691523
+   droberta per word (production; retrain._embed_once)           GaussianNB          40            0.676610          0.690341
+   droberta per word (production; retrain._embed_once)      NearestCentroid          40            0.680924          0.708149
+   droberta per word (production; retrain._embed_once) KNeighborsClassifier          50            0.659825          0.709177
+      mpnet          one batch (round-2 cv_metrics.py) KNeighborsClassifier          50            0.713486          0.741599
+     minilm          one batch (round-2 cv_metrics.py) KNeighborsClassifier          50            0.703321          0.723080
+   droberta          one batch (round-2 cv_metrics.py) KNeighborsClassifier          50            0.659825          0.709177
+encoders: done in 383.0s; errors=0; max |mpnet rows - main grid| = 0.0
+supervised_eval.py encoders: total 383.0s

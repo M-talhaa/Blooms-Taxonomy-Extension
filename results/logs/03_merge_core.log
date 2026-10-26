@@ -1,0 +1,8 @@
+merged core: 381 verbs, 607 assignments (was 358 / 559)
+per level: {'Kn': 55, 'Cm': 74, 'Ap': 140, 'An': 131, 'Sn': 128, 'Ev': 79}
+new verbs added: 2
+new level-assignments on existing core verbs: 25
+excluded entries: 7 -> ['give examples', 'back/back up', 'break down', 'point out', 'set up', 'set up', 'tell/tell why']
+candidates promoted to core (removed from pool): 2 -> ['break', 'practice']
+final candidate pool: 1650 (was 1652)
+expert-sample verbs newly promoted to core: none

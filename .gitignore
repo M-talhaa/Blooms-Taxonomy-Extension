@@ -1,12 +1,19 @@
 __pycache__/
 *.pyc
 .ipynb_checkpoints/
-*.log
 .DS_Store
 Thumbs.db
 
+# logs of local runs; the logs of the documented reproduction run are kept
+*.log
+!results/logs/*.log
+
 # caches and local rerun output
 results/_embed_cache/
-
-# local rerun output folders
 results/rerun/
+
+# every export by retrain.py (final stage) writes a new timestamped winner bundle and tuning
+# table here; the packaged copy of the production bundle is production_model/, and the
+# tuning tables already in the repository stay tracked
+results/BT4_structural_best/artifacts/
+results/BT4_structural_best/BT4_PROD_TUNING_*.csv

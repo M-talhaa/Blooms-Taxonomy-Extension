@@ -1,0 +1,10 @@
+input candidates: 1824
+  dropped-auxiliary: 5
+  dropped-core-leak: 69
+  kept: 1570
+  kept+spelling: 17
+  lemmatized: 65
+  merged-duplicate: 98
+cleaned candidate lemmas: 1652
+sample changes: [('accept', 'accept', 'dropped-core-leak', 'accept'), ('accounting', 'account', 'lemmatized', ''), ('acquainted', 'acquaint', 'merged-duplicate', 'acquaint'), ('acting', 'act', 'dropped-core-leak', 'act'), ('adapted', 'adapt', 'dropped-core-leak', 'adapt'), ('adding', 'add', 'dropped-core-leak', 'add'), ('agonizing', 'agonize', 'lemmatized', ''), ('aligned', 'align', 'merged-duplicate', 'align'), ('analyse', 'analyze', 'dropped-core-leak', 'analyze'), ('applied', 'apply', 'dropped-core-leak', 'apply'), ('associated', 'associate', 'dropped-core-leak', 'associate'), ('astonished', 'astonish', 'lemmatized', '')]
+written to <repo>\revision_pipeline

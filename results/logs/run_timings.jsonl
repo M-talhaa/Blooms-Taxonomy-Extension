@@ -1,0 +1,19 @@
+{"step": "01_normalize", "cmd": "python -I -B revision_pipeline/normalize.py", "start": "2026-10-24T23:24:32", "end": "2026-10-24T23:24:38", "seconds": 6.3, "exit": 0}
+{"step": "02_reconcile_table9", "cmd": "python -I -B revision_pipeline/reconcile_table9.py", "start": "2026-10-24T23:24:38", "end": "2026-10-24T23:24:38", "seconds": 0.1, "exit": 0}
+{"step": "03_merge_core", "cmd": "python -I -B revision_pipeline/merge_core.py", "start": "2026-10-24T23:24:38", "end": "2026-10-24T23:24:39", "seconds": 1.5, "exit": 0}
+{"step": "04_regen_core_figures", "cmd": "python -I -B revision_pipeline/regen_core_figures.py", "start": "2026-10-24T23:24:39", "end": "2026-10-24T23:24:43", "seconds": 3.2, "exit": 0}
+{"step": "05_retrain_scan", "cmd": "python -I -B revision_pipeline/retrain.py --core-csv revision_pipeline/core_merged.csv --candidates revision_pipeline/candidates_final.txt --outdir . --scan-only", "start": "2026-10-24T23:24:43", "end": "2026-10-24T23:32:39", "seconds": 476.5, "exit": 0}
+{"step": "06_supervised_eval", "cmd": "python -I -B revision_pipeline/supervised_eval.py all --workers 8", "start": "2026-10-24T23:32:39", "end": "2026-10-24T23:44:44", "seconds": 724.6, "exit": 0}
+{"step": "07_select_model", "cmd": "python -I -B revision_pipeline/select_model.py", "start": "2026-10-24T23:44:44", "end": "2026-10-24T23:44:48", "seconds": 4.5, "exit": 0}
+{"step": "08_robustness", "cmd": "python -I -B revision_pipeline/robustness.py", "start": "2026-10-24T23:44:48", "end": "2026-10-24T23:46:07", "seconds": 78.4, "exit": 0}
+{"step": "09_scs_sensitivity", "cmd": "python -I -B revision_pipeline/scs_sensitivity.py", "start": "2026-10-24T23:46:07", "end": "2026-10-24T23:47:05", "seconds": 57.8, "exit": 0}
+{"step": "10_retrain_export", "cmd": "python -I -B revision_pipeline/retrain.py --core-csv revision_pipeline/core_merged.csv --candidates revision_pipeline/candidates_final.txt --outdir .", "start": "2026-10-24T23:47:05", "end": "2026-10-24T23:54:51", "seconds": 466.4, "exit": 0}
+{"step": "11_methodology_upgrades", "cmd": "python -I -B revision_pipeline/methodology_upgrades.py", "start": "2026-10-24T23:54:51", "end": "2026-10-24T23:55:10", "seconds": 18.7, "exit": 0}
+{"step": "12_cv_metrics_mpnet", "cmd": "python -I -B revision_pipeline/cv_metrics.py", "start": "2026-10-24T23:55:10", "end": "2026-10-25T00:04:37", "seconds": 567.2, "exit": 0}
+{"step": "13_cv_metrics_minilm", "cmd": "python -I -B revision_pipeline/cv_metrics.py --encoder sentence-transformers/all-MiniLM-L6-v2 --tag minilm", "start": "2026-10-25T00:04:37", "end": "2026-10-25T00:13:19", "seconds": 522.2, "exit": 0}
+{"step": "14_cv_metrics_droberta", "cmd": "python -I -B revision_pipeline/cv_metrics.py --encoder sentence-transformers/all-distilroberta-v1 --tag droberta", "start": "2026-10-25T00:13:19", "end": "2026-10-25T00:22:40", "seconds": 560.5, "exit": 0}
+{"step": "15_bank_structure", "cmd": "python -I -B revision_pipeline/bank_structure.py", "start": "2026-10-25T00:22:40", "end": "2026-10-25T00:23:09", "seconds": 29.1, "exit": 0}
+{"step": "16_expert_recompute", "cmd": "python -I -B revision_pipeline/expert_recompute.py", "start": "2026-10-25T00:23:09", "end": "2026-10-25T00:23:32", "seconds": 23.2, "exit": 0}
+{"step": "17_regen_bank_figures", "cmd": "python -I -B revision_pipeline/regen_bank_figures.py", "start": "2026-10-25T00:23:32", "end": "2026-10-25T00:23:34", "seconds": 2.2, "exit": 0}
+{"step": "18_regen_model_space", "cmd": "python -I -B revision_pipeline/regen_model_space.py", "start": "2026-10-25T00:23:34", "end": "2026-10-25T00:24:59", "seconds": 85.0, "exit": 0}
+{"step": "19_paper_results", "cmd": "python -I -B revision_pipeline/paper_results.py", "start": "2026-10-25T00:25:22", "end": "2026-10-25T00:25:24", "seconds": 2.2, "exit": 0}

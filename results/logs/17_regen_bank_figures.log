@@ -1,0 +1,4 @@
+accepted verbs: 1420 | entries: 1647
+entries per level: {'Kn': 167, 'Cm': 86, 'Ap': 445, 'An': 257, 'Sn': 413, 'Ev': 279}
+levels per verb: {1: np.int64(1243), 2: np.int64(133), 3: np.int64(38), 4: np.int64(6)}
+figures written to <repo>\results\figures

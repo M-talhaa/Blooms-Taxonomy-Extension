@@ -1,0 +1,58 @@
+======================================================================
+A. TRANSCRIPTION AGREEMENT (pass 1 vs pass 2)
+======================================================================
+pass1: 580 entries | pass2: 580 entries
+only in pass1 (0): []
+only in pass2 (0): []
+frequency disagreements (0):
+
+AGREED ENTRIES: 580 (used as the authoritative table below)
+
+======================================================================
+B. PUBLISHED TABLE vs NOTEBOOK CORE
+======================================================================
+level   published  notebook   diff
+Kn             54        54     +0
+Cm             71        69     +2
+Ap            137       133     +4
+An            127       119     +8
+Sn            123       118     +5
+Ev             68        66     +2
+TOTAL         580       559    +21
+
+MISSING from notebook: 26 assignments
+  multi-word phrases (12): ['back up [Ap] f=1', 'carry out [Ap] f=1', 'figure out [An] f=2', 'follow up [Ap] f=1', 'lay out [An] f=2', 'make sense of [Cm] f=1', 'make up [Sn] f=1', 'picture graphically [Cm] f=2', 'point out [An] f=7', 'round off [Ap] f=2', 'set up [Sn] f=6', 'size up [An] f=2']
+  SINGLE-WORD verbs (14):
+    breadboard [An] freq=2
+    breakdown [An] freq=8
+    category [An] freq=1
+    example [Cm] freq=3
+    examples [Cm] freq=1
+    interconvert [Ap] freq=2
+    interface [Sn] freq=2
+    layout [An] freq=1
+    reframe [Ev] freq=2
+    reframe [Sn] freq=1
+    role-play [Sn] freq=1
+    setup [An] freq=1
+    setup [Sn] freq=1
+    summary [Ev] freq=1
+
+In NOTEBOOK but not in published table (5):
+    convert [Ap] freq=2
+    exemplify [Cm] freq=3
+    figure [An] freq=2
+    picture [Cm] freq=2
+    roleplay [Sn] freq=1
+
+FREQUENCY MISMATCHES (4):
+    arrange [An]: published=2 notebook=1
+    deduce [An]: published=3 notebook=2
+    limit [An]: published=3 notebook=2
+    query [An]: published=2 notebook=1
+
+Unique verbs: published 379, notebook 358
+Verbs entirely absent from notebook: 24
+  single-word (12): ['breadboard', 'breakdown', 'category', 'example', 'examples', 'interconvert', 'interface', 'layout', 'reframe', 'role-play', 'setup', 'summary']
+
+VERDICT: DISCREPANCIES FOUND

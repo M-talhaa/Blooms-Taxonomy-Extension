@@ -1,0 +1,9 @@
+All core (381 verbs, 607 assignments): matches T1_core_all.csv (max abs difference 1.2e-07)
+High-frequency core (freq >= 10, 135 assignments): matches T2_core_high.csv (max abs difference 2.4e-07)
+Low-frequency core (freq < 10, 472 assignments): matches T3_core_low.csv (max abs difference 1.3e-07)
+d_n all: 0.056, 0.049, 0.071, 0.091, 0.105
+d_n high: 0.228, 0.177, 0.234, 0.226, 0.266
+d_n low: 0.059, 0.054, 0.073, 0.104, 0.111
+written:
+  <repo>\results\core_structure\Fig1_core_centroid_distance_heatmaps.png
+  <repo>\results\core_structure\Fig2_mean_centroid_distance_by_gap.png
