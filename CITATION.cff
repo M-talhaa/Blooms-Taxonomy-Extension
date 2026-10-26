@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-title: Extending the action verb inventory of Bloom's cognitive domain for engineering education
-message: If you use this verb bank, model or code, please cite the paper below.
+title: "Blooms-Taxonomy-Extension: code, data and models for extending the action verb inventory of Bloom's cognitive domain"
+message: If you use this verb bank, model or code, please cite the article below.
 type: software
 authors:
   - family-names: Talha
@@ -17,6 +17,8 @@ authors:
     orcid: https://orcid.org/0000-0002-6273-4451
 repository-code: https://github.com/Adamsua-lab/Blooms-Taxonomy-Extension
 license: MIT
+version: 1.0.0
+# doi: the Zenodo DOI of this release (reserved through a manual Zenodo upload) is added here before the release is archived.
 keywords:
   - Bloom's taxonomy
   - action verbs
@@ -26,7 +28,7 @@ keywords:
   - sentence embeddings
 preferred-citation:
   type: article
-  title: Extending the Action Verb Inventory of Bloom's Cognitive Domain for Engineering Education with Machine Learning
+  title: "Extending the Action Verb Inventory of Bloom's Cognitive Domain for Engineering Education with Machine Learning"
   authors:
     - family-names: Talha
       given-names: Muhammad
@@ -36,3 +38,4 @@ preferred-citation:
       given-names: Ahmed Jawad
   journal: Discover Education
   year: 2026
+  # doi: the article DOI is added here on publication.
