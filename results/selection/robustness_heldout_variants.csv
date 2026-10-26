@@ -1,0 +1,33 @@
+menu,ho,ho_column,rule,winner,score,runner_up,runner_up_score,margin,shortlist,stage2_ran,kNN_score
+A,seed13,HO_within1_seed13,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5480630513868969,0.165363080626033,,,0.7134261320129299
+A,seed13,HO_within1_seed13,two_stage,CalibratedSVC,0.1704371559957412,KNeighborsClassifier,0.0,0.1704371559957412,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,mean5,HO_within1_mean5,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5520128217780591,0.16141331023487082,,,0.7134261320129299
+A,mean5,HO_within1_mean5,two_stage,CalibratedSVC,0.1704371559957412,KNeighborsClassifier,0.0,0.1704371559957412,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,seed14,HO_within1_seed14,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5520128217780591,0.16141331023487082,,,0.7134261320129299
+A,seed14,HO_within1_seed14,two_stage,CalibratedSVC,0.1704371559957412,KNeighborsClassifier,0.0,0.1704371559957412,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,seed15,HO_within1_seed15,proposed,KNeighborsClassifier,0.7134261320129299,NearestCentroid,0.5289135540235739,0.18451257798935605,,,0.7134261320129299
+A,seed15,HO_within1_seed15,two_stage,NearestCentroid,0.05172145513474184,KNeighborsClassifier,0.0,0.05172145513474184,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,seed16,HO_within1_seed16,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5520128217780591,0.16141331023487082,,,0.7134261320129299
+A,seed16,HO_within1_seed16,two_stage,CalibratedSVC,0.1704371559957412,KNeighborsClassifier,0.0,0.1704371559957412,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,seed17,HO_within1_seed17,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5520128217780591,0.16141331023487082,,,0.7134261320129299
+A,seed17,HO_within1_seed17,two_stage,CalibratedSVC,0.1704371559957412,KNeighborsClassifier,0.0,0.1704371559957412,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,all_verbs_mean5,HO_within1_all_mean5,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5520128217780591,0.16141331023487082,,,0.7134261320129299
+A,all_verbs_mean5,HO_within1_all_mean5,two_stage,CalibratedSVC,0.13876844572639868,KNeighborsClassifier,0.0,0.13876844572639868,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+A,all_verbs_seed13,HO_within1_all_seed13,proposed,KNeighborsClassifier,0.7134261320129299,CalibratedSVC,0.5520128217780591,0.16141331023487082,,,0.7134261320129299
+A,all_verbs_seed13,HO_within1_all_seed13,two_stage,NearestCentroid,0.05172145513474184,KNeighborsClassifier,0.0,0.05172145513474184,CalibratedSVC;LogisticRegression;NearestCentroid;KNeighborsClassifier,True,
+B,seed13,HO_within1_seed13,proposed,Legacy kNN,0.7022273519166231,KNeighborsClassifier,0.662453516328037,0.03977383558858616,,,0.662453516328037
+B,seed13,HO_within1_seed13,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,mean5,HO_within1_mean5,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,mean5,HO_within1_mean5,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,seed14,HO_within1_seed14,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,seed14,HO_within1_seed14,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,seed15,HO_within1_seed15,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,seed15,HO_within1_seed15,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,seed16,HO_within1_seed16,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,seed16,HO_within1_seed16,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,seed17,HO_within1_seed17,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,seed17,HO_within1_seed17,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,all_verbs_mean5,HO_within1_all_mean5,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,all_verbs_mean5,HO_within1_all_mean5,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,
+B,all_verbs_seed13,HO_within1_all_seed13,proposed,Legacy kNN,0.7103303511451853,KNeighborsClassifier,0.662453516328037,0.04787683481714833,,,0.662453516328037
+B,all_verbs_seed13,HO_within1_all_seed13,two_stage,KNeighborsClassifier,0.3074935327814891,Legacy kNN,0.0,0.3074935327814891,CalibratedSVC;KNeighborsClassifier;Legacy kNN,True,

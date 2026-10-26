@@ -1,0 +1,22 @@
+family,config,n_joint_draws,n_single
+LinearSVC,"LinearSVC|{""C"": 2.0} P45",442,19
+LinearSVC,"LinearSVC|{""C"": 0.1} P45",53,1
+LinearSVC,"LinearSVC|{""C"": 1.0} P50",5,0
+CalibratedSVC,"CalibratedSVC|{""C"": 1.0} P45",414,20
+CalibratedSVC,"CalibratedSVC|{""C"": 2.0} P45",44,0
+CalibratedSVC,"CalibratedSVC|{""C"": 0.5} P45",42,0
+LogisticRegression,"LogisticRegression|{""C"": 0.5} P45",394,19
+LogisticRegression,"LogisticRegression|{""C"": 0.5} P40",106,1
+RidgeClassifier,"RidgeClassifier|{""alpha"": 5.0} P40",500,20
+SGDClassifier,"SGDClassifier|{""alpha"": 1e-05, ""loss"": ""hinge""} P55",500,20
+PassiveAggressive,"PassiveAggressive|{""C"": 0.5} P50",390,18
+PassiveAggressive,"PassiveAggressive|{""C"": 2.0} P55",110,2
+LDA,"LDA|{""shrinkage"": ""auto""} P60",448,19
+LDA,"LDA|{""shrinkage"": ""auto""} P55",52,1
+QDA,"QDA|{""reg_param"": 0.05} P60",500,20
+GaussianNB,"GaussianNB|{""var_smoothing"": 1e-09} P40",451,19
+GaussianNB,"GaussianNB|{""var_smoothing"": 1e-09} P45",49,1
+NearestCentroid,NearestCentroid|{} P40,500,20
+KNeighborsClassifier,"KNeighborsClassifier|{""n_neighbors"": 21} P50",500,20
+Legacy kNN,Legacy kNN|unweighted|K=15/th=0.28/c=6,453,19
+Legacy kNN,Legacy kNN|unweighted|K=13/th=0.12/c=6,47,1

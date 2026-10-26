@@ -1,0 +1,119 @@
+set,rule,winner,detail,score
+v2_7fam,"Spearman(obj, AUC)",,rho -0.7143 p 0.0713,-0.7142857142857144
+v2_7fam,2C weighted sum,LogisticRegression,"w in [0.0000, 0.2990]",
+v2_7fam,2C weighted sum,KNeighborsClassifier,"w in [0.2991, 0.6615]",
+v2_7fam,2C weighted sum,SGDClassifier,"w in [0.6616, 1.0000]",
+v2_7fam,2C weighted sum exact switch,LogisticRegression->KNeighborsClassifier,w = 0.299038,0.2990384425482675
+v2_7fam,2C weighted sum exact switch,KNeighborsClassifier->SGDClassifier,w = 0.661540,0.6615400576721717
+v2_7fam,2C weighted sum w=0.5,KNeighborsClassifier,,
+v2_7fam,2C rank-sum,KNeighborsClassifier,min rank sum 6.0,6.0
+v2_7fam,2C maximin (stage one),KNeighborsClassifier,0.5544104687,0.5544104686695293
+v2_7fam,2C Pareto front,LogisticRegression;SGDClassifier;PassiveAggressive;NearestCentroid;KNeighborsClassifier,kNN on front: True,
+v2_7fam,2C eps1 (best AUC within 0.075 of best obj),PassiveAggressive,,
+v2_7fam,2C eps2 (best obj within 0.008 of best AUC),KNeighborsClassifier,,
+v2_7fam,2C eps1 sweep,,0.00000: SGDClassifier; 0.06344: PassiveAggressive; 0.07514: KNeighborsClassifier; 0.12351: NearestCentroid; 0.12615: LogisticRegression,
+v2_7fam,2C eps2 sweep,,0.000000: LogisticRegression; 0.004637: NearestCentroid; 0.006982: KNeighborsClassifier; 0.048031: PassiveAggressive; 0.054089: SGDClassifier,
+v2_7fam,published two-stage,KNeighborsClassifier,0.5544104687,0.5544104686695293
+v2_9fam,"Spearman(obj, AUC)",,rho -0.4833 p 0.1875,-0.48333333333333334
+v2_9fam,2C weighted sum,CalibratedSVC,"w in [0.0000, 0.5416]",
+v2_9fam,2C weighted sum,KNeighborsClassifier,"w in [0.5417, 0.7384]",
+v2_9fam,2C weighted sum,SGDClassifier,"w in [0.7385, 1.0000]",
+v2_9fam,2C weighted sum exact switch,CalibratedSVC->KNeighborsClassifier,w = 0.541688,0.5416882868502537
+v2_9fam,2C weighted sum exact switch,KNeighborsClassifier->SGDClassifier,w = 0.738479,0.7384788320816249
+v2_9fam,2C weighted sum w=0.5,CalibratedSVC,,
+v2_9fam,2C rank-sum,CalibratedSVC,min rank sum 6.0,6.0
+v2_9fam,2C maximin (stage one),KNeighborsClassifier,0.7134261320,0.7134261320129299
+v2_9fam,2C Pareto front,CalibratedSVC;SGDClassifier;PassiveAggressive;KNeighborsClassifier,kNN on front: True,
+v2_9fam,2C eps1 (best AUC within 0.075 of best obj),PassiveAggressive,,
+v2_9fam,2C eps2 (best obj within 0.008 of best AUC),CalibratedSVC,,
+v2_9fam,2C eps1 sweep,,0.00000: SGDClassifier; 0.06344: PassiveAggressive; 0.07514: KNeighborsClassifier; 0.11746: CalibratedSVC,
+v2_9fam,2C eps2 sweep,,0.000000: CalibratedSVC; 0.011106: KNeighborsClassifier; 0.052156: PassiveAggressive; 0.058214: SGDClassifier,
+v2_9fam,published two-stage,KNeighborsClassifier,0.5289876000,0.528987599967633
+A_matched_HOseed13,"Spearman(obj, AUC)",,rho -0.7000 p 0.0358,-0.7
+A_matched_HOseed13,2C weighted sum,RidgeClassifier,"w in [0.0000, 0.1039]",
+A_matched_HOseed13,2C weighted sum,LogisticRegression,"w in [0.1040, 0.4050]",
+A_matched_HOseed13,2C weighted sum,KNeighborsClassifier,"w in [0.4051, 0.7475]",
+A_matched_HOseed13,2C weighted sum,SGDClassifier,"w in [0.7476, 1.0000]",
+A_matched_HOseed13,2C weighted sum exact switch,RidgeClassifier->LogisticRegression,w = 0.103920,0.10392004218731661
+A_matched_HOseed13,2C weighted sum exact switch,LogisticRegression->KNeighborsClassifier,w = 0.405077,0.40507735503331815
+A_matched_HOseed13,2C weighted sum exact switch,KNeighborsClassifier->SGDClassifier,w = 0.747579,0.7475794059320904
+A_matched_HOseed13,2C weighted sum w=0.5,KNeighborsClassifier,,
+A_matched_HOseed13,2C rank-sum,CalibratedSVC/KNeighborsClassifier,min rank sum 8.0,8.0
+A_matched_HOseed13,2C maximin (stage one),KNeighborsClassifier,0.7134261320,0.7134261320129299
+A_matched_HOseed13,2C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;SGDClassifier;PassiveAggressive;KNeighborsClassifier,kNN on front: True,
+A_matched_HOseed13,2C eps1 (best AUC within 0.075 of best obj),PassiveAggressive,,
+A_matched_HOseed13,2C eps2 (best obj within 0.008 of best AUC),CalibratedSVC,,
+A_matched_HOseed13,2C eps1 sweep,,0.00000: SGDClassifier; 0.06344: PassiveAggressive; 0.07514: KNeighborsClassifier; 0.11746: CalibratedSVC; 0.12615: LogisticRegression; 0.16862: RidgeClassifier,
+A_matched_HOseed13,2C eps2 sweep,,0.000000: RidgeClassifier; 0.001085: LogisticRegression; 0.002996: CalibratedSVC; 0.008731: KNeighborsClassifier; 0.052569: PassiveAggressive; 0.057714: SGDClassifier,
+A_matched_HOseed13,3C weighted-sum simplex share,KNeighborsClassifier 0.833;RidgeClassifier 0.062;SGDClassifier 0.059;LogisticRegression 0.045,"5151 points, step 0.01",0.8332362648029509
+A_matched_HOseed13,3C equal weights,KNeighborsClassifier,0.8540517683,0.8540517682504998
+A_matched_HOseed13,3C rank-sum,KNeighborsClassifier,9.0,9.0
+A_matched_HOseed13,3C one-stage maximin,KNeighborsClassifier,0.7134261320,0.7134261320129299
+A_matched_HOseed13,3C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;SGDClassifier;PassiveAggressive;KNeighborsClassifier,kNN on front: True,
+A_matched_HOseed13,published two-stage,CalibratedSVC,0.1704371560,0.1704371559957412
+B_matched_HOseed13,"Spearman(obj, AUC)",,rho -0.6970 p 0.0251,-0.6969696969696969
+B_matched_HOseed13,2C weighted sum,RidgeClassifier,"w in [0.0000, 0.1110]",
+B_matched_HOseed13,2C weighted sum,LogisticRegression,"w in [0.1111, 0.3432]",
+B_matched_HOseed13,2C weighted sum,Legacy kNN,"w in [0.3433, 1.0000]",
+B_matched_HOseed13,2C weighted sum exact switch,RidgeClassifier->LogisticRegression,w = 0.111028,0.11102839075963336
+B_matched_HOseed13,2C weighted sum exact switch,LogisticRegression->Legacy kNN,w = 0.343280,0.3432801834563799
+B_matched_HOseed13,2C weighted sum w=0.5,Legacy kNN,,
+B_matched_HOseed13,2C rank-sum,Legacy kNN,min rank sum 8.0,8.0
+B_matched_HOseed13,2C maximin (stage one),Legacy kNN,0.7103303511,0.7103303511451853
+B_matched_HOseed13,2C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;KNeighborsClassifier;Legacy kNN,kNN on front: True,
+B_matched_HOseed13,2C eps1 (best AUC within 0.075 of best obj),Legacy kNN,,
+B_matched_HOseed13,2C eps2 (best obj within 0.008 of best AUC),CalibratedSVC,,
+B_matched_HOseed13,2C eps1 sweep,,0.00000: Legacy kNN; 0.09531: KNeighborsClassifier; 0.13763: CalibratedSVC; 0.14632: LogisticRegression; 0.18879: RidgeClassifier,
+B_matched_HOseed13,2C eps2 sweep,,0.000000: RidgeClassifier; 0.001085: LogisticRegression; 0.002996: CalibratedSVC; 0.008731: KNeighborsClassifier; 0.016718: Legacy kNN,
+B_matched_HOseed13,3C weighted-sum simplex share,KNeighborsClassifier 0.518;Legacy kNN 0.374;RidgeClassifier 0.067;LogisticRegression 0.041,"5151 points, step 0.01",0.5175694039992235
+B_matched_HOseed13,3C equal weights,KNeighborsClassifier,0.8370608964,0.8370608963555354
+B_matched_HOseed13,3C rank-sum,KNeighborsClassifier/Legacy kNN,10.0,10.0
+B_matched_HOseed13,3C one-stage maximin,Legacy kNN,0.7022273519,0.7022273519166231
+B_matched_HOseed13,3C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;KNeighborsClassifier;Legacy kNN,kNN on front: True,
+B_matched_HOseed13,published two-stage,KNeighborsClassifier,0.3074935328,0.3074935327814891
+A_matched_HOmean5,"Spearman(obj, AUC)",,rho -0.7000 p 0.0358,-0.7
+A_matched_HOmean5,2C weighted sum,RidgeClassifier,"w in [0.0000, 0.1039]",
+A_matched_HOmean5,2C weighted sum,LogisticRegression,"w in [0.1040, 0.4050]",
+A_matched_HOmean5,2C weighted sum,KNeighborsClassifier,"w in [0.4051, 0.7475]",
+A_matched_HOmean5,2C weighted sum,SGDClassifier,"w in [0.7476, 1.0000]",
+A_matched_HOmean5,2C weighted sum exact switch,RidgeClassifier->LogisticRegression,w = 0.103920,0.10392004218731661
+A_matched_HOmean5,2C weighted sum exact switch,LogisticRegression->KNeighborsClassifier,w = 0.405077,0.40507735503331815
+A_matched_HOmean5,2C weighted sum exact switch,KNeighborsClassifier->SGDClassifier,w = 0.747579,0.7475794059320904
+A_matched_HOmean5,2C weighted sum w=0.5,KNeighborsClassifier,,
+A_matched_HOmean5,2C rank-sum,CalibratedSVC/KNeighborsClassifier,min rank sum 8.0,8.0
+A_matched_HOmean5,2C maximin (stage one),KNeighborsClassifier,0.7134261320,0.7134261320129299
+A_matched_HOmean5,2C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;SGDClassifier;PassiveAggressive;KNeighborsClassifier,kNN on front: True,
+A_matched_HOmean5,2C eps1 (best AUC within 0.075 of best obj),PassiveAggressive,,
+A_matched_HOmean5,2C eps2 (best obj within 0.008 of best AUC),CalibratedSVC,,
+A_matched_HOmean5,2C eps1 sweep,,0.00000: SGDClassifier; 0.06344: PassiveAggressive; 0.07514: KNeighborsClassifier; 0.11746: CalibratedSVC; 0.12615: LogisticRegression; 0.16862: RidgeClassifier,
+A_matched_HOmean5,2C eps2 sweep,,0.000000: RidgeClassifier; 0.001085: LogisticRegression; 0.002996: CalibratedSVC; 0.008731: KNeighborsClassifier; 0.052569: PassiveAggressive; 0.057714: SGDClassifier,
+A_matched_HOmean5,3C weighted-sum simplex share,KNeighborsClassifier 0.812;LogisticRegression 0.077;SGDClassifier 0.059;RidgeClassifier 0.051,"5151 points, step 0.01",0.8122694622403417
+A_matched_HOmean5,3C equal weights,KNeighborsClassifier,0.8540517683,0.8540517682504998
+A_matched_HOmean5,3C rank-sum,KNeighborsClassifier,9.0,9.0
+A_matched_HOmean5,3C one-stage maximin,KNeighborsClassifier,0.7134261320,0.7134261320129299
+A_matched_HOmean5,3C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;SGDClassifier;PassiveAggressive;KNeighborsClassifier,kNN on front: True,
+A_matched_HOmean5,published two-stage,CalibratedSVC,0.1704371560,0.1704371559957412
+B_matched_HOmean5,"Spearman(obj, AUC)",,rho -0.6970 p 0.0251,-0.6969696969696969
+B_matched_HOmean5,2C weighted sum,RidgeClassifier,"w in [0.0000, 0.1110]",
+B_matched_HOmean5,2C weighted sum,LogisticRegression,"w in [0.1111, 0.3432]",
+B_matched_HOmean5,2C weighted sum,Legacy kNN,"w in [0.3433, 1.0000]",
+B_matched_HOmean5,2C weighted sum exact switch,RidgeClassifier->LogisticRegression,w = 0.111028,0.11102839075963336
+B_matched_HOmean5,2C weighted sum exact switch,LogisticRegression->Legacy kNN,w = 0.343280,0.3432801834563799
+B_matched_HOmean5,2C weighted sum w=0.5,Legacy kNN,,
+B_matched_HOmean5,2C rank-sum,Legacy kNN,min rank sum 8.0,8.0
+B_matched_HOmean5,2C maximin (stage one),Legacy kNN,0.7103303511,0.7103303511451853
+B_matched_HOmean5,2C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;KNeighborsClassifier;Legacy kNN,kNN on front: True,
+B_matched_HOmean5,2C eps1 (best AUC within 0.075 of best obj),Legacy kNN,,
+B_matched_HOmean5,2C eps2 (best obj within 0.008 of best AUC),CalibratedSVC,,
+B_matched_HOmean5,2C eps1 sweep,,0.00000: Legacy kNN; 0.09531: KNeighborsClassifier; 0.13763: CalibratedSVC; 0.14632: LogisticRegression; 0.18879: RidgeClassifier,
+B_matched_HOmean5,2C eps2 sweep,,0.000000: RidgeClassifier; 0.001085: LogisticRegression; 0.002996: CalibratedSVC; 0.008731: KNeighborsClassifier; 0.016718: Legacy kNN,
+B_matched_HOmean5,3C weighted-sum simplex share,Legacy kNN 0.620;KNeighborsClassifier 0.256;LogisticRegression 0.070;RidgeClassifier 0.054,"5151 points, step 0.01",0.25606678314890313
+B_matched_HOmean5,3C equal weights,Legacy kNN,0.8889980096,0.8889980095704537
+B_matched_HOmean5,3C rank-sum,KNeighborsClassifier/Legacy kNN,10.0,10.0
+B_matched_HOmean5,3C one-stage maximin,Legacy kNN,0.7103303511,0.7103303511451853
+B_matched_HOmean5,3C Pareto front,CalibratedSVC;LogisticRegression;RidgeClassifier;KNeighborsClassifier;Legacy kNN,kNN on front: True,
+B_matched_HOmean5,published two-stage,KNeighborsClassifier,0.3074935328,0.3074935327814891
+A_matched_HOseed13,proposed rule (select_model.rule_balanced_maximin),KNeighborsClassifier,0.7134261320; runner-up CalibratedSVC 0.5480630514,0.7134261320129299
+B_matched_HOseed13,proposed rule (select_model.rule_balanced_maximin),Legacy kNN,0.7022273519; runner-up KNeighborsClassifier 0.6624535163,0.7022273519166231
+A_matched_HOmean5,proposed rule (select_model.rule_balanced_maximin),KNeighborsClassifier,0.7134261320; runner-up CalibratedSVC 0.5520128218,0.7134261320129299
+B_matched_HOmean5,proposed rule (select_model.rule_balanced_maximin),Legacy kNN,0.7103303511; runner-up KNeighborsClassifier 0.6624535163,0.7103303511451853
