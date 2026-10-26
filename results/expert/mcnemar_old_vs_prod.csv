@@ -1,0 +1,7 @@
+set,metric,OLD_hits,PROD_hits,OLD_only,PROD_only,p_exact
+D30,strict,7,11,3,7,0.3438
+D30,endorsed,14,18,2,6,0.2891
+D29,strict,7,11,3,7,0.3438
+D29,endorsed,14,18,2,6,0.2891
+C26,strict,6,11,2,7,0.1797
+C26,endorsed,13,18,1,6,0.1250

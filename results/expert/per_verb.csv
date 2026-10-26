@@ -1,0 +1,31 @@
+verb,rated_form,votes,none_votes,Emax,E25,none_plurality,in_pool,in_C26,PROD_status,PROD_primary,PROD_hard,PROD_strict,PROD_endorsed,OLD_status,OLD_primary,OLD_hard,OLD_strict,OLD_endorsed,v1_stored_primary,v1_stored_hard
+deviate,deviate,1/2/3/2/3/3,1,Ap Sn Ev,Cm Ap An Sn Ev,False,True,True,accepted,An,An,0,1,accepted,An,An,0,1,An,An
+input,input,4/3/2/0/1/0,2,Kn,Kn Cm Ap,False,True,False,rejected,,,0,0,accepted,An,Cm An,0,0,An,Cm An
+forego,forego,0/0/1/1/3/3,1,Sn Ev,Sn Ev,False,True,True,accepted,Sn,Sn,1,1,accepted,An,An,0,0,An,An
+authorize,authorize,0/0/3/1/2/3,1,Ap Ev,Ap Sn Ev,False,True,False,rejected,,,0,0,accepted,An,An,0,0,An,An
+contradict,contradict,0/2/0/4/1/4,1,An Ev,Cm An Ev,False,True,True,accepted,Ev,Cm Ev,1,1,accepted,An,Ap An Sn,1,1,An,Ap An Sn
+enrich,enrich,0/2/3/0/4/1,1,Sn,Cm Ap Sn,False,True,True,accepted,Sn,Sn,1,1,accepted,Ap,Ap,0,1,Ap,Ap
+expend,expend,0/1/4/2/2/1,2,Ap,Ap An Sn,False,True,True,accepted,Ap,Ap,1,1,accepted,Ap,Ap,1,1,Ap,Ap
+deprive,deprive,1/0/4/2/1/0,3,Ap,Ap An,False,True,True,accepted,Ev,Ev,0,0,accepted,Ap,Ap,1,1,Ap,Ap
+displace,displace,1/1/4/3/2/1,3,Ap,Ap An Sn,False,True,True,accepted,Ap,Ap,1,1,accepted,Ap,Ap An,1,1,Ap,Ap An
+decline,decline,0/1/1/2/0/5,0,Ev,An Ev,False,True,True,accepted,Ev,Ap Ev,1,1,accepted,Ap,Ap Sn,0,0,Ap,Ap Sn
+favour,favour,0/0/0/1/1/6,1,Ev,Ev,False,True,True,accepted,Ev,Ev,1,1,accepted,Cm,Cm,0,0,Cm,Cm
+creep,creep,1/0/0/2/0/1,4,An,An,True,True,True,accepted,Kn,Kn An,0,0,accepted,Cm,Cm,0,0,Cm,Cm
+guard,guard,1/1/0/0/0/3,3,Ev,Ev,False,True,True,accepted,Ev,Ev,1,1,accepted,Cm,Cm Ap Sn,0,0,Cm,Cm Ap Sn
+rest,resting,1/1/2/0/2/1,5,Ap Sn,Ap Sn,True,True,False,rejected,,,0,0,accepted,Ap,Ap,1,1,Cm,Cm
+amplify,amplify,1/2/3/4/3/1,2,An,Cm Ap An Sn,False,True,True,accepted,Ap,Ap,0,1,accepted,Cm,Cm,0,1,Cm,Cm
+dump,dump,2/2/1/0/1/1,5,Kn Cm,Kn Cm,True,True,True,accepted,Ev,Ev,0,0,accepted,Ev,Ap An Ev,0,0,Ev,Ap An Ev
+offload,offload,1/2/2/0/3/2,2,Sn,Cm Ap Sn Ev,False,True,True,accepted,Ap,Ap,0,1,accepted,Ev,Ev,0,1,Ev,Ev
+detach,detach,1/3/3/0/2/1,2,Cm Ap,Cm Ap Sn,False,True,True,accepted,An,An,0,0,accepted,Ev,Ev,0,0,Ev,Ev
+lock,lock,1/1/3/1/2/1,3,Ap,Ap Sn,False,True,True,accepted,Ev,Ev,0,0,accepted,Ev,Ev,0,0,Ev,Ev
+tighten,tighten,2/1/2/2/2/1,2,Kn Ap An Sn,Kn Ap An Sn,False,True,True,accepted,Ap,Ap,1,1,accepted,Ev,Ev,0,0,Ev,Ev
+gaze,gaze,1/2/1/0/0/0,5,Cm,Cm,True,True,True,accepted,An,Kn Cm An,0,0,accepted,Kn,Kn,0,0,Kn,Kn
+stamp,stamp,1/1/2/1/1/3,1,Ev,Ap Ev,False,True,True,accepted,Kn,Kn,0,0,accepted,Kn,Kn,0,0,Kn,Kn
+copy,copying,2/1/5/0/0/0,2,Ap,Kn Ap,False,False,False,missing,,,0,0,missing,,,0,0,Kn,Kn
+peek,peek,1/3/1/1/0/0,5,Cm,Cm,True,True,True,accepted,An,Kn An,0,0,accepted,Kn,Kn,0,0,Kn,Kn
+recollect,recollect,6/2/3/1/1/0,0,Kn,Kn Cm Ap,False,True,True,accepted,Kn,Kn,1,1,accepted,Kn,Kn,1,1,Kn,Kn
+contain,contain,4/4/3/0/1/0,3,Kn Cm,Kn Cm Ap,False,True,True,accepted,Ap,Ap,0,1,accepted,Sn,Sn,0,0,Sn,Sn
+renormalize,renormalize,1/2/3/4/3/1,1,An,Cm Ap An Sn,False,True,True,accepted,Sn,Sn,0,1,accepted,Sn,Sn,0,1,Sn,Sn
+accrue,accrue,1/1/4/2/2/0,3,Ap,Ap An Sn,False,True,True,accepted,Ap,Ap,1,1,accepted,Sn,Sn,0,1,Sn,Sn
+compromise,compromise,1/3/3/4/4/2,1,An Sn,Cm Ap An Sn Ev,False,True,True,accepted,Ev,An Ev,0,1,accepted,Sn,An Sn,1,1,Sn,An Sn
+modulate,modulate,1/2/4/3/3/1,2,Ap,Cm Ap An Sn,False,True,True,accepted,Sn,Ap Sn,0,1,accepted,Sn,Sn,0,1,Sn,Sn

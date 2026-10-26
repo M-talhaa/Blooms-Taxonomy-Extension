@@ -1,0 +1,3 @@
+bank,inputs,accepted,unassigned,entries,acceptance,entries_per_input,entries_per_accepted,entries_Kn,entries_Cm,entries_Ap,entries_An,entries_Sn,entries_Ev,verbs_with_0_levels,verbs_with_1_levels,verbs_with_2_levels,verbs_with_3_levels,verbs_with_4_levels,verbs_with_5_levels,verbs_with_6_levels,primary_Kn,primary_Cm,primary_Ap,primary_An,primary_Sn,primary_Ev,primary_None
+v2 delivered bank,1650,1420,230,1647,0.860606,0.998182,1.159859,167,86,445,257,413,279,230,1243,133,38,6,0,0,151,56,383,212,360,258,230
+v1 bank (commit 2a87a33),1824,1506,318,1859,0.825658,1.019189,1.234396,49,373,574,259,485,119,318,1246,185,61,10,4,0,41,301,467,190,407,100,318
