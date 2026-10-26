@@ -1,0 +1,4 @@
+subset,d1,d2,d3,d4,d5
+"All core (381 verbs, 607 assignments)",0.055506,0.049424,0.070922,0.090970,0.105422
+"High-frequency core (freq >= 10, 135 assignments)",0.227663,0.177346,0.233916,0.226111,0.266037
+"Low-frequency core (freq < 10, 472 assignments)",0.058964,0.054048,0.072647,0.103671,0.110679
