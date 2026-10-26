@@ -1,13 +1,31 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-retrain.py - Standalone, faithful re-implementation of the Algorithm-1 pipeline from
-"BT 3 - Model training and classification.ipynb" (Blooms-Taxonomy-Extension repo).
+retrain.py - standalone implementation of Algorithm 1 of the Blooms-Taxonomy-Extension
+repository: structural scan of the model zoo, model selection, and export of the selected
+classifier (winner bundle and classified verb bank). It reproduces "BT 3 - Model training and
+classification.ipynb"; every deviation from the notebook is listed under DEVIATIONS.
 
-USAGE
-  python retrain.py --core-csv core.csv --candidates candidates.txt --outdir OUT
-  python retrain.py --core-csv core.csv --candidates candidates.txt --outdir OUT \
-      --mock-embeddings --mock-dim 64        # cheap dry-run, no model download
+USAGE (from the repository root; every path is relative)
+  Stage 1, structural scan only (input of supervised_eval.py, select_model.py, robustness.py):
+    python -I -B revision_pipeline/retrain.py --core-csv revision_pipeline/core_merged.csv --candidates revision_pipeline/candidates_final.txt --outdir . --scan-only
+  Final stage, structural scan + model selection + export of the selected family:
+    python -I -B revision_pipeline/retrain.py --core-csv revision_pipeline/core_merged.csv --candidates revision_pipeline/candidates_final.txt --outdir <out>
+  Dry run without the encoder (only the scan is meaningful; never use for real runs):
+    add --mock-embeddings --mock-dim 64 --scan-only
+
+REPRODUCTION ORDER (round 3; commands and runtimes in results/selection/RUN_LOG.md)
+  1. retrain.py --scan-only --outdir .   results/structural_scan_components.csv,
+                                         model_comparison_table5.csv, model_comparison_pareto.csv
+  2. supervised_eval.py all              results/selection/supervised_grid*.csv and related files
+  3. select_model.py                     results/selection/selection_table.csv, selection_report.md
+  4. robustness.py                       results/selection/robustness_*.csv, robustness_report.md
+  5. retrain.py --outdir <out>           repeats the deterministic scan, applies the selection rule
+                                         of select_model.py to it and exports the selected family:
+                                         <out>/results/Verb List Classified by Model.csv, the winner
+                                         bundle and winner_and_constants.json
+  With --outdir . step 5 rewrites the committed results/ files in place. production_model/ is the
+  packaged copy of the winner bundle (README.md and classify.py added).
 
 INPUTS
   --core-csv     CSV with columns: verb, Kn, Cm, Ap, An, Sn, Ev (0/1 multi-hot), freq
@@ -19,28 +37,101 @@ INPUTS
                  weight of each verb).
   --candidates   txt file, one candidate verb per line (a CSV with a verb column and
                  optional Kn..Ev trace columns is also accepted)
+  Model selection (final stage) also reads results/selection/supervised_grid_per_seed.csv
+  (supervised_eval.py) and, as a cross-check, results/selection/selection_table.csv
+  (select_model.py), both located relative to this file.
 
-PIPELINE (identical to BT3, cells 5-11)
-  1. Embed with sentence-transformers/all-mpnet-base-v2, normalize_embeddings=True (L2).
-  2. Row weights: w = 1 + log(1 + freq), clip to [0.5, 3.0], divide by mean.
-  3. Model zoo (MODEL_GRID below, verbatim) trained OneVsRest, plus Legacy kNN votes.
+PIPELINE (BT3 cells 5 to 11, with the deviations below)
+  1. Embed with sentence-transformers/all-mpnet-base-v2, normalize_embeddings=True (L2); the
+     vectors are served from revision_pipeline/all_embeddings.npz (per-word encodings).
+  2. Row weights: w = 1 + log(1 + freq), clip to [0.5, 3.0], divide by the mean (ROW WEIGHTS).
+  3. Model zoo MODEL_GRID trained one-vs-rest, plus the vote-based Legacy kNN (LEGACY_KNN_GRID).
   4. Per-level empirical-CDF calibration fitted on OUT-OF-FOLD core scores,
-     KFold(n_splits=5, shuffle=True, random_state=13)  ->  K = 5 folds (N_SPLITS_OOF).
-  5. Percentile threshold scan over P_GRID = [20, 25, 30, 35, 40, 45, 50, 55, 60]
-     (weighted per-level quantiles of positive-class calibrated scores).
-  6. StructuralStats + SCS = 1*D - 1*M + 0.8*T + 0.3*C - 0.05*E and the penalized
-     objective (acceptance / entries-per-accepted bands) copied verbatim.
-  7. Winner = max PenalizedObj (ties: Eval_SCS, then Eval_Acceptance).
-  8. Post-processing: top-2 margin collapse delta = 0.12; soft thresholds alpha = 0.85.
-  9. Outputs (under --outdir):
-       results/Verb List Classified by Model.csv        same column layout as the repo file
+     KFold(n_splits=N_SPLITS_OOF, shuffle=True, random_state=RNG_SEED).
+  5. Percentile threshold scan over P_GRID (row-weighted per-level quantiles of the positives'
+     calibrated core scores).
+  6. StructuralStats on the 1,650 candidates, SCS = 1*D - 1*M + 0.8*T + 0.3*C - 0.05*E, and the
+     penalized objective (paper Eq. 19) = SCS minus the acceptance and entries-per-accepted band
+     penalties.
+  7. Per-family structural best: the largest penalized objective, ties by raw SCS, then by
+     acceptance (tune_ovr_model for the one-vs-rest families, tune_legacy_knn for Legacy kNN, D11).
+  8. Model selection (D12): select_model.SELECTION_RULE (currently "balanced_maximin", the
+     function select_model.rule_balanced_maximin) over the per-family structural bests of this
+     run, with the matched supervised criteria of supervised_eval.py. Missing supervised results
+     stop the run with an error; there is no structural-only fallback.
+  9. Export of the selected family: tuning thresholds, top-2 margin collapse (delta 0.060), soft
+     tier at 0.85 x the hard thresholds.
+  Outputs (under --outdir):
+       results/structural_scan_components.csv           per-candidate SCS components (D4)
+       results/model_comparison_table5.csv              per-family structural bests (Table 5)
+       results/model_comparison_pareto.csv              Pareto front of Table 5 (Eval_SCS, acceptance)
+     final stage only:
+       results/Verb List Classified by Model.csv        the classified bank (repo column layout)
        results/BT4_structural_best/BT4_PROD_TUNING_<winner>_<ts>.csv   (notebook-native name)
        results/BT4_structural_best/artifacts/<winner>_<ts>/            winner bundle
            model.pkl, calibration_cdfs.json, thresholds.json, row_weights.npy,
            S_core_calibrated.npy, S_eval_calibrated.npy, metadata.json, bt4_scorer.py
-       results/model_comparison_table5.csv              Table-5-style comparison
-       results/structural_scan_components.csv           per-model per-percentile SCS parts
-       results/winner_and_constants.json                winner + every constant + Table 5
+       results/winner_and_constants.json                winner, selection, constants, Table 5
+
+CONSTANTS (name = value: role; anything not listed is a literal inside a verbatim function)
+  RNG_SEED = 13                 random_state of every seeded estimator in MODEL_GRID, of the OOF
+                                KFold, of the PCA in front of LDA/QDA and of the bootstrap in
+                                core_targets_from_labels
+  USE_ROW_WEIGHTS = True        build row weights from the core frequencies (ROW WEIGHTS)
+  USE_OOF = True                calibrate on out-of-fold core scores (in-sample only if an OOF
+                                fit fails, which is printed as [warn])
+  N_SPLITS_OOF = 5              folds of the OOF KFold (shuffle=True, random_state=RNG_SEED)
+  P_GRID = [20, 25, ..., 60]    percentiles of the threshold scan
+  MIN_ACCEPT = 0.01             a setting whose candidate acceptance is below this is not
+                                admissible
+  SCS weights (SCS defaults)    wD = 1.0, wM = 1.0, wT = 0.8, wC = 0.3, wE = 0.05; empty_min = 10
+                                (a level with fewer than 10 entries counts as empty in E)
+  SCS target_ratio = 1.51,      presentation only: they set the "overlap" and "acceptance" parts
+  acc_window = (0.30, 0.85)     that SCS returns next to the score; they never enter the score
+  _coherence_per_class          C = 0.7 * mean((silhouette + 1) / 2) + 0.3 * mean(1 / (1 + DB))
+                                over the six one-vs-rest splits (inner weights 0.7 and 0.3)
+  make_estimator (LDA, QDA)     whitened PCA (random_state=RNG_SEED) in front of the estimator,
+                                n_components = _pca_dim_for_lda_qda(X, n_classes=2) = 2
+  _make_calibrated_svc          SVC(kernel="linear", class_weight="balanced") with sigmoid
+                                calibration, CalibratedClassifierCV(cv=3); C from MODEL_GRID
+  SCS_EMPTY_LEVEL_PEN = 0.05    second subtraction of E in the one-vs-rest objective
+                                (tune_ovr_model); E = 0 at every admissible one-vs-rest setting,
+                                so it never changes a value used for selection
+  core_targets_from_labels      bootstrap = 400 resamples, margin_acc = margin_enac = 0.08: the
+                                data-driven acceptance band (ACC_BAND) and entries-per-accepted
+                                band (ENAC_BAND); PEN_ACC = 5.0, PEN_ENAC = 2.5: quadratic penalty
+                                coefficients of Eq. 19; SCS_TIE_EPS = 0.02 is still returned but
+                                unused since round 3 (it was the raw-SCS tie window of the
+                                round-2 Legacy kNN pick, D11)
+  ACC_BAND_CLAMP = (0.25, 0.85) clamp applied to ACC_BAND after the bootstrap
+  ADEQUACY_FLOOR = 0.5          selection: a family whose structural best has PenalizedObj below
+                                this is not considered (equal to select_model.ADEQUACY_FLOOR;
+                                checked at run time)
+  LEGACY_KNN_GRID               Legacy kNN vote grid: K in (5, 7, 9, 11, 13, 15), cosine
+                                threshold in (0.12, ..., 0.32), vote cutoff in (6, ..., 32);
+                                unweighted and frequency-weighted variants
+  MODEL_GRID                    the 11 one-vs-rest families and their 27 settings (verbatim)
+  PREFER_PARITY_THRESH = True   export uses the tuning thresholds (D6)
+  PREFER_PARITY_SCORES = True   export uses the tuning-calibrated candidate scores (D6)
+  APPLY_TOP2_MARGIN = True      apply the top-2 margin collapse at export
+  TOP2_MARGIN_DEFAULT = 0.060   top-2 margin delta: a multi-label verb keeps only its top level
+                                when that level's calibrated score leads the second by at least
+                                0.060 (D14)
+  SUGGEST_ALPHA = 0.85          soft tier: a level is suggested at 0.85 x its hard threshold
+  The supervised protocol (CV MultilabelStratifiedKFold seeds 13 to 17, inner KFold seed 13,
+  held-out outer seeds 13 to 17) is fixed in supervised_eval.py; the selection rule, its switch
+  SELECTION_RULE and its eligibility definition are in select_model.py.
+
+ROW WEIGHTS (unweighted fit, weighted thresholds)
+  The notebook calls OneVsRestClassifier.fit(X, Y, sample_weight=row_w) and falls back to the
+  unweighted fit if that call raises. scikit-learn 1.9.0 (requirements.txt) rejects sample_weight
+  (ValueError; releases before metadata routing raised TypeError), so EVERY one-vs-rest model,
+  inside the OOF folds and on the full core, is fit UNWEIGHTED, as in the published run. The row
+  weights reach only the weighted threshold percentiles (thresholds_from_percentile_weighted).
+  _fit_ovr keeps the notebook's attempt so the code path and the results are unchanged, counts
+  the outcomes in ROW_WEIGHT_FIT, prints them and writes them to winner_and_constants.json
+  ("row_weight_fit"); a weighted fit that succeeds is reported as a warning, because it would
+  change the models relative to the published run.
 
 ============================= DEVIATIONS ======================================
 Everything below is copied verbatim from BT3 unless listed here. Deviations:
@@ -65,16 +156,16 @@ D3. sklearn-version compat shims (behavior-preserving):
         sklearn>=1.2 (removed >=1.4). _make_calibrated_svc() tries base_estimator
         first, falls back to estimator. Hyperparameters unchanged.
     (b) The notebook wraps OneVsRestClassifier.fit(X, Y, sample_weight=row_w) in
-        try/except TypeError with an unweighted ovr.fit(X, Y) fallback. On modern
-        sklearn the same call raises ValueError (metadata routing) instead of
-        TypeError; we except (TypeError, ValueError) so the notebook's effective
-        behavior (attempt weighted fit, silently fall back to unweighted; row
-        weights still used for the threshold quantiles) is preserved.
+        try/except TypeError with an unweighted ovr.fit(X, Y) fallback. scikit-learn
+        1.9.0 raises ValueError for the same call (metadata routing is off), so
+        _fit_ovr catches (TypeError, ValueError): the weighted fit is attempted and
+        the model is fit unweighted, which is the notebook's effective behavior
+        (ROW WEIGHTS above).
 D4. Instrumentation only: tune_ovr_model() and tune_legacy_knn() additionally
     append every evaluated (model, params, percentile) candidate's StructuralStats
     components (D, M, T, C, E, D_bar, W_bar, rho, acceptance, entry_rate,
     en_over_ac, SCS, PenalizedObj, thresholds) to a global SCAN_LOG that is saved
-    to results/structural_scan_components.csv. Selection logic is untouched.
+    to results/structural_scan_components.csv.
 D5. --mock-embeddings replaces the SentenceTransformer with a deterministic
     per-word random unit vector (dry-run/testing only; never use for real runs).
 D6. The committed notebook contains no cell that computes winner_thresholds_oof /
@@ -86,16 +177,57 @@ D6. The committed notebook contains no cell that computes winner_thresholds_oof 
     S_eval_winner (the notebook's own "CURRENT" fallback branch).
 D7. The notebook imports spacy/wordnet and builds *_words_spacy docs in cells 0/4;
     none of that feeds the Algorithm-1 pipeline and it is omitted here.
-D8. If the winner is the Legacy kNN voter the notebook's save cell raises
-    (winner_model is None -> "cannot be serialized"); identical behavior here.
+D8. If the selected family were the Legacy kNN voter, the notebook's save cell would
+    raise (winner_model is None -> "cannot be serialized"); the guard is kept, but
+    Legacy kNN is not eligible for selection (D12), so it cannot be selected.
 D9. display(...) calls replaced by print(...to_string()); prints kept.
 D10. The notebook's params.json helper cell (set_active_params etc., cell 3) is
      legacy kNN bookkeeping unused by the pipeline and is omitted.
+D11. Legacy kNN pick (round 3 bug fix). tune_legacy_knn ranks the admissible vote
+     configurations by the penalized objective, ties by raw SCS, then acceptance,
+     exactly like tune_ovr_model; the frequency-weighted variant replaces the
+     unweighted one only if its (objective, SCS, acceptance) key is strictly larger
+     (notebook rule, unchanged). The notebook and round 2 kept the configuration with
+     the largest RAW SCS within SCS_TIE_EPS = 0.02, which ignored the guardrail
+     penalty: the Legacy row of Table 5 was frequency-weighted K=5/th=0.32/c=32
+     (acceptance 0.192, PenalizedObj -1.197); with the fix it is unweighted
+     K=15/th=0.28/c=6 (PenalizedObj 1.0037). Legacy kNN is a structural reference
+     row only (D12).
+D12. Model selection (round 3). The notebook selected the largest penalized
+     objective (structure only); round 2 added a two-stage joint rule fed by CV and
+     held-out results of fixed default configurations at P50 (cv_metrics.py,
+     methodology_upgrades.py). Round 3 delegates the selection to select_model.py:
+     select_production_family() builds the menu from this run's per-family
+     structural bests, attaches the supervised criteria of exactly those
+     configurations and percentiles (results/selection/supervised_grid_per_seed.csv,
+     supervised_eval.py) and applies select_model.SELECTION_RULE. Eligibility,
+     adequacy floor, criteria and aggregation are defined there (select_model.py
+     header). The run stops with an error if the supervised results are missing or
+     do not cover a family the rule considers, if the core differs from the core of
+     the supervised evaluation, if select_model's own re-derivation from the scan
+     file disagrees with this run, or if results/selection/selection_table.csv
+     selects a different family or score. The round-2 two-stage form on the same
+     inputs is reported in winner_and_constants.json, not used.
+D13. Stages: the scan outputs (structural_scan_components.csv, Table 5, Pareto table)
+     are written before the selection, and --scan-only stops there. In
+     winner_and_constants.json, bundle_dir is a POSIX path relative to --outdir, and
+     the keys "selection", "reproduction_checks" (D15), "row_weight_fit" and "versions" are
+     added.
+D14. The committed notebook lacks the cell that defined the post-processing
+     constants (its fallback top-2 delta was 0.12). TOP2_MARGIN_DEFAULT restores the
+     published value 0.060 (paper 3.3.2.5, archived bundle), which produced the
+     delivered bank and production_model/.
+D15. Reproduction checks (reporting only): after the export, the winner bundle is compared
+     with the packaged production_model/ (model.pkl, calibration_cdfs.json, thresholds.json,
+     row_weights.npy, bt4_scorer.py: bytes, else the largest numerical difference) and the
+     exported bank with the repository's results/"Verb List Classified by Model.csv" as it was
+     before the export. The result is printed and stored under "reproduction_checks" in
+     winner_and_constants.json; production_model/ is never written.
 ===============================================================================
 """
 
 import argparse
-import re
+import hashlib
 import json
 import math
 import os
@@ -136,28 +268,34 @@ from sklearn.svm import SVC, LinearSVC
 import numpy.linalg as npl
 
 # ------------------------------
-# Toggles & constants  (verbatim from BT3 cell 9)
+# Toggles & constants  (verbatim from BT3 cell 9 unless noted; roles in the CONSTANTS block above)
 # ------------------------------
 RNG_SEED = 13
 USE_ROW_WEIGHTS = True
-USE_OOF = True          # <-- OOF calibration on by default
-N_SPLITS_OOF = 5        # <-- K = 5 out-of-fold splits (KFold, shuffle=True, random_state=13)
-SCS_EMPTY_LEVEL_PEN = 0.05  # penalty per empty level in SCS objective
+USE_OOF = True          # out-of-fold calibration
+N_SPLITS_OOF = 5        # KFold(n_splits=5, shuffle=True, random_state=RNG_SEED)
+SCS_EMPTY_LEVEL_PEN = 0.05  # second empty-level subtraction in the one-vs-rest objective
 
 # Percentile grid (verbatim): P_GRID = list(range(20, 61, 5))
 P_GRID = list(range(20, 61, 5))          # [20, 25, 30, 35, 40, 45, 50, 55, 60]
 
-# Post-processing (verbatim from BT3 cell 11)
+# Post-processing (BT3 cell 11)
 PREFER_PARITY_THRESH = True      # True -> tuning thresholds; False -> use OOF-aligned if available
 PREFER_PARITY_SCORES = True      # True -> use tuning-calibrated scores if present
 APPLY_TOP2_MARGIN    = True      # Post-process: collapse to single label if (top1 - top2) >= margin
-TOP2_MARGIN_DEFAULT  = 0.060     # delta; the committed notebook defaults to 0.12 because its
-                                 # POSTPROC-defining cell was deleted, but the PUBLISHED production
-                                 # configuration (paper 3.3.2.5, archived bundle) used 0.060;
-                                 # we restore the published value and document the discrepancy.
+TOP2_MARGIN_DEFAULT  = 0.060     # published production delta (D14)
 SUGGEST_ALPHA        = 0.85      # "Soft suggestion" threshold = alpha * hard threshold (per class)
 
 MIN_ACCEPT = 0.01                # min_accept guardrail used for every tuner call in BT3
+ACC_BAND_CLAMP = (0.25, 0.85)    # clamp of the acceptance band (values verbatim from BT3 cell 9)
+ADEQUACY_FLOOR = 0.5             # selection floor on PenalizedObj (= select_model.ADEQUACY_FLOOR, D12)
+
+# Legacy kNN vote grid (verbatim defaults of tune_legacy_knn)
+LEGACY_KNN_GRID = {
+    "Ks": (5, 7, 9, 11, 13, 15),
+    "Th": (0.12, 0.14, 0.16, 0.20, 0.24, 0.28, 0.32),
+    "Ct": (6, 8, 10, 12, 16, 20, 24, 28, 32),
+}
 
 LEVELS = ["Kn", "Cm", "Ap", "An", "Sn", "Ev"]
 LVL2IDX = {lv: i for i, lv in enumerate(LEVELS)}
@@ -179,20 +317,17 @@ core_freq = None
 df_eval = None
 ROW_W = None
 TARGETS = None
-SCS_TIE_EPS = None
-CV_RESULTS_PATH = None   # set by --cv-results; enables joint selection
-CV_NAME_MAP = {
-    "SGDClassifier": "SGD-hinge-1e4", "LogisticRegression": "LogReg-C1",
-    "RidgeClassifier": "Ridge-a1", "LinearSVC": "LinearSVC-C1",
-    "KNeighborsClassifier": "kNN-21", "NearestCentroid": "NearestCentroid",
-    "PassiveAggressive": "PassiveAggressive-C1", "GaussianNB": "GaussianNB",
-    "LDA": "LDA", "QDA": "QDA", "CalibratedSVC": "CalibratedSVC",
-}
+# Round-2 option (a cv_results_*.csv for the round-2 joint selection). Ignored since round 3
+# (D12); run_pipeline prints a warning if it is set (BT 3 notebook compatibility).
+CV_RESULTS_PATH = None
 RESULTS_DIR = None
 EMBED_CACHE_DIR = None
 
 # D4: per-candidate structural-stats scan log (instrumentation only)
 SCAN_LOG: List[Dict[str, Any]] = []
+
+# Outcomes of the weighted one-vs-rest fit attempts (ROW WEIGHTS in the header)
+ROW_WEIGHT_FIT = {"weighted_fit_ok": 0, "weighted_fit_fallback_unweighted": 0}
 
 # ==============================================================================
 # Embeddings  (verbatim from BT3 cell 5, cache rooted under outdir, D2;
@@ -867,14 +1002,42 @@ def make_estimator(label: str, base, params: dict, X_fit: np.ndarray, y_fit: np.
     return base(**params)
 
 
-def _fit_ovr_core(label, base, params, X, Y, row_w):
-    est = make_estimator(label, base, params, X, Y)
-    ovr = OneVsRestClassifier(est)
+def _fit_ovr(ovr, X, Y, row_w):
+    """Fit a OneVsRestClassifier as the notebook did (D3b, ROW WEIGHTS in the header): the
+    weighted fit is attempted and, when the installed scikit-learn rejects sample_weight
+    (1.9.0: ValueError; releases before metadata routing: TypeError), the model is fit
+    UNWEIGHTED. Under the pinned scikit-learn every model is therefore fit unweighted and the
+    row weights reach only the weighted threshold percentiles. Outcomes go to ROW_WEIGHT_FIT."""
+    if row_w is None:
+        ovr.fit(X, Y)
+        return ovr
     try:
         ovr.fit(X, Y, sample_weight=row_w)
-    except (TypeError, ValueError):   # D3b: notebook catches TypeError only
+        ROW_WEIGHT_FIT["weighted_fit_ok"] += 1
+    except (TypeError, ValueError):   # D3b: the notebook catches TypeError only
         ovr.fit(X, Y)
+        ROW_WEIGHT_FIT["weighted_fit_fallback_unweighted"] += 1
     return ovr
+
+
+def _row_weight_fit_report() -> Dict[str, Any]:
+    d = dict(ROW_WEIGHT_FIT)
+    print(f"[ROW-WEIGHTS] one-vs-rest fits: weighted fit accepted {d['weighted_fit_ok']}, "
+          f"rejected by scikit-learn and fit unweighted {d['weighted_fit_fallback_unweighted']}; "
+          "row weights enter the threshold percentiles")
+    if d["weighted_fit_ok"]:
+        print("[ROW-WEIGHTS] WARNING: this scikit-learn accepted sample_weight, so row weights reached "
+              "the model fit. The published models were fit unweighted (scikit-learn 1.9.0); results "
+              "will differ from the published run.")
+    d["note"] = ("OneVsRestClassifier.fit(X, Y, sample_weight=w) is attempted as in the notebook; "
+                 "scikit-learn 1.9.0 rejects it (ValueError) and the model is fit unweighted. "
+                 "Row weights enter only the weighted threshold percentiles.")
+    return d
+
+
+def _fit_ovr_core(label, base, params, X, Y, row_w):
+    est = make_estimator(label, base, params, X, Y)
+    return _fit_ovr(OneVsRestClassifier(est), X, Y, row_w)
 
 
 def _scores_in_sample(label, base, params, X_core, Y_core, X_eval, row_w):
@@ -890,11 +1053,8 @@ def _scores_oof(label, base, params, X, Y, row_w, n_splits=5, seed=RNG_SEED):
     S_oof = np.zeros((X.shape[0], Y.shape[1]), dtype=float)
     for tr, va in kf.split(X):
         est = make_estimator(label, base, dict(params), X[tr], Y[tr])
-        ovr = OneVsRestClassifier(est)
-        try:
-            ovr.fit(X[tr], Y[tr], sample_weight=row_w[tr] if row_w is not None else None)
-        except (TypeError, ValueError):   # D3b
-            ovr.fit(X[tr], Y[tr])
+        ovr = _fit_ovr(OneVsRestClassifier(est), X[tr], Y[tr],
+                       row_w[tr] if row_w is not None else None)
         S_oof[va] = scores_ovr(ovr, X[va])
     clf_full = _fit_ovr_core(label, base, params, X, Y, row_w)
     return S_oof, clf_full
@@ -991,15 +1151,15 @@ def _log_scan(model, params, mode, p, thr, scs_c, scs_e, obj_e, out_c, out_e, pa
 
 
 def tune_legacy_knn(
-    Ks=(5, 7, 9, 11, 13, 15),
-    Th=(0.12, 0.14, 0.16, 0.20, 0.24, 0.28, 0.32),
-    Ct=(6, 8, 10, 12, 16, 20, 24, 28, 32),
+    Ks=LEGACY_KNN_GRID["Ks"],
+    Th=LEGACY_KNN_GRID["Th"],
+    Ct=LEGACY_KNN_GRID["Ct"],
     use_freq=False,
-    min_accept: float = 0.01
+    min_accept: float = MIN_ACCEPT
 ):
     freq = core_freq if use_freq else None
     vocab = core_words
-    best = None
+    best, best_key = None, None
     for K, th, co in product(Ks, Th, Ct):
         Yb_eval, _ = legacy_knn_predict_eval(X_eval, X_core, Y_core, K, th, co, freq=freq, core_vocab=vocab)
         out_e = structural_eval(Yb_eval, eval_verbs)
@@ -1022,11 +1182,13 @@ def tune_legacy_knn(
                    scs_c=scs_c, scs_e=scs_e, obj_e=obj_e,
                    out_c=out_c, out_e=out_e, parts_c=parts_c, parts_e=parts_e,
                    Yb_c=Yb_core, Yb_e=Yb_eval, clf=None, S_core=None, S_eval=None, cdfs=None, row_w=ROW_W)
-        if (best is None) or (rec["scs_e"] > best["scs_e"]) or (
-            abs(rec["scs_e"] - best["scs_e"]) < SCS_TIE_EPS and
-            rec["out_e"]["acc"]["acceptance"] > best["out_e"]["acc"]["acceptance"]
-        ):
-            best = rec
+        # BUGFIX (round 3, D11): rank by the penalized objective, as tune_ovr_model does; ties by
+        # raw SCS, then acceptance; on a full tie the first configuration in grid order is kept.
+        # The notebook and round 2 kept the largest RAW SCS within SCS_TIE_EPS = 0.02 (the larger
+        # acceptance among near-ties), which ignored the guardrail penalty of the objective.
+        key = (rec["obj_e"], rec["scs_e"], rec["out_e"]["acc"]["acceptance"])
+        if best is None or key > best_key:
+            best, best_key = rec, key
     return best
 
 
@@ -1130,7 +1292,7 @@ def tune_ovr_model(label: str, base, param_grid: List[Dict[str, Any]], min_accep
         if not cands:
             continue
 
-        # BUGFIX (major revision): the original code shortlisted by RAW SCS within
+        # BUGFIX (round 2): the original code shortlisted by RAW SCS within
         # SCS_TIE_EPS and only then maximized the penalized objective. Because the
         # shortlist ignored the guardrail penalty, a family could be represented by a
         # configuration with a far worse objective than its own optimum (e.g.
@@ -1205,8 +1367,8 @@ def _ensure_eval_verb_col(df_eval):
     raise RuntimeError("No verb column found in df_eval.")
 
 
-def _apply_top2_margin(S01, Yb, delta=0.12):
-    """If >=2 labels accepted and (top1 - top2) >= delta, collapse to single label."""
+def _apply_top2_margin(S01, Yb, delta=TOP2_MARGIN_DEFAULT):
+    """If >=2 labels accepted and (top1 - top2) >= delta, collapse to single label (delta 0.060, D14)."""
     Yb2 = Yb.copy()
     for i in range(S01.shape[0]):
         idx = np.where(Yb2[i] == 1)[0]
@@ -1295,11 +1457,237 @@ class BT4Scorer:
 
 
 # ==============================================================================
+# Model selection (round 3, D12): select_model.py rule with matched supervised criteria
+# ==============================================================================
+def _finite_or_none(v):
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return None
+    return v if math.isfinite(v) else None
+
+
+def _sha256(path) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 20), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def select_production_family(records: List[Dict[str, Any]], core_csv: str) -> Dict[str, Any]:
+    """Applies select_model.SELECTION_RULE to the per-family structural bests of this run, with
+    the supervised criteria of exactly those configurations and percentiles
+    (results/selection/supervised_grid_per_seed.csv, written by supervised_eval.py). Never falls
+    back to a structural-only selection: every missing or inconsistent input raises."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    if here not in sys.path:
+        sys.path.insert(0, here)          # python -I does not put the script directory on sys.path
+    import select_model as sm             # imported here: select_model imports retrain lazily
+
+    if sm.ADEQUACY_FLOOR != ADEQUACY_FLOOR:
+        raise RuntimeError(f"ADEQUACY_FLOOR = {ADEQUACY_FLOOR} differs from select_model.ADEQUACY_FLOOR = "
+                           f"{sm.ADEQUACY_FLOOR}")
+    sm.check_constants()                  # the constants select_model mirrors equal this file's
+
+    per_seed = os.path.join(sm.SEL_DIR, "supervised_grid_per_seed.csv")
+    if not os.path.exists(per_seed):
+        raise RuntimeError(
+            f"Model selection needs the supervised evaluation results, which are missing: {per_seed}\n"
+            "Run first:  python -I -B revision_pipeline/supervised_eval.py all\n"
+            "retrain.py never falls back to a structural-only selection; use --scan-only to write the "
+            "structural scan alone.")
+    sm_words, sm_Y, _ = load_core_from_csv(sm.CORE_CSV)
+    if list(sm_words) != list(core_words) or not np.array_equal(np.asarray(sm_Y), np.asarray(Y_core)):
+        raise RuntimeError(f"The core of this run ({core_csv}) differs from the core of the supervised "
+                           f"evaluation ({sm.CORE_CSV}); the supervised criteria would not match.")
+    if MOCK_EMBED:
+        print("[MOCK] the supervised criteria were computed with the real embeddings; this selection is a "
+              "dry run only.")
+    sup = sm.SupervisedTables(sm.SEL_DIR, require=True)
+
+    rows = []
+    for r in records:
+        if r["Model"] == sm.LEGACY:
+            p = r["Params"]
+            cfg = sm.legacy_config_id("freq-weighted" if p["use_freq"] else "unweighted",
+                                      p["K"], p["thresh"], p["cutoff"])
+            pct = -1
+        else:
+            cfg = sm.config_id(r["Model"], r["params"])
+            pct = int(r["p"])
+        rows.append(dict(family=r["Model"], label=f"{r['Model']} ({r['Mode']})", cfg_id=cfg, percentile=pct,
+                         SCS=float(r["scs_e"]), PenalizedObj=float(r["obj_e"]),
+                         acceptance=float(r["out_e"]["acc"]["acceptance"]),
+                         e_over_a=float(r["out_e"]["acc"]["en_over_ac"])))
+    menu = sm.menu_from_records(rows, sup)
+
+    # (a) the supervised criteria exist for every family the rule considers
+    crit = ["CV_macro_AUC_mean5", "HO_within1_mean5"]
+    pool = menu[menu["eligible"] & (menu["PenalizedObj"] >= ADEQUACY_FLOOR)]
+    missing = pool[pool[crit].isna().any(axis=1)]
+    if len(missing):
+        raise RuntimeError(
+            "Supervised results are missing for " +
+            ", ".join(f"{c} P{p}" for c, p in zip(missing["cfg_id"], missing["percentile"])) +
+            f" in {per_seed}. Rerun supervised_eval.py after the scan.")
+    if len(pool) < 2:
+        raise RuntimeError(f"Only {len(pool)} eligible families reach the adequacy floor {ADEQUACY_FLOOR}; "
+                           "the selection rule needs at least two.")
+
+    # (b) select_model's own re-derivation from the scan file written by this run must agree
+    scan_csv = str(RESULTS_DIR / "structural_scan_components.csv")
+    ref = sm.build_menu(sm.StructuralScan(scan_csv)).set_index("family")
+    bad = [] if len(ref) == len(menu) else [f"{len(ref)} families there, {len(menu)} here"]
+    for r in menu.itertuples():
+        if r.family not in ref.index:
+            bad.append(f"{r.family}: missing"); continue
+        q = ref.loc[r.family]
+        mine = (r.cfg_id, int(r.percentile), float(r.PenalizedObj), float(r.SCS))
+        theirs = (q["cfg_id"], int(q["percentile"]), float(q["PenalizedObj"]), float(q["SCS"]))
+        if mine != theirs:
+            bad.append(f"{r.family}: {mine} vs {theirs}")
+    if bad:
+        raise RuntimeError("select_model's re-derivation from " + scan_csv + " disagrees with this run: " +
+                           "; ".join(bad))
+
+    # (c) the rule (select_model.SELECTION_RULE); the round-2 two-stage form is reported, not used
+    ranked, info = sm.select(menu, floor=ADEQUACY_FLOOR)
+    if info["winner"] is None:
+        raise RuntimeError("the selection rule returned no family")
+    win = ranked.iloc[0]
+    if not bool(win["eligible"]):
+        raise RuntimeError(f"selected family {win['family']} is not eligible")
+    _, info_v2 = sm.rule_v2_two_stage(menu, floor=ADEQUACY_FLOOR, ho_col="HO_within1_seed13")
+
+    # (d) agreement with select_model.py's committed output
+    st_path = os.path.join(sm.SEL_DIR, "selection_table.csv")
+    if MOCK_EMBED:
+        st_status = "skipped (mock embeddings)"
+    elif not os.path.exists(st_path):
+        st_status = "selection_table.csv not found (select_model.py not run)"
+        print(f"[warn] {st_status}")
+    else:
+        st = pd.read_csv(st_path, float_precision="round_trip")
+        chosen = st.loc[st["selected"].astype(bool)]
+        theirs = (list(chosen["family"]), [float(x) for x in chosen["score"]], list(pd.unique(st["selection_rule"])))
+        mine = ([info["winner"]], [float(info["score"])], [info["rule"]])
+        if theirs != mine:
+            raise RuntimeError(f"{st_path} (select_model.py) gives {theirs}, this run gives {mine}. Rerun "
+                               "select_model.py (reproduction step 3) or check the inputs.")
+        st_status = "same family, rule and score"
+
+    table = menu[["family", "label", "eligible", "cfg_id", "percentile", "PenalizedObj", "CV_macro_AUC_mean5",
+                  "HO_within1_mean5", "HO_within1_seed13"]].merge(
+        ranked[["family", "n_obj", "n_auc", "n_ho", "score", "limiting_criterion", "rank"]], on="family", how="left")
+    table.insert(3, "floor_pass", table["PenalizedObj"] >= ADEQUACY_FLOOR)
+    with pd.option_context("display.width", 250, "display.max_columns", 30):
+        print("\n[SELECTION] select_model." + sm.RULES[info["rule"]].__name__ +
+              f" (SELECTION_RULE = {info['rule']!r}, adequacy floor {ADEQUACY_FLOOR}):")
+        print(table.drop(columns=["cfg_id", "HO_within1_seed13"]).to_string(index=False))
+    print(f"[SELECTION] selected {info['winner']} ({win['label']}), score {info['score']:.10f}; runner-up "
+          f"{info['runner_up']} {info['runner_up_score']:.10f}; margin {info['margin']:.10f}")
+    print(f"[SELECTION] round-2 two-stage form on the same inputs (reported only): {info_v2['winner']} "
+          f"{info_v2['score']:.10f}")
+    print(f"[SELECTION] cross-checks: select_model re-derivation identical; selection_table.csv: {st_status}")
+
+    rel = lambda path: os.path.relpath(path, sm.REPO).replace(os.sep, "/")
+    return dict(
+        rule=info["rule"],
+        rule_function=sm.RULES[info["rule"]].__name__,
+        adequacy_floor=ADEQUACY_FLOOR,
+        criteria=info.get("criteria"),
+        eligibility="one-vs-rest families with per-level OOF-ECDF calibrated scores; Legacy kNN is a "
+                    "structural reference row only (select_model.ELIGIBILITY_NOTE)",
+        winner_family=str(info["winner"]),
+        winner_label=str(win["label"]),
+        winner_cfg_id=str(win["cfg_id"]),
+        winner_percentile=int(win["percentile"]),
+        score=_finite_or_none(info["score"]),
+        runner_up=info["runner_up"],
+        runner_up_score=_finite_or_none(info["runner_up_score"]),
+        margin=_finite_or_none(info["margin"]),
+        v2_two_stage_same_inputs=dict(winner=info_v2["winner"], score=_finite_or_none(info_v2["score"]),
+                                      note="round-2 two-stage rule (held-out seed 13) on the same matched "
+                                           "inputs; reported only, not used"),
+        supervised_inputs=dict(path=rel(per_seed), sha256=_sha256(per_seed)),
+        cross_checks=dict(select_model_rederivation="identical configurations, PenalizedObj and SCS",
+                          selection_table=st_status,
+                          supervised_coverage="complete for every eligible family above the floor"),
+        table=json.loads(table.to_json(orient="records")),
+    )
+
+
+def _reproduction_checks(bundle_dir: Path, bank_path: Path, bank_before: Optional[bytes]) -> Dict[str, Any]:
+    """D15: compares the exported winner bundle with the packaged production_model/ and the exported
+    bank with the repository's results/"Verb List Classified by Model.csv" (read before the export).
+    Reports only; nothing in production_model/ or in the repository bank is written here."""
+    repo = Path(__file__).resolve().parent.parent
+    prod = repo / "production_model"
+    out: Dict[str, Any] = {}
+    if prod.is_dir():
+        files = {}
+        for name in ("model.pkl", "calibration_cdfs.json", "thresholds.json", "row_weights.npy", "bt4_scorer.py"):
+            a, b = bundle_dir / name, prod / name
+            if not (a.exists() and b.exists()):
+                files[name] = "missing"
+                continue
+            if a.read_bytes() == b.read_bytes():
+                files[name] = "byte-identical"
+                continue
+            try:
+                if name == "model.pkl":
+                    ma, mb = joblib.load(a), joblib.load(b)
+                    d = max(float(np.max(np.abs(scores_ovr(ma, X) - scores_ovr(mb, X)))) for X in (X_core, X_eval))
+                    what = "raw scores on the core and the candidates"
+                elif name == "row_weights.npy":
+                    d = float(np.max(np.abs(np.load(a) - np.load(b))))
+                    what = "values"
+                elif name == "bt4_scorer.py":
+                    d, what = float("nan"), "source text"
+                else:
+                    ja, jb = (json.loads(p.read_text(encoding="utf-8")) for p in (a, b))
+                    flat = ((lambda j: np.concatenate([np.r_[c["xs"], c["cdf"]] for c in j]))
+                            if name == "calibration_cdfs.json" else (lambda j: np.asarray(j["thresholds_tuning"])))
+                    d = float(np.max(np.abs(flat(ja) - flat(jb))))
+                    what = "values"
+                files[name] = f"differs in bytes; max abs difference of {what}: {d:.3e}"
+            except Exception as e:   # shapes differ, unreadable file
+                files[name] = f"differs ({type(e).__name__}: {e})"
+        out["production_model"] = files
+    if bank_before is not None:
+        new = bank_path.read_bytes()
+        if new == bank_before:
+            out["bank"] = "byte-identical to the repository bank"
+        else:
+            from io import BytesIO
+            a = pd.read_csv(BytesIO(bank_before), keep_default_na=False)
+            b = pd.read_csv(BytesIO(new), keep_default_na=False)
+            cols = ["Verb", "AcceptedPattern", "PrimaryDomain", "OtherDomains", "SoftPattern", "SoftPrimaryDomain"]
+            same = (len(a) == len(b)) and bool((a[cols].astype(str).to_numpy() == b[cols].astype(str).to_numpy()).all())
+            out["bank"] = ("differs in bytes; hard labels, primaries and soft patterns identical for all "
+                           f"{len(b)} verbs" if same else "DIFFERS in labels, primaries or soft patterns")
+    for k, v in out.items():
+        print(f"[CHECK] {k}: {v}")
+    flat_status = json.dumps(out)
+    if "differs" in flat_status.lower() or "missing" in flat_status:
+        print("[CHECK] WARNING: the export is not byte-identical to the packaged production model or the "
+              "repository bank (details above).")
+    return out
+
+
+# ==============================================================================
 # Main pipeline
 # ==============================================================================
-def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
+def run_pipeline(core_csv: str, candidates_path: str, outdir: str, scan_only: bool = False) -> None:
     global X_core, Y_core, X_eval, core_words, eval_verbs, core_freq, df_eval
-    global ROW_W, TARGETS, SCS_TIE_EPS, RESULTS_DIR, EMBED_CACHE_DIR
+    global ROW_W, TARGETS, RESULTS_DIR, EMBED_CACHE_DIR
+
+    if CV_RESULTS_PATH:
+        print("[warn] retrain.CV_RESULTS_PATH is a round-2 option and is ignored: the selection uses "
+              "select_model.py with the supervised_eval.py results (D12).")
+    SCAN_LOG.clear()
+    ROW_WEIGHT_FIT.update(weighted_fit_ok=0, weighted_fit_fallback_unweighted=0)
 
     outdir = Path(outdir)
     RESULTS_DIR = outdir / "results"
@@ -1320,11 +1708,10 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
     TARGETS = core_targets_from_labels(Y_core)
     print("Data-driven TARGETS:", TARGETS)
     lo, hi = TARGETS["ACC_BAND"]
-    lo = max(0.25, min(lo, 0.85))
-    hi = max(lo + 1e-3, min(0.85, hi))
+    lo = max(ACC_BAND_CLAMP[0], min(lo, ACC_BAND_CLAMP[1]))
+    hi = max(lo + 1e-3, min(ACC_BAND_CLAMP[1], hi))
     TARGETS["ACC_BAND"] = (lo, hi)
     print("Adjusted TARGETS:", TARGETS)
-    SCS_TIE_EPS = TARGETS["SCS_TIE_EPS"]
 
     # ---- Row weights ----
     ROW_W = _build_core_row_weights() if USE_ROW_WEIGHTS else np.ones(X_core.shape[0], dtype=float)
@@ -1374,72 +1761,25 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
     print("\nPareto-front (Eval_SCS vs Acceptance):")
     print(df_pareto.sort_values(["Eval_SCS", "Eval_Acceptance"], ascending=[False, False]).to_string(index=False))
 
-    # Final pick: maximize PenalizedObj; tie -> higher Eval_SCS then Acceptance (verbatim)
-    df_pick = df_models.sort_values(["PenalizedObj", "Eval_SCS", "Eval_Acceptance"], ascending=[False, False, False])
-    winner_row = df_pick.iloc[0]
+    # ---- Save scan components (D4), Table 5 and the Pareto table, before the selection (D13) ----
+    pd.DataFrame(SCAN_LOG).to_csv(RESULTS_DIR / "structural_scan_components.csv", index=False)
+    df_models.sort_values(["PenalizedObj", "Eval_SCS", "Eval_Acceptance"], ascending=[False, False, False]) \
+        .to_csv(RESULTS_DIR / "model_comparison_table5.csv", index=False)
+    df_pareto.sort_values(["Eval_SCS", "Eval_Acceptance"], ascending=[False, False]) \
+        .to_csv(RESULTS_DIR / "model_comparison_pareto.csv", index=False)
+    print("Saved:", str(RESULTS_DIR / "structural_scan_components.csv"))
+    print("Saved:", str(RESULTS_DIR / "model_comparison_table5.csv"))
+    print("Saved:", str(RESULTS_DIR / "model_comparison_pareto.csv"))
+    row_weight_fit = _row_weight_fit_report()
+    if scan_only:
+        print("\n[scan-only] structural scan written; no model selection and no export (D13).")
+        return
 
-    # ------------------------------------------------------------------
-    # Joint selection (major revision).
-    # Structural coherence and per-verb correctness are complementary and neither
-    # alone is sufficient: on the corrected core the structural objective ranks
-    # models in the OPPOSITE order to cross-validated generalization (Spearman
-    # -0.757, p = 0.049). Structural coherence matters for a taxonomy, so it is not
-    # demoted to a guardrail; instead both criteria are min-max normalized across
-    # the candidate families and the winner is the family maximizing the WEAKER of
-    # its two normalized scores (a maximin rule). This selects the model that is
-    # strong on both rather than excellent on one and poor on the other. The rule
-    # is scalarization-robust here: maximin and rank-sum agree.
-    # ------------------------------------------------------------------
-    if CV_RESULTS_PATH:
-        cvdf = pd.read_csv(CV_RESULTS_PATH).groupby("model")[["macro_AUC"]].mean()
-        fam_of = lambda s: re.sub(r"\s*\(.*\)", "", str(s))
-        cand = df_models.copy()
-        cand["Family"] = cand["Model"].map(fam_of)
-        cand["CV_AUC"] = cand["Family"].map(lambda f: float(cvdf.loc[CV_NAME_MAP[f], "macro_AUC"])
-                                            if f in CV_NAME_MAP and CV_NAME_MAP[f] in cvdf.index else np.nan)
-        cand = cand.dropna(subset=["CV_AUC"])
-        # Structural adequacy floor: families whose best penalized objective is
-        # below 0.5 are structurally degenerate; including them distorts min-max
-        # normalization (menu sensitivity), so they are excluded before scaling.
-        cand = cand[cand["PenalizedObj"] >= 0.5]
-        # Third criterion: held-out END-TO-END pipeline performance on labeled
-        # core verbs (gate recall and within-one-level ordinal accuracy), which
-        # consumes no expert data. Loaded from heldout_results.csv when present.
-        import os as _os
-        _ho_path = _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "heldout_results.csv")
-        HO_MAP = {"KNeighborsClassifier": "kNN-21", "LogisticRegression": "LogReg-C1",
-                  "NearestCentroid": "NearestCentroid", "CalibratedSVC": "CalibratedSVC"}
-        if _os.path.exists(_ho_path):
-            _ho = pd.read_csv(_ho_path).set_index("model")
-            cand["HO_within1"] = cand["Family"].map(
-                lambda f: float(_ho.loc[HO_MAP[f], "within1"]) if f in HO_MAP and HO_MAP[f] in _ho.index else np.nan)
-        if len(cand) >= 2:
-            def _n(s):
-                rng = s.max() - s.min()
-                return (s - s.min()) / rng if rng > 0 else s * 0 + 1.0
-            # Stage one: maximin over (penalized objective, CV AUC) among
-            # adequacy-passing families; stage-one score >= 0.5 advances.
-            cand["n_obj"] = _n(cand["PenalizedObj"])
-            cand["n_auc"] = _n(cand["CV_AUC"])
-            cand["Stage1"] = cand[["n_obj", "n_auc"]].min(axis=1)
-            short = cand[cand["Stage1"] >= 0.5].copy()
-            # Stage two: add held-out end-to-end within-one-level accuracy and
-            # re-normalize the three criteria within the shortlist.
-            if len(short) >= 2 and "HO_within1" in short.columns and short["HO_within1"].notna().all():
-                for c_src, c_dst in [("PenalizedObj", "s_obj"), ("CV_AUC", "s_auc"), ("HO_within1", "s_ho")]:
-                    short[c_dst] = _n(short[c_src])
-                short["Maximin"] = short[["s_obj", "s_auc", "s_ho"]].min(axis=1)
-                cand = short
-            else:
-                cand["Maximin"] = cand["Stage1"]
-            cand = cand.sort_values(["Maximin", "PenalizedObj"], ascending=False)
-            print("\n[JOINT SELECTION] structural objective vs cross-validated AUC:")
-            print(cand[["Model", "PenalizedObj", "CV_AUC", "n_obj", "n_auc", "Maximin"]]
-                  .round(3).to_string(index=False))
-            winner_row = cand.iloc[0]
-            print(f"[JOINT SELECTION] winner: {winner_row['Model']} "
-                  f"(structural {winner_row['PenalizedObj']:.3f}, CV AUC {winner_row['CV_AUC']:.3f})")
-    print("\n>> Selected winner (taxonomy-aware objective):")
+    # ---- Model selection (D12): select_model.SELECTION_RULE with matched supervised criteria ----
+    selection = select_production_family(records, core_csv)
+    winner_name = selection["winner_label"]
+    winner_row = df_models.loc[df_models["Model"] == winner_name].iloc[0]
+    print(f"\n>> Selected family (select_model.{selection['rule_function']}):")
     print(winner_row.to_frame().T.to_string())
 
     winner_name = winner_row["Model"]
@@ -1457,14 +1797,11 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
 
     print(f"\nArtifacts ready for production:\n  {winner_name} | params={winner_params} | thr={winner_thresholds}")
 
-    # ---- Save scan components (D4) & Table-5 comparison ----
-    pd.DataFrame(SCAN_LOG).to_csv(RESULTS_DIR / "structural_scan_components.csv", index=False)
-    df_models.sort_values(["PenalizedObj", "Eval_SCS", "Eval_Acceptance"], ascending=[False, False, False]) \
-        .to_csv(RESULTS_DIR / "model_comparison_table5.csv", index=False)
-    df_pareto.sort_values(["Eval_SCS", "Eval_Acceptance"], ascending=[False, False]) \
-        .to_csv(RESULTS_DIR / "model_comparison_pareto.csv", index=False)
+    # D15: the repository bank as it is before this export (compared with the export below)
+    repo_bank = Path(__file__).resolve().parent.parent / "results" / "Verb List Classified by Model.csv"
+    bank_before = repo_bank.read_bytes() if (repo_bank.exists() and not MOCK_EMBED) else None
 
-    # ---- SAVE WINNER BUNDLE (verbatim from cell 10; D8 identical failure for kNN) ----
+    # ---- SAVE WINNER BUNDLE (verbatim from cell 10; guard D8) ----
     if winner_model is None:
         raise RuntimeError("winner_model is None (Legacy kNN cannot be serialized as a scoring model in this path).")
 
@@ -1651,6 +1988,8 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
     export.to_csv(RESULTS_DIR / "Verb List Classified by Model.csv", index=False)
     print("\nSaved:", str(out_path))
     print("Saved:", str(RESULTS_DIR / "Verb List Classified by Model.csv"))
+    checks = ({"skipped": "mock embeddings"} if MOCK_EMBED else
+              _reproduction_checks(bundle_dir, RESULTS_DIR / "Verb List Classified by Model.csv", bank_before))
 
     # ---- Winner + constants + Table-5 JSON ----
     summary = {
@@ -1663,8 +2002,12 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
             "Eval_SCS": float(winner_row["Eval_SCS"]),
             "PenalizedObj": float(winner_row["PenalizedObj"]),
             "Eval_Acceptance": float(winner_row["Eval_Acceptance"]),
-            "bundle_dir": str(bundle_dir),
+            "bundle_dir": os.path.relpath(bundle_dir, outdir).replace(os.sep, "/"),
+            "selected_by": f"select_model.{selection['rule_function']} (SELECTION_RULE = {selection['rule']!r})",
         },
+        "selection": selection,
+        "reproduction_checks": checks,
+        "row_weight_fit": row_weight_fit,
         "constants": {
             "embedding_model": ("MOCK (deterministic random unit vectors)" if MOCK_EMBED
                                  else "sentence-transformers/all-mpnet-base-v2"),
@@ -1689,14 +2032,19 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
                 "PEN_ACC": TARGETS["PEN_ACC"],
                 "PEN_ENAC": TARGETS["PEN_ENAC"],
                 "bootstrap": 400, "margin_acc": 0.08, "margin_enac": 0.08,
-                "acc_band_clamp": [0.25, 0.85],
+                "acc_band_clamp": list(ACC_BAND_CLAMP),
             },
             "min_accept": MIN_ACCEPT,
             "top2_margin_delta": TOP2_MARGIN_DEFAULT,
             "suggest_alpha": SUGGEST_ALPHA,
-            "legacy_knn_grid": {"Ks": [5, 7, 9, 11, 13, 15],
-                                 "Th": [0.12, 0.14, 0.16, 0.20, 0.24, 0.28, 0.32],
-                                 "Ct": [6, 8, 10, 12, 16, 20, 24, 28, 32]},
+            "adequacy_floor": ADEQUACY_FLOOR,
+            "selection_rule": selection["rule"],
+            "row_weights_in_fit": ("attempted as in the notebook; rejected by scikit-learn 1.9.0, so every "
+                                   "one-vs-rest model is fit unweighted; row weights enter only the "
+                                   "threshold percentiles"),
+            "legacy_knn_grid": {k: list(v) for k, v in LEGACY_KNN_GRID.items()},
+            "legacy_knn_pick": ("per variant: largest PenalizedObj, ties raw SCS then acceptance (D11); the "
+                                "freq-weighted variant replaces the unweighted one only if strictly better"),
             "levels": LEVELS,
         },
         "model_zoo": [
@@ -1717,22 +2065,30 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str) -> None:
         "inputs": {"core_csv": str(core_csv), "candidates": str(candidates_path),
                     "n_core": len(core_words), "n_candidates": len(eval_verbs)},
         "mock_embeddings": MOCK_EMBED,
+        "versions": _versions(),
     }
     with open(RESULTS_DIR / "winner_and_constants.json", "w", encoding="utf-8") as f:
         json.dump(summary, f, ensure_ascii=False, indent=2)
     print("Saved:", str(RESULTS_DIR / "winner_and_constants.json"))
-    print("Saved:", str(RESULTS_DIR / "model_comparison_table5.csv"))
-    print("Saved:", str(RESULTS_DIR / "structural_scan_components.csv"))
+
+
+def _versions() -> Dict[str, str]:
+    import scipy
+    import sklearn
+    return {"python": sys.version.split()[0], "numpy": np.__version__, "pandas": pd.__version__,
+            "scipy": scipy.__version__, "scikit-learn": sklearn.__version__, "joblib": joblib.__version__}
 
 
 def main():
     global MOCK_EMBED, MOCK_DIM
-    ap = argparse.ArgumentParser(description="Faithful standalone retraining of the BT3 Algorithm-1 pipeline.")
+    ap = argparse.ArgumentParser(description="Standalone Algorithm 1: structural scan, model selection "
+                                             "(select_model.py) and export of the selected family.")
     ap.add_argument("--core-csv", required=True, help="Core CSV: verb, Kn..Ev (0/1), freq")
     ap.add_argument("--candidates", required=True, help="Candidate verb list (.txt, one verb per line; or .csv)")
     ap.add_argument("--outdir", default="retrain_out", help="Output directory (default: retrain_out)")
-    ap.add_argument("--cv-results", default=None,
-                    help="cv_results_*.csv from cv_metrics.py; enables joint structural+supervised selection")
+    ap.add_argument("--scan-only", action="store_true",
+                    help="stage 1: write the structural scan, Table 5 and the Pareto table, then stop "
+                         "(no model selection, no export)")
     ap.add_argument("--mock-embeddings", action="store_true",
                     help="D5: deterministic random unit vectors instead of MPNet (dry-run/testing ONLY)")
     ap.add_argument("--mock-dim", type=int, default=768, help="Dimension for --mock-embeddings (default 768)")
@@ -1744,9 +2100,7 @@ def main():
         print(f"[MOCK] Using deterministic mock embeddings (dim={MOCK_DIM}). Results are NOT meaningful.")
 
     t0 = time.time()
-    global CV_RESULTS_PATH
-    CV_RESULTS_PATH = args.cv_results
-    run_pipeline(args.core_csv, args.candidates, args.outdir)
+    run_pipeline(args.core_csv, args.candidates, args.outdir, scan_only=args.scan_only)
     print(f"\nDone in {time.time() - t0:.1f}s")
 
 
