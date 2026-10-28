@@ -7,11 +7,11 @@ by AI-assisted transcription and the two files are byte-identical, so report A b
 only confirm that they agree; it is not an independent check against the printed table.
 
 Reports:
-  A. Disagreements between the two independent transcription passes (must be
-     resolved by hand before anything downstream is trusted).
+  A. Disagreements between the two transcription passes (any would need to be
+     resolved by hand against the printed table before anything downstream is used).
   B. Entries in the published table missing from the notebook core, split into
-     multi-word phrases (likely deliberate: the pipeline embeds single lemmas)
-     and single-word verbs (real omissions).
+     multi-word phrases (missing from the original notebook core; all 12 are kept
+     in the final core, see merge_core.py) and single-word verbs (real omissions).
   C. Entries in the notebook not present in the published table.
   D. Frequency mismatches.
 """
@@ -50,7 +50,7 @@ for k in freqdiff[:30]:
 agreed = {k: p1[k] for k in set(p1) & set(p2) if p1[k] == p2[k]}
 print(f"\nAGREED ENTRIES: {len(agreed)} (used as the authoritative table below)")
 if only1 or only2 or freqdiff:
-    print("NOTE: disagreements above need manual adjudication against the PDF.")
+    print("The disagreements above need to be resolved by hand against the printed table.")
 
 print()
 print("=" * 70)

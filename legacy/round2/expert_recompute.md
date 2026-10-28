@@ -1,4 +1,9 @@
-# Expert agreement recomputed against the regenerated bank
+# Expert agreement recomputed against the regenerated bank (first revision, superseded)
+
+Kept for reference; see `legacy/round2/README.md`. The current analysis is
+`results/expert/expert_report.md`, which scores both models on the same verbs and gives exact
+p-values for the endorsed and high-consensus chance tests (0.0072 and 0.0007) and a 100,000-draw
+Monte Carlo p-value for the score-vote correlation (0.0132).
 
 Sampled verbs matched in the new bank: 29/30.
 Not in the extension any more: ['copy'] ('copy' resolved to a core verb under normalization).

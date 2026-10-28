@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-retrain.py - standalone implementation of Algorithm 1 of the Blooms-Taxonomy-Extension
-repository: structural scan of the model zoo, model selection, and export of the selected
-classifier (winner bundle and classified verb bank). It reproduces "BT 3 - Model training and
-classification.ipynb"; every deviation from the notebook is listed under DEVIATIONS.
+retrain.py - standalone implementation of the article's Algorithm 1 (training, calibration and
+structural tuning of the model zoo), the model selection of Section 2.3.5 and Algorithm 2
+(classification of the candidate verbs with the selected model), with export of the winner
+bundle and the classified verb bank. It reproduces the training and classification code of the
+original "BT 3 - Model training and classification.ipynb" (commit 2a87a33; the current notebook
+runs this script instead). "The notebook", "BT3" and the cell numbers below refer to that original
+version; every deviation from it is listed under DEVIATIONS.
 
 USAGE (from the repository root; every path is relative)
   Stage 1, structural scan only (input of supervised_eval.py, select_model.py, robustness.py):
@@ -63,15 +66,17 @@ PIPELINE (BT3 cells 5 to 11, with the deviations below)
      tier at 0.85 x the hard thresholds.
   Outputs (under --outdir):
        results/structural_scan_components.csv           per-candidate SCS components (D4)
-       results/model_comparison_table5.csv              per-family structural bests (Table 5)
-       results/model_comparison_pareto.csv              Pareto front of Table 5 (Eval_SCS, acceptance)
+       results/model_comparison_table5.csv              per-family structural bests (Eq. 19; structural
+                                                        column of Table 8)
+       results/model_comparison_pareto.csv              Pareto front of the per-family bests (Eval_SCS, acceptance)
      final stage only:
        results/Verb List Classified by Model.csv        the classified bank (repo column layout)
        results/BT4_structural_best/BT4_PROD_TUNING_<winner>_<ts>.csv   (notebook-native name)
        results/BT4_structural_best/artifacts/<winner>_<ts>/            winner bundle
            model.pkl, calibration_cdfs.json, thresholds.json, row_weights.npy,
            S_core_calibrated.npy, S_eval_calibrated.npy, metadata.json, bt4_scorer.py
-       results/winner_and_constants.json                winner, selection, constants, Table 5
+       results/winner_and_constants.json                winner, selection, constants, per-family bests
+                                                        (key table5_model_comparison)
 
 CONSTANTS (name = value: role; anything not listed is a literal inside a verbatim function)
   RNG_SEED = 13                 random_state of every seeded estimator in MODEL_GRID, of the OOF
@@ -101,8 +106,9 @@ CONSTANTS (name = value: role; anything not listed is a literal inside a verbati
                                 data-driven acceptance band (ACC_BAND) and entries-per-accepted
                                 band (ENAC_BAND); PEN_ACC = 5.0, PEN_ENAC = 2.5: quadratic penalty
                                 coefficients of Eq. 19; SCS_TIE_EPS = 0.02 is still returned but
-                                unused since round 3 (it was the raw-SCS tie window of the
-                                round-2 Legacy kNN pick, D11)
+                                unused since round 3: it was the raw-SCS tie window of the
+                                notebook's one-vs-rest pick within a setting (replaced in round 2,
+                                D16) and of the Legacy kNN pick of the notebook and round 2 (D11)
   ACC_BAND_CLAMP = (0.25, 0.85) clamp applied to ACC_BAND after the bootstrap
   ADEQUACY_FLOOR = 0.5          selection: a family whose structural best has PenalizedObj below
                                 this is not considered (equal to select_model.ADEQUACY_FLOOR;
@@ -136,12 +142,12 @@ ROW WEIGHTS (unweighted fit, weighted thresholds)
 ============================= DEVIATIONS ======================================
 Everything below is copied verbatim from BT3 unless listed here. Deviations:
 
-D1. I/O adaptation (required by task): core labels/freq come from --core-csv and
+D1. I/O adaptation: core labels/freq come from --core-csv and
     candidates from --candidates instead of in-notebook Python lists / "newest CSV
     in results/". The CSV loader is the notebook's own fallback branch of
     load_core_from_memory_or_results() (coerce_bloom_columns / find_verb_col /
     groupby("verb_norm").max(), freq = groupby max of weight|freq|frequency),
-    copied verbatim. Note the notebook's primary path derived freq as the max
+    copied verbatim. The notebook's primary path derived freq as the max
     per-level WEIGHT of each verb; supplying that same value in the 'freq' column
     reproduces it exactly. A long-format core CSV (verb, level, freq) is accepted
     and pivoted to the wide layout before the verbatim loader logic runs.
@@ -189,10 +195,10 @@ D11. Legacy kNN pick (round 3 bug fix). tune_legacy_knn ranks the admissible vot
      unweighted one only if its (objective, SCS, acceptance) key is strictly larger
      (notebook rule, unchanged). The notebook and round 2 kept the configuration with
      the largest RAW SCS within SCS_TIE_EPS = 0.02, which ignored the guardrail
-     penalty: the Legacy row of Table 5 was frequency-weighted K=5/th=0.32/c=32
-     (acceptance 0.192, PenalizedObj -1.197); with the fix it is unweighted
-     K=15/th=0.28/c=6 (PenalizedObj 1.0037). Legacy kNN is a structural reference
-     row only (D12).
+     penalty: the Legacy row of the round-2 model_comparison_table5.csv was
+     frequency-weighted K=5/th=0.32/c=32 (acceptance 0.192, PenalizedObj -1.197);
+     with the fix it is unweighted K=15/th=0.28/c=6 (PenalizedObj 1.0037). Legacy kNN
+     is a structural reference row only (D12).
 D12. Model selection (round 3). The notebook selected the largest penalized
      objective (structure only); round 2 added a two-stage joint rule fed by CV and
      held-out results of fixed default configurations at P50 (cv_metrics.py,
@@ -208,21 +214,28 @@ D12. Model selection (round 3). The notebook selected the largest penalized
      file disagrees with this run, or if results/selection/selection_table.csv
      selects a different family or score. The round-2 two-stage form on the same
      inputs is reported in winner_and_constants.json, not used.
-D13. Stages: the scan outputs (structural_scan_components.csv, Table 5, Pareto table)
-     are written before the selection, and --scan-only stops there. In
-     winner_and_constants.json, bundle_dir is a POSIX path relative to --outdir, and
-     the keys "selection", "reproduction_checks" (D15), "row_weight_fit" and "versions" are
-     added.
+D13. Stages: the scan outputs (structural_scan_components.csv,
+     model_comparison_table5.csv, model_comparison_pareto.csv) are written before the
+     selection, and --scan-only stops there. In winner_and_constants.json, bundle_dir is
+     a POSIX path relative to --outdir, and the keys "selection", "reproduction_checks"
+     (D15), "row_weight_fit" and "versions" are added.
 D14. The committed notebook lacks the cell that defined the post-processing
      constants (its fallback top-2 delta was 0.12). TOP2_MARGIN_DEFAULT restores the
-     published value 0.060 (paper 3.3.2.5, archived bundle), which produced the
-     delivered bank and production_model/.
+     published value 0.060 (paper Section 2.3.5), which produced the delivered bank
+     and production_model/.
 D15. Reproduction checks (reporting only): after the export, the winner bundle is compared
      with the packaged production_model/ (model.pkl, calibration_cdfs.json, thresholds.json,
      row_weights.npy, bt4_scorer.py: bytes, else the largest numerical difference) and the
      exported bank with the repository's results/"Verb List Classified by Model.csv" as it was
      before the export. The result is printed and stored under "reproduction_checks" in
      winner_and_constants.json; production_model/ is never written.
+D16. One-vs-rest pick within a hyperparameter setting (round 2 bug fix). The notebook's
+     tune_ovr_model kept the percentiles whose raw SCS lies within SCS_TIE_EPS = 0.02 of
+     the largest raw SCS and took the largest penalized objective among them (ties by
+     acceptance). That shortlist ignored the guardrail penalty, so tune_ovr_model ranks
+     every admissible percentile by the penalized objective directly, ties by raw SCS,
+     then acceptance (BUGFIX comment in tune_ovr_model). The comparison across settings
+     is the notebook's.
 ===============================================================================
 """
 
@@ -371,8 +384,9 @@ def _embed_once(text: str) -> np.ndarray:
 
 
 # In-memory embedding store loaded from a consolidated all_embeddings.npz.
-# Added because per-file np.load of ~2000 tiny .npy files stalls indefinitely on
-# this machine (file opens blocked at the filesystem level); one npz avoids it.
+# It holds the vectors of every verb of the committed core and candidate lists, so a run reads
+# one file instead of about 2,000 small .npy files; any other word falls back to the per-word
+# cache (D2).
 _NPZ_CACHE: dict = {}
 
 def _load_npz_cache():
@@ -1249,7 +1263,8 @@ MODEL_GRID = [
 
 
 # ==============================================================================
-# Tuning loop  (verbatim; D4 adds _log_scan calls only)
+# Tuning loop  (verbatim except the per-setting pick, D16: since round 2 it maximizes the
+# penalized objective directly, see the BUGFIX comment below; D4 adds the _log_scan calls)
 # ==============================================================================
 def tune_ovr_model(label: str, base, param_grid: List[Dict[str, Any]], min_accept: float = 0.01):
     best = None
@@ -1574,7 +1589,7 @@ def select_production_family(records: List[Dict[str, Any]], core_csv: str) -> Di
         mine = ([info["winner"]], [float(info["score"])], [info["rule"]])
         if theirs != mine:
             raise RuntimeError(f"{st_path} (select_model.py) gives {theirs}, this run gives {mine}. Rerun "
-                               "select_model.py (reproduction step 3) or check the inputs.")
+                               "select_model.py or check the inputs.")
         st_status = "same family, rule and score"
 
     table = menu[["family", "label", "eligible", "cfg_id", "percentile", "PenalizedObj", "CV_macro_AUC_mean5",
@@ -1761,7 +1776,7 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str, scan_only: bo
     print("\nPareto-front (Eval_SCS vs Acceptance):")
     print(df_pareto.sort_values(["Eval_SCS", "Eval_Acceptance"], ascending=[False, False]).to_string(index=False))
 
-    # ---- Save scan components (D4), Table 5 and the Pareto table, before the selection (D13) ----
+    # ---- Save scan components (D4), the per-family bests and the Pareto table, before the selection (D13) ----
     pd.DataFrame(SCAN_LOG).to_csv(RESULTS_DIR / "structural_scan_components.csv", index=False)
     df_models.sort_values(["PenalizedObj", "Eval_SCS", "Eval_Acceptance"], ascending=[False, False, False]) \
         .to_csv(RESULTS_DIR / "model_comparison_table5.csv", index=False)
@@ -1991,7 +2006,7 @@ def run_pipeline(core_csv: str, candidates_path: str, outdir: str, scan_only: bo
     checks = ({"skipped": "mock embeddings"} if MOCK_EMBED else
               _reproduction_checks(bundle_dir, RESULTS_DIR / "Verb List Classified by Model.csv", bank_before))
 
-    # ---- Winner + constants + Table-5 JSON ----
+    # ---- Winner, constants and per-family bests (winner_and_constants.json) ----
     summary = {
         "winner": {
             "name": winner_name,
@@ -2081,13 +2096,13 @@ def _versions() -> Dict[str, str]:
 
 def main():
     global MOCK_EMBED, MOCK_DIM
-    ap = argparse.ArgumentParser(description="Standalone Algorithm 1: structural scan, model selection "
+    ap = argparse.ArgumentParser(description="Standalone Algorithms 1 and 2: structural scan, model selection "
                                              "(select_model.py) and export of the selected family.")
     ap.add_argument("--core-csv", required=True, help="Core CSV: verb, Kn..Ev (0/1), freq")
     ap.add_argument("--candidates", required=True, help="Candidate verb list (.txt, one verb per line; or .csv)")
     ap.add_argument("--outdir", default="retrain_out", help="Output directory (default: retrain_out)")
     ap.add_argument("--scan-only", action="store_true",
-                    help="stage 1: write the structural scan, Table 5 and the Pareto table, then stop "
+                    help="stage 1: write the structural scan, the per-family bests and the Pareto table, then stop "
                          "(no model selection, no export)")
     ap.add_argument("--mock-embeddings", action="store_true",
                     help="D5: deterministic random unit vectors instead of MPNet (dry-run/testing ONLY)")

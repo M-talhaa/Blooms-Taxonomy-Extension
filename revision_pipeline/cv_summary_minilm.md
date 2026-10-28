@@ -1,4 +1,6 @@
-# CV summary (minilm, 381 core verbs, repeated 5x5 stratified CV, winner percentile P50)
+# CV summary (minilm, 381 core verbs, repeated 5x5 stratified CV, P50; round-2 protocol at the fixed configurations listed, kept for traceability)
+
+The CV results reported in the article are at matched configurations: `results/selection/matched_supervised.csv` (Table 6, all-mpnet-base-v2) and `results/selection/encoder_ablation.csv` (Table 7, all three encoders).
 
 | Model | macro AUC | macro F1 (mean over repeats) | 95% CI (seed 13 repeat) | micro F1 | subset acc |
 |---|---|---|---|---|---|

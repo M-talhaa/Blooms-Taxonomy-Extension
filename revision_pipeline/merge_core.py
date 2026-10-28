@@ -1,4 +1,4 @@
-"""Merge published Bloom verb lists into the training core (plan item 17).
+"""Merge published Bloom verb lists into the training core (Section 2 of the article).
 
 Sources:
   core_published.csv   Sharunova et al. 2019, appendix Table 9, transcribed verbatim
@@ -9,16 +9,18 @@ Sources:
   stanny_extracted.csv Stanny 2016, Table 1 (176 unique words, 263 pairs, f = lists nominating)
   newton_extracted.csv Newton, Da Silva and Peters 2020, Table 1 master list (original taxonomy names)
 
-Rules (all documented for the methods section):
+Rules:
   1. Crosswalk to original-taxonomy codes: Knowledge/Remember->Kn, Understand/Comprehension->Cm,
      Apply/Application->Ap, Analyze/Analysis->An, Evaluate/Evaluation->Ev, Create/Synthesis->Sn.
-  2. Only single-token entries are eligible (no spaces or slashes); hyphens allowed.
-     The pipeline embeds isolated verb lemmas, so phrases are excluded and listed in the audit.
+  2. From the Stanny and Newton lists, only single-token entries are eligible (no spaces or
+     slashes; hyphens allowed). Their multi-word and slash entries are excluded and listed in
+     merge_audit.csv. The 12 multi-word entries of the Sharunova table stay in the core, since
+     the sentence encoder embeds them directly.
   3. Frequencies are combined conservatively with max() across consolidations, because the
      consulted source lists overlap heavily; a sum would double-count the same underlying lists.
      Newton's master list carries no counts and contributes freq 1 where it is the only source.
   4. Labels are unioned (multi-label by design).
-  5. Any NEW core verb is removed from the candidate pool (it is training data now).
+  5. Any new core verb is removed from the candidate pool (it is training data now).
 
 Inputs also include cleaned_candidates.txt (normalize.py) and, for the final check, the expert
 vote workbook legacy/Final File(with model & Expert Classification).xlsx.
@@ -106,7 +108,7 @@ print(f"excluded entries: {len(excluded)} -> {[e[1] for e in excluded]}")
 print(f"candidates promoted to core (removed from pool): {len(promoted)} -> {promoted[:15]}")
 print(f"final candidate pool: {len(final_cands)} (was {len(cands)})")
 
-# expert-sample implications (load the real rated verbs, clean lemma form)
+# Check whether any expert-rated verb (Verb_clean column of the expert workbook) was promoted to the core
 import pandas as pd
 sample30 = [str(v).strip().lower() for v in
             pd.read_excel(os.path.join(REPO, "legacy", "Final File(with model & Expert Classification).xlsx"))["Verb_clean"]]

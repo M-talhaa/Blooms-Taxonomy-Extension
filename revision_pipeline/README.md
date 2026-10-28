@@ -1,6 +1,7 @@
 # Revision pipeline
 
-Standalone scripts behind every number in the revised manuscript and the response letter.
+Standalone scripts behind every number in the article and in the comparison with the original
+submission (`results/change_attribution/`).
 `retrain.py` reproduces the BT 3 notebook pipeline (every constant and every deviation from the
 notebook is listed in its header); the other scripts add the evaluation, selection, robustness,
 bank-structure and expert analyses, and the comparison with the original submission. All scripts
@@ -18,7 +19,7 @@ root [`README.md`](../README.md#reproduction). In short:
 | 2 | `reconcile_table9.py` | nothing (prints the comparison of the two transcription passes with the original core) |
 | 3 | `merge_core.py` | `core_merged.csv` (381 verbs, 607 assignments), `merge_audit.csv`, `candidates_final.txt` (1,650) |
 | 4 | `regen_core_figures.py` | `results/core_structure/` Fig. 1, Fig. 2, `core_gap_means.csv` |
-| 5 | `retrain.py ... --scan-only` | `results/structural_scan_components.csv`, `model_comparison_table5.csv`, `model_comparison_pareto.csv` |
+| 5 | `retrain.py ... --scan-only` | `results/structural_scan_components.csv`, `model_comparison_table5.csv` (Table 5 of the original submission; structural column of Table 8 in the article), `model_comparison_pareto.csv` |
 | 6 | `supervised_eval.py all` | `results/selection/` supervised grid, matched table, baselines, McNemar, per-level, encoder ablation |
 | 7 | `select_model.py` | `results/selection/selection_table.csv`, `selection_report.md`, `v2_default_config_reference.csv` |
 | 8 | `robustness.py` | `results/selection/robustness_*.csv`, `robustness_report.md` |
@@ -29,11 +30,11 @@ root [`README.md`](../README.md#reproduction). In short:
 | 15 | `bank_structure.py` | `results/bank_structure/` |
 | 16 | `expert_recompute.py` | `results/expert/` |
 | 17, 18 | `regen_bank_figures.py`, `regen_model_space.py` | `results/figures/` |
-| 19 | `change_attribution.py` | `results/change_attribution/` (bank change and refit attribution relative to the original submission; response letter) |
+| 19 | `change_attribution.py` | `results/change_attribution/` (bank change and refit attribution relative to the original submission) |
 | 20 | `paper_results.py` | `results/paper_tables.md`, `results/paper_numbers.json` |
 
 Steps 11 to 14 regenerate the round-2 default-configuration outputs, which are kept for
-traceability; the round-3 tables do not depend on them (`results/paper_tables.md` quotes
+traceability; the tables of the article do not depend on them (`results/paper_tables.md` quotes
 them only as round-2 reference values, in the note under Section 5 and in Section 19).
 
 ## Files
@@ -69,7 +70,7 @@ Model training, selection and export
   changes.
 - `select_model.py`: the selection rule as one named, switchable function
   (`SELECTION_RULE = "balanced_maximin"`, function `rule_balanced_maximin`), the eligibility
-  definition, the selection table and report, and the round-2 two-stage rule for disclosure.
+  definition, the selection table and report, and the round-2 two-stage rule for comparison.
 - `robustness.py`: robustness of the selection (SCS weights, held-out variants, guardrails and
   penalties, decision margins, aggregation alternatives, Legacy kNN admitted under an
   evaluation-only construction).
@@ -96,9 +97,9 @@ Bank structure, expert agreement, figures and tables
   threshold sweep (`results/expert/`).
 - `regen_core_figures.py`: Figures 1 and 2 (core structure), checked against the core tables.
 - `regen_bank_figures.py`, `regen_model_space.py`: the bank figures in `results/figures/`
-  (repository figures; not in the manuscript).
-- `change_attribution.py`: the numbers that only the response letter quotes
-  (`results/change_attribution/`). (a) The original-submission bank
+  (repository figures; not in the article).
+- `change_attribution.py`: the comparison of the delivered bank and the production model with
+  the original submission (`results/change_attribution/`). (a) The original-submission bank
   (`legacy/original_submission_bank_v1.csv`) carried over to the 1,650 normalized candidates
   through `normalization_audit.csv` and compared verb by verb with the delivered bank: acceptance,
   agreement of the accept or reject decision, same primary level, distance between the primary
@@ -106,13 +107,15 @@ Bank structure, expert agreement, figures and tables
   or lemmatized raw form); the first-form rule is reported as the alternative. (b) Refits of
   SGDClassifier (the archived original configuration and alpha 1e-4) and kNN-21 on the original
   358-verb core and on the corrected 381-verb core with the production procedure of `retrain.py`
-  (imported), scored on the rated verbs over 30, 29, own accepted and the common 26 verbs, with
-  exact McNemar tests against the production model and the core x family 2 x 2. The refit of the
-  production configuration must reproduce the delivered bank, and the corrected-core refits the
-  penalized objectives of `results/model_comparison_table5.csv`; the script stops otherwise.
-- `paper_results.py`: every manuscript table and number, read from the outputs above and
+  (imported), scored against the expert ratings on four verb sets (all 30 rated verbs, the 29 rated
+  verbs in the candidate pool, the verbs of those 29 that each model accepts, and the 26 of them that
+  the production model accepts), with exact McNemar tests against the production model and the
+  core x family 2 x 2. The refit of the production configuration must reproduce the delivered bank,
+  and the refits on the corrected core must reproduce the penalized objectives of
+  `results/model_comparison_table5.csv`; the script stops otherwise.
+- `paper_results.py`: every table and number of the article, read from the outputs above and
   cross-checked; writes `results/paper_tables.md` and `results/paper_numbers.json` (Section 20
-  holds the response-letter numbers of `change_attribution.py`).
+  holds the comparison with the original submission from `change_attribution.py`).
 
 ## Notes
 

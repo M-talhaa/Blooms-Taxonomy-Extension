@@ -1,12 +1,12 @@
-"""cv_metrics.py - ROUND-2 cross-validation protocol, kept for traceability.
+"""cv_metrics.py - round-2 cross-validation protocol, kept for traceability.
 
 STATUS IN ROUND 3
-  This is the round-2 DEFAULT-CONFIGURATION protocol: each family is evaluated at one fixed
+  This is the round-2 default-configuration protocol: each family is evaluated at one fixed
   configuration (the `zoo` entries in main(), mostly library defaults) and at the scan winner's
   percentile (P50), while the structural objective uses each family's own best configuration and
   percentile. For model selection it is superseded by supervised_eval.py (every configuration of
   the model zoo at every percentile, matched to each family's structural best; outputs in
-  results/selection/). It is kept because the round-2 manuscript (Tables 6 and 7) and the round-2
+  results/selection/). It is kept because the first revision (its Tables 6 and 7) and the round-2
   reference of select_model.py (v2_default_config_reference.csv) were computed from its outputs:
     cv_results_mpnet.csv, cv_results_minilm.csv, cv_results_droberta.csv  (model x repeat rows)
     cv_summary_mpnet.md, cv_summary_minilm.md, cv_summary_droberta.md    (summaries)
@@ -106,7 +106,7 @@ def run_model(name, make_clf, X, Y, w, percentile, seeds=(13, 14, 15, 16, 17)):
             except (TypeError, ValueError):
                 clf.fit(X[tr], Y[tr])
             # Mirror the production rule: calibration CDFs and thresholds are fit on
-            # INNER out-of-fold train scores (as retrain.py's _scores_oof does), which
+            # inner out-of-fold train scores (as retrain.py's _scores_oof does), which
             # matters greatly for kNN whose in-sample scores saturate at 1.0.
             from sklearn.model_selection import KFold
             S_tr_oof = np.zeros((len(tr), Y.shape[1]), dtype=float)
@@ -250,7 +250,11 @@ def main():
     df = pd.DataFrame([{k: v for k, v in r.items() if k != "_oof"} for r in all_recs])
     df.to_csv(f"{args.out_prefix}_results_{args.tag}.csv", index=False)
 
-    lines = [f"# CV summary ({args.tag}, {len(verbs)} core verbs, repeated 5x5 stratified CV, winner percentile P{pct})", ""]
+    lines = [f"# CV summary ({args.tag}, {len(verbs)} core verbs, repeated 5x5 stratified CV, P{pct}; round-2 protocol at "
+             f"the fixed configurations listed, kept for traceability)", "",
+             "The CV results reported in the article are at matched configurations: "
+             "`results/selection/matched_supervised.csv` (Table 6, all-mpnet-base-v2) and "
+             "`results/selection/encoder_ablation.csv` (Table 7, all three encoders).", ""]
     lines.append("| Model | macro AUC | macro F1 (mean over repeats) | 95% CI (seed 13 repeat) | micro F1 | subset acc |")
     lines.append("|---|---|---|---|---|---|")
     ref_oof = None

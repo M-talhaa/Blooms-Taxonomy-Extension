@@ -44,22 +44,6 @@ iterative-stratification 0.1.9, sentence-transformers 5.6.1, torch 2.13.0+cpu.
   cv_metrics.bootstrap_ci exactly for kNN-21 P50 seed 13 (macro F1 CI [0.4701540627, 0.5370211025]);
   first five resamples agree with sklearn to 1.1e-16 (AUC) and 0 (F1).
 
-### Checks against the verified sandbox (comparison script kept outside the repository)
-
-Reference: sandbox/supervised/out/supervised_grid_per_seed.csv, supervised_grid.csv and
-matched_supervised.csv (sandbox `X|PCA2` rows correspond to the primary LDA/QDA rows here).
-
-| comparison | rows | numeric columns | max abs difference |
-|---|---|---|---|
-| supervised_grid_per_seed.csv | 1,350 | 36 | 0 |
-| supervised_grid.csv (means, SDs, seed 13, bootstrap CIs, McNemar) | 270 | 113 | 2.8e-16 |
-| matched_supervised.csv | 13 | 47 | 2.2e-16 |
-| mcnemar_vs_production.csv per repeat (b, c, p) | 130 tests | | 0 mismatches |
-| structural best configuration per family vs sandbox structural/best_configs.json | 11 families | | 0 mismatches |
-
-A separate smoke test of kNN-21 and LDA (structural projection) before the full run also gave
-max abs difference 0 against the sandbox per-seed values.
-
 ### Reproduction of round-2 outputs (v2_reproduction_check.csv)
 
 * CV metrics at the round-2 configurations (P50) equal revision_pipeline/cv_results_mpnet.csv to
@@ -78,13 +62,13 @@ all-distilroberta-v1 0.659825, which round to the Table 7 values 0.713 / 0.703 /
 0). Per-word and one-batch encodings give the same kNN-21 values to 6 decimals. The MPNet rows of
 the ablation equal the main grid exactly (max abs difference 0).
 
-## End-to-end run of the round-3 sequence (retrain.py integration, task A3)
+## End-to-end run of the round-3 sequence
 
 Run on 2026-10-24 (UTC-6) from the repository root on branch round3-revision, with
-HF_HUB_OFFLINE=1 and TRANSFORMERS_OFFLINE=1 set; a small driver kept outside the repository ran
-the commands one after the other and wrote one log per step. Python 3.12.10, numpy 2.5.1,
-pandas 3.0.5, scipy 1.18.0, scikit-learn 1.9.0, joblib 1.5.3 (as recorded in
-results/winner_and_constants.json "versions").
+HF_HUB_OFFLINE=1 and TRANSFORMERS_OFFLINE=1 set; the commands below were run one after the other
+(the logs in results/logs/ are from the later full run of the README sequence, not from this
+run). Python 3.12.10, numpy 2.5.1, pandas 3.0.5, scipy 1.18.0, scikit-learn 1.9.0, joblib 1.5.3
+(as recorded in results/winner_and_constants.json "versions").
 
 | step | command | start | end | runtime (s) | exit |
 |---|---|---|---|---|---|
@@ -92,7 +76,7 @@ results/winner_and_constants.json "versions").
 | 2 supervised evaluation | `python -I -B revision_pipeline/supervised_eval.py all --workers 8` | 22:25:35 | 22:37:53 | 738.7 | 0 |
 | 3 selection | `python -I -B revision_pipeline/select_model.py` | 22:37:53 | 22:37:58 | 4.8 | 0 |
 | 4 robustness | `python -I -B revision_pipeline/robustness.py` | 22:37:58 | 22:39:19 | 81.2 | 0 |
-| 5 selection + export | `python -I -B revision_pipeline/retrain.py --core-csv revision_pipeline/core_merged.csv --candidates revision_pipeline/candidates_final.txt --outdir <out>` (`<out>` = a scratch folder outside the repository) | 22:39:19 | 22:47:24 | 484.2 | 0 |
+| 5 selection + export | `python -I -B revision_pipeline/retrain.py --core-csv revision_pipeline/core_merged.csv --candidates revision_pipeline/candidates_final.txt --outdir <out>` (`<out>` = a separate output folder, so that the committed results/ files are not overwritten) | 22:39:19 | 22:47:24 | 484.2 | 0 |
 | 6 round-2 held-out protocol | `python -I -B revision_pipeline/methodology_upgrades.py` | 22:47:33 | 22:47:52 | 19.1 | 0 |
 | 7 round-2 CV protocol, MPNet | `python -I -B revision_pipeline/cv_metrics.py` | 22:47:52 | 22:57:32 | 579.8 | 0 |
 | 8 round-2 CV protocol, MiniLM | `python -I -B revision_pipeline/cv_metrics.py --encoder sentence-transformers/all-MiniLM-L6-v2 --tag minilm` | 22:57:32 | 23:06:11 | 518.9 | 0 |
@@ -116,11 +100,11 @@ round-2 default-configuration outputs that are kept for traceability.
   The table is sorted by PenalizedObj, so the Legacy kNN row moves from last to first place,
   above SGDClassifier P55 (0.9834924301). Legacy kNN stays a structural reference row that is not
   eligible for selection.
-* results/model_comparison_pareto.csv (front of Eval_SCS and acceptance over the Table 5 rows):
-  committed SGDClassifier P55, PassiveAggressive P50, KNeighborsClassifier P50, GaussianNB P40;
-  now Legacy kNN (K=15/th=0.28/c=6), KNeighborsClassifier P50, GaussianNB P40. The bug-fixed
-  Legacy row (SCS 1.00367, acceptance 0.849) dominates SGD (0.99766, 0.804) and PassiveAggressive
-  (0.92145, 0.833).
+* results/model_comparison_pareto.csv (front of Eval_SCS and acceptance over the rows of
+  model_comparison_table5.csv): committed SGDClassifier P55, PassiveAggressive P50,
+  KNeighborsClassifier P50, GaussianNB P40; now Legacy kNN (K=15/th=0.28/c=6),
+  KNeighborsClassifier P50, GaussianNB P40. The bug-fixed Legacy row (SCS 1.00367, acceptance
+  0.849) dominates SGD (0.99766, 0.804) and PassiveAggressive (0.92145, 0.833).
 * Row weights: 162 weighted one-vs-rest fits attempted, 0 accepted, 162 fit unweighted.
 
 ### Steps 2 to 4
@@ -129,10 +113,11 @@ round-2 default-configuration outputs that are kept for traceability.
   fields (column runtime_s of supervised_grid.csv and encoder_ablation.csv, runtime fields of
   grid_meta.json and encoder_ablation_meta.json).
 * select_model.py: selection_table.csv and v2_default_config_reference.csv byte-identical.
-  selection_report.md differs in one line only: the sentence on the Table 5 Legacy kNN row now
-  quotes the new row (`Legacy kNN (K=15/th=0.28/c=6)`, PenalizedObj 1.0036655202) but still
-  attributes it to the round-2 raw-SCS rule, which is no longer true for the regenerated table
-  (text produced by select_model.write_report; to be corrected there).
+  selection_report.md differs in one line only: the sentence on the Legacy kNN row of
+  results/model_comparison_table5.csv quoted the new row (`Legacy kNN (K=15/th=0.28/c=6)`,
+  PenalizedObj 1.0036655202) but still attributed it to the round-2 raw-SCS rule.
+  select_model.write_report was corrected afterwards, and the committed selection_report.md
+  states that the regenerated table applies the bug-fixed rule.
 * robustness.py: all nine robustness_* outputs byte-identical (robustness_report.md included);
   revision_pipeline/scs_sensitivity.md (not part of this sequence) unchanged.
 
@@ -150,13 +135,12 @@ round-2 default-configuration outputs that are kept for traceability.
   "reproduction_checks" in winner_and_constants.json): model.pkl, calibration_cdfs.json,
   thresholds.json, row_weights.npy and bt4_scorer.py byte-identical to production_model/;
   metadata.json equal apart from created_at and the artifact paths; the exported
-  "Verb List Classified by Model.csv" is byte-identical to the repository bank and to the
-  pre-change snapshot, so hard labels, primaries, other domains, soft patterns and soft primaries
-  agree for 1,650 of 1,650 verbs. Production summary: 1,420 accepted, 230 rejected, 1,243 single
-  label, 177 multi-label, 179 suggested only (equal to the committed winner_and_constants.json).
-* production_model/ and results/Verb List Classified by Model.csv show no change against HEAD.
-  (The pre-change snapshot holds README.md and classify.py of production_model/ with CRLF line
-  endings; their content is otherwise identical.)
+  "Verb List Classified by Model.csv" is byte-identical to the repository bank, so hard labels,
+  primaries, other domains, soft patterns and soft primaries agree for 1,650 of 1,650 verbs.
+  Production summary: 1,420 accepted, 230 rejected, 1,243 single label, 177 multi-label, 179
+  suggested only (equal to the committed winner_and_constants.json).
+* production_model/ and results/Verb List Classified by Model.csv show no change against the
+  committed versions.
 * results/winner_and_constants.json is the step 5 output copied unchanged. Its winner.bundle_dir
   is relative to the step 5 --outdir and is not archived; the packaged copy of that bundle is
   production_model/ (byte-identical, above).

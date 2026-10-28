@@ -6,8 +6,9 @@ README), checks them against each other, and writes two files:
   results/paper_tables.md     every manuscript table, each with the file(s) it was read from
   results/paper_numbers.json  one flat key per number, with the exact value of the source file
 
-Tables are named by content. The "v2" numbers in the headings refer to the round-2 manuscript and
-are given only for orientation; the round-3 numbering follows the restructured manuscript.
+Tables are named by content, with the matching table, figure or section of the article in
+brackets where there is one. "v1" marks the original submission; its tables are cited only for
+traceability.
 
 Inputs (all committed; nothing else is read):
   revision_pipeline/core_merged.csv                      merge_core.py
@@ -25,12 +26,13 @@ Inputs (all committed; nothing else is read):
                                                           software versions, keys only)
   results/bank_structure/*.csv                            bank_structure.py
   results/expert/*.csv, expert_summary.json               expert_recompute.py
-  results/change_attribution/*.csv                        change_attribution.py (response letter:
-                                                          bank change and refit attribution)
+  results/change_attribution/*.csv                        change_attribution.py (change from the
+                                                          original submission: bank change and
+                                                          refit attribution)
   revision_pipeline/cv_results_{mpnet,minilm,droberta}.csv, heldout_results.csv
                                                           cv_metrics.py, methodology_upgrades.py
-                                                          (round-2 default configurations, kept for
-                                                          traceability)
+                                                          (first-revision default configurations,
+                                                          kept for traceability)
 
 The checks stop the script with an error when two sources disagree (for example, the selected
 family in selection_table.csv against winner_and_constants.json, or the bank counts against
@@ -213,7 +215,7 @@ put("core.n_assignments", n_core_assign)
 put("core.n_assignments_high_freq_ge10", n_high)
 put("core.n_assignments_low_freq_lt10", n_low)
 
-heading("1. Core-list centroid distances (v2 Tables 2 to 4) and gap means (v2 Fig. 2)",
+heading("1. Core-list centroid distances (Tables 2 to 4) and gap means (Fig. 2)",
         ["results/core_structure/T1_core_all.csv", "results/core_structure/T2_core_high.csv",
          "results/core_structure/T3_core_low.csv",
          "results/core_structure/core_gap_means.csv", "revision_pipeline/core_merged.csv"])
@@ -258,7 +260,8 @@ table(["Subset", "d1", "d2", "d3", "d4", "d5"], rows)
 # ----------------------------------------------------------------------------- 2. structural comparison
 t5 = csv("results/model_comparison_table5.csv")
 pareto = csv("results/model_comparison_pareto.csv")
-heading("2. Structural comparison of the families (structural part of v2 Table 8a; v1 Table 5)",
+heading("2. Structural comparison of the families (Eq. 19; penalized objective column of Table 8; "
+        "Table 5 of the original submission)",
         ["results/model_comparison_table5.csv", "results/model_comparison_pareto.csv",
          "results/selection/selection_table.csv"])
 w("Each family at its structural best (largest penalized objective, Eq. 19; ties by SCS, then "
@@ -295,7 +298,7 @@ w(f"Highest PenalizedObj among the eligible families: {best_eligible['family']} 
 w()
 
 # ----------------------------------------------------------------------------- 3. CV at matched configs
-heading("3. Repeated stratified cross-validation at matched configurations (replaces v2 Table 6)",
+heading("3. Repeated stratified cross-validation at matched configurations (Table 6)",
         ["results/selection/matched_supervised.csv", "results/selection/baselines.csv"])
 w("Repeated stratified 5-fold multi-label cross-validation on the 381-verb core, 5 repeats "
   "(MultilabelStratifiedKFold, seeds 13 to 17); scores calibrated by the out-of-fold empirical CDF "
@@ -340,7 +343,8 @@ table(["Family", "Configuration", "Macro AUC mean (SD) [95% CI]", "Macro F1 mean
        "Micro F1 mean (SD)"], rows)
 supp = ms[ms["supplementary"].astype(bool)]
 w(f"Not shown: {len(supp)} supplementary rows (" + ", ".join(supp["cfg_id"]) + ") that use the "
-  "24-component PCA of round-2 cv_metrics.py; they exist only to reproduce the round-2 CV table. "
+  "24-component PCA of the first-revision cv_metrics.py; they exist only to reproduce the "
+  "first-revision CV table. "
   f"Rank of the production model by CV macro AUC: {order.index(PROD) + 1} of {len(order)} "
   f"({sum(1 for f in order[:order.index(PROD)] if f in eligible_floor) + 1} of the {n_floor} "
   "floor-passing families).")
@@ -372,11 +376,11 @@ ea = csv("results/selection/encoder_ablation.csv")
 eaw = ea[ea["encoding"].str.startswith("per word")]
 ENC = [("mpnet", "all-mpnet-base-v2 (training encoder)"), ("minilm", "all-MiniLM-L6-v2"),
        ("droberta", "all-distilroberta-v1")]
-heading("5. Encoder ablation at matched configurations (replaces v2 Table 7)",
+heading("5. Encoder ablation at matched configurations (Table 7)",
         ["results/selection/encoder_ablation.csv", "revision_pipeline/cv_results_mpnet.csv",
          "revision_pipeline/cv_results_minilm.csv", "revision_pipeline/cv_results_droberta.csv"])
 w("CV macro AUC (mean of 5 repeats) with each family at its MPNet structural best configuration "
-  "and percentile; the outer partitions, calibration and thresholds are those of Section 3. Rank "
+  "and percentile; the outer partitions, calibration and thresholds are those of Section 3 above. Rank "
   "in brackets, among the families shown, within each encoder.")
 w()
 piv = eaw.pivot_table(index="family", columns="encoder_tag", values="CV_macro_AUC_mean5", aggfunc="first")
@@ -400,7 +404,7 @@ for t, lab in ENC:
     close(ob.iloc[0]["CV_macro_AUC_mean5"], kr["CV_macro_AUC_mean5"], 1e-6,
           f"per-word vs one-batch encoding, production model, {t}")
     check(round(kr["CV_macro_AUC_mean5"], 3) == round(float(kr["v2_table7_CV_macro_AUC"]), 3),
-          f"production AUC {t} rounds to the v2 Table 7 value")
+          f"production AUC {t} rounds to the first-revision Table 7 value")
 rows = []
 for t, lab in ENC:
     kr = eaw[(eaw["encoder_tag"] == t) & (eaw["family"] == PROD)].iloc[0]
@@ -409,18 +413,18 @@ for t, lab in ENC:
 w("Production model across encoders:")
 w()
 table(["Encoder", "CV macro AUC", "CV macro F1", "Held-out within-one (accepted verbs)", "AUC rank"], rows)
-# round-2 default-configuration files: does MPNet give the highest AUC for every configuration?
+# first-revision default-configuration files: does MPNet give the highest AUC for every configuration?
 cvr = {t: csv(f"revision_pipeline/cv_results_{t}.csv").groupby("model")["macro_AUC"].mean() for t, _ in ENC}
 models = [m for m in cvr["mpnet"].index if m not in ("majority-level", "freq-random")]
 n_mp_best = sum(1 for m in models if cvr["mpnet"][m] >= max(cvr["minilm"][m], cvr["droberta"][m]))
 put("encoder.round2_defaults.n_configs", len(models))
 put("encoder.round2_defaults.n_mpnet_highest_auc", n_mp_best)
-w(f"Round-2 default configurations at P50 (traceability files `revision_pipeline/cv_results_*.csv`): "
+w(f"First-revision default configurations at P50 (traceability files `revision_pipeline/cv_results_*.csv`): "
   f"MPNet gives the highest macro AUC of the three encoders for {n_mp_best} of {len(models)} configurations.")
 w()
 
 # ----------------------------------------------------------------------------- 6. selection
-heading("6. Model selection (replaces v2 Tables 8a and 8b)",
+heading("6. Model selection (Section 2.3.5, Table 8)",
         ["results/selection/selection_table.csv", "results/winner_and_constants.json",
          "results/selection/baselines.csv"])
 w("Rule (`select_model.rule_balanced_maximin`): among the eligible families that pass the adequacy "
@@ -494,17 +498,18 @@ gap_auc = float(sl_auc.iloc[1] - sl_auc.iloc[0])
 put("selection.two_stage_v2.shortlist", ";".join(shortlist))
 put("selection.two_stage_v2.production_auc_gap_to_next", gap_auc)
 put("selection.two_stage_v2.production_score", sel_by_fam.loc[PROD, "v2_two_stage_score_HOseed13"])
-w(f"Disclosure: the round-2 two-stage form of the rule (stage-one maximin of PenalizedObj and CV AUC, "
-  f"shortlist, then maximin with held-out seed 13 re-normalized inside the shortlist), applied to the "
+w(f"For comparison (Section 3.1), the first-revision two-stage form of the rule (stage-one maximin of "
+  f"PenalizedObj and CV AUC, shortlist, then maximin with held-out seed 13 re-normalized inside the "
+  f"shortlist), applied to the "
   f"same matched inputs, selects **{ts['winner']}** with {f3(ts['score'])}. Shortlist: "
   f"{', '.join(shortlist)}. The production model scores "
   f"{f3(sel_by_fam.loc[PROD, 'v2_two_stage_score_HOseed13'])} there because, re-normalized inside the "
   f"shortlist, its CV AUC ({f4(sl_auc.iloc[0])}) is the lowest, {f4(gap_auc)} below the next "
-  f"({sl_auc.index[1]}, {f4(sl_auc.iloc[1])}). Section 9 reports how this depends on the inputs.")
+  f"({sl_auc.index[1]}, {f4(sl_auc.iloc[1])}). Section 9 below reports how this depends on the inputs.")
 w()
 
 # ----------------------------------------------------------------------------- 7. held-out pipeline
-heading("7. Held-out evaluation of the full production pipeline at matched configurations (replaces v2 Table 11)",
+heading("7. Held-out evaluation of the full production pipeline at matched configurations (Table 11)",
         ["results/selection/matched_supervised.csv", "results/selection/selection_table.csv",
          "results/selection/baselines.csv"])
 w("Outer 5-fold split of the core (MultilabelStratifiedKFold, seeds 13 to 17): calibration and "
@@ -542,7 +547,7 @@ for s, v in zip(seeds, kseed):
     put(f"heldout.production.HO_within1_seed{s}", v)
 w("Production model, held-out within-one by outer seed: "
   + ", ".join(f"seed {s} {f3(v)}" for s, v in zip(seeds, kseed))
-  + f". Seed 13 (the only seed used in round 2) is its most favourable repeat.")
+  + f". Seed 13 (the only seed used in the first revision) is its most favourable repeat.")
 w()
 check(max(kseed) == kseed[0], "seed 13 is the production model's best held-out repeat (text above)")
 
@@ -703,7 +708,7 @@ three = [("3C equal weights", "equal-weight sum of the three normalized criteria
          ("2C weighted sum w=0.5", "structure and CV AUC only: equal-weight sum"),
          ("2C eps1 (best AUC within 0.075 of best obj)", "best CV AUC within 0.075 of the best PenalizedObj"),
          ("2C eps2 (best obj within 0.008 of best AUC)", "best PenalizedObj within 0.008 of the best CV AUC"),
-         ("published two-stage", "round-2 two-stage rule with the 5-seed held-out mean")]
+         ("published two-stage", "first-revision two-stage rule with the 5-seed held-out mean")]
 for rule, _ in three:
     put(f"robustness.aggregation.{slug(rule)}.winner", agA.loc[rule, "winner"])
 
@@ -715,13 +720,13 @@ rows = [
     ["Rule in use, baseline", f"{b0['winner']} {f3(b0['score'])}; runner-up {b0['runner_up']}, margin {f3(b0['margin'])}"],
     ["Rule in use, 8 held-out variants (each seed, mean, all-verbs)",
      f"{PROD} in {int((prop_wins['winner'] == PROD).sum())} of {len(prop_wins)}"],
-    ["Round-2 two-stage form, 8 held-out variants",
+    ["First-revision two-stage form, 8 held-out variants",
      "; ".join(f"{ho_lab[r['ho']]}: {r['winner']} {f3(r['score'])}" for _, r in two.iterrows())],
     ["SCS weights, 500 joint draws (each weight x U(0.5, 1.5)), rule in use", counts(joint["proposed_A_winner"])],
     [f"  of which all {n_floor} families pass the floor ({len(all9)} draws)", counts(all9["proposed_A_winner"])],
     ["  closest win of the production model", f"margin {f6(closest['proposed_A_margin'])} ({closest['setting']})"],
     ["SCS weights, 500 joint draws, structure-only rule", counts(joint["A_structural_winner"])],
-    ["SCS weights, 500 joint draws, round-2 two-stage form (seed 13)", counts(joint["A_seed13_winner"])],
+    ["SCS weights, 500 joint draws, first-revision two-stage form (seed 13)", counts(joint["A_seed13_winner"])],
     ["SCS weights, 20 single-weight changes (x0.5, x0.75, x1.25, x1.5), rule in use", counts(single["proposed_A_winner"])],
     [f"Guardrails and penalties, {len(rgd)} settings (one change at a time), rule in use",
      f"{PROD} in {int((g_win == PROD).sum())} of {len(rgd)}; "
@@ -732,7 +737,7 @@ rows = [
     ["Legacy kNN admitted (evaluation-only construction), rule in use",
      f"{hvB.loc['proposed', 'winner']} {f3(hvB.loc['proposed', 'score'])} (kNN-21 {f3(hvB.loc['proposed', 'kNN_score'])}); "
      f"500 joint draws: {counts(joint['proposed_B_winner'])}"],
-    ["Legacy kNN admitted, round-2 two-stage form", f"{hvB.loc['two_stage', 'winner']} {f3(hvB.loc['two_stage', 'score'])}"],
+    ["Legacy kNN admitted, first-revision two-stage form", f"{hvB.loc['two_stage', 'winner']} {f3(hvB.loc['two_stage', 'score'])}"],
     ["Spearman correlation of PenalizedObj and CV AUC across the floor-passing families", sp["detail"]],
 ]
 for rule, lab in three:
@@ -752,7 +757,7 @@ w()
 bank = csv("results/Verb List Classified by Model.csv")
 cc = csv("results/bank_structure/coverage_cardinality.csv").set_index("bank")
 ps = wjs["production_summary"]
-heading("10. Extension outcomes of the delivered bank (v2 Table 9, both density ratios)",
+heading("10. Extension outcomes of the delivered bank (Table 9, with both density ratios)",
         ["results/bank_structure/coverage_cardinality.csv", "results/Verb List Classified by Model.csv",
          "results/winner_and_constants.json"])
 acc_mask = bank["Accepted"].astype(str).str.lower() == "true"
@@ -776,7 +781,7 @@ rows_def = [("Input verbs", "inputs", "int"), ("Accepted verbs", "accepted", "in
             ("Unassigned (rejected) verbs", "unassigned", "int"), ("Acceptance rate", "acceptance", "ratio"),
             ("Verb-level entries", "entries", "int"),
             ("Entries per input verb (v1 'entry rate')", "entries_per_input", "ratio"),
-            ("Entries per accepted verb (v2 'levels per accepted verb')", "entries_per_accepted", "ratio")]
+            ("Entries per accepted verb ('levels per accepted verb' in Table 9)", "entries_per_accepted", "ratio")]
 rows_def += [(f"Entries at {lv}", f"entries_{lv}", "int") for lv in LEVELS]
 rows_def += [(f"Verbs with {c} level{'s' if c != 1 else ''}", f"verbs_with_{c}_levels", "int") for c in range(1, 6)]
 rows_def += [(f"Primary domain {lv}", f"primary_{lv}", "int") for lv in LEVELS]
@@ -796,11 +801,12 @@ for lab, col, kind in rows_def:
             cells.append(f"{v:,}")
         put(f"bank.{tag}.{col}", v)
     rows.append([lab] + cells)
-hdr = ["Quantity", "Delivered bank (round 2 and 3)"] + (["Original submission (v1, commit 2a87a33)"] if v1_key else [])
+hdr = ["Quantity", "Delivered bank (first and second revision)"] + (["Original submission (v1, commit 2a87a33)"] if v1_key else [])
 table(hdr, rows)
 if not v1_key:
-    w("The v1 column is missing: coverage_cardinality.csv was regenerated without git history "
-      "(bank_structure.py reads the v1 bank with git show 2a87a33).")
+    w("The v1 column is missing: coverage_cardinality.csv was regenerated without the v1 bank "
+      "(bank_structure.py reads legacy/original_submission_bank_v1.csv, or commit 2a87a33 through git "
+      "when that file is absent).")
     w()
 put("bank.v2.multi_label_verbs", ps["multi_label"])
 put("bank.v2.single_label_verbs", ps["single_label"])
@@ -811,7 +817,7 @@ w()
 
 # ----------------------------------------------------------------------------- 11. gap means core vs extended
 gmm = csv("results/bank_structure/gap_means_mpnet.csv")
-heading("11. Mean centroid distance by taxonomic gap, core and extended bank (restores v1 Table 8)",
+heading("11. Mean centroid distance by taxonomic gap, core and extended bank (Section 3.3.1; core rows as in Fig. 2)",
         ["results/bank_structure/gap_means_mpnet.csv", "results/core_structure/core_gap_means.csv"])
 w("all-mpnet-base-v2; Spearman rho of d_n against n = 1..5 with the exact one-tailed p (share of the "
   "120 orderings with rho at least the observed one).")
@@ -830,7 +836,7 @@ table(["Labeling", "Entries", "d1", "d2", "d3", "d4", "d5", "rho", "Exact p"], r
 
 # ----------------------------------------------------------------------------- 12. encoder trend
 et = csv("results/bank_structure/encoder_trend.csv")
-heading("12. Gap trend in three encoders (v2 Table 10)", ["results/bank_structure/encoder_trend.csv"])
+heading("12. Gap trend in three encoders (Table 10)", ["results/bank_structure/encoder_trend.csv"])
 rows = []
 for _, r in et.iterrows():
     tag = slug(r["encoder"].split(" (")[0])
@@ -856,7 +862,7 @@ fk = csv("results/expert/fleiss_kappa.csv", keep_default_na=False)
 rs = csv("results/expert/rater_subsampling.csv")
 sw = csv("results/expert/threshold_sweep.csv")
 pv = csv("results/expert/per_verb.csv")
-heading("13. Expert agreement, production model (Section 3.3.3)",
+heading("13. Expert agreement, production model (Section 3.4)",
         ["results/expert/expert_summary.json", "results/expert/baselines_and_permutation.csv"])
 p26 = es["production"]["C26"]
 hi_k, hi_n = es["production"]["high"]
@@ -994,12 +1000,12 @@ put("expert.n_rated_verbs", len(pv))
 table(["Verb", "Rated form", "Votes Kn/Cm/Ap/An/Sn/Ev", "None", "Endorsed levels (>= 2 of 8)",
        "Production status", "Production primary", "Production hard levels", "Original-submission primary"], rows)
 
-# ----------------------------------------------------------------------------- 19. round-2 reference
+# ----------------------------------------------------------------------------- 19. first-revision reference
 v2r = csv("results/selection/v2_default_config_reference.csv")
 ho2 = csv("revision_pipeline/heldout_results.csv")
-heading("19. Round-2 reference values (traceability; not for the round-3 tables)",
+heading("19. First-revision reference values (traceability; not used in the article)",
         ["results/selection/v2_default_config_reference.csv", "revision_pipeline/heldout_results.csv"])
-w("Round 2 evaluated CV and held-out at default configurations and P50 while the structural objective "
+w("The first revision evaluated CV and held-out at default configurations and P50 while the structural objective "
   "used each family's own best configuration. These rows reproduce that construction.")
 w()
 rows = []
@@ -1014,7 +1020,7 @@ for _, r in ho2.iterrows():
     rows.append([r["model"], f3(r["gate_recall"]), f3(r["primary_in_labels"]), f3(r["within1"]),
                  f2(r["mean_ordinal_dist"]), f3(r["macro_F1"]), f3(r["macro_AUC"])])
     put(f"round2.heldout_seed13.{slug(r['model'])}.within1", r["within1"])
-w("Round-2 held-out table (default configurations, seed 13 only; `methodology_upgrades.py`):")
+w("First-revision held-out table (default configurations, seed 13 only; `methodology_upgrades.py`):")
 w()
 table(["Model", "Gate recall", "Primary in labels", "Within-one", "Mean ordinal distance", "Macro F1",
        "Macro AUC"], rows)
@@ -1028,7 +1034,7 @@ cmod = csv(f"{CA}/refit_models.csv").set_index("model")
 cra = csv(f"{CA}/refit_agreement.csv")
 crm = csv(f"{CA}/refit_mcnemar_vs_production.csv")
 c22 = csv(f"{CA}/core_family_2x2.csv")
-heading("20. Change from the original submission (response letter)",
+heading("20. Change from the original submission",
         [f"{CA}/bank_change_summary.csv", f"{CA}/bank_change_distance.csv", f"{CA}/refit_models.csv",
          f"{CA}/refit_agreement.csv", f"{CA}/refit_mcnemar_vs_production.csv", f"{CA}/core_family_2x2.csv"])
 RULES = [("lemma_form", "Lemma-form rule (reported)"), ("first_form", "First-form rule (alternative)")]
@@ -1051,7 +1057,8 @@ for rid, _ in RULES:
     for dist, r in d_.iterrows():
         put(f"change.bank.{rid}.distance_{int(dist)}.verbs", r["verbs"])
         put(f"change.bank.{rid}.distance_{int(dist)}.share", r["share"])
-w("Numbers that only the response letter quotes, generated by `revision_pipeline/change_attribution.py` "
+w("Comparison of the original-submission bank and model with the delivered bank and the production "
+  "model (not reported in the article), generated by `revision_pipeline/change_attribution.py` "
   "(definitions, mapping rules and checks in its docstring; full report in `results/change_attribution/change_attribution.md`).")
 w()
 w("Bank change: the original-submission labels carried over to the 1,650 normalized candidates through "
@@ -1093,7 +1100,7 @@ for st_ in ("D30", "D29"):
     rp = cra[(cra["model"] == "kNN21_381_P50") & (cra["set"] == st_)].iloc[0]
     check((int(rp["strict"]), int(rp["endorsed"])) == (int(lp["strict"]), int(lp["endorsed"])),
           f"change: production refit on {st_} vs like_for_like.csv")
-w("Expert agreement of refits (production procedure of `retrain.py`; scikit-learn 1.9.0) of each model family on each "
+w("Expert agreement of refits (production procedure of `retrain.py`; scikit-learn 1.9.0) of the two model families (SGDClassifier and kNN-21) on each "
   "version of the training core: the original 358-verb core (`revision_pipeline/core_notebook_original.csv`) and the "
   "corrected 381-verb core. kNN21_381_P50 is the refit of the production model and reproduces the delivered bank. "
   "D30 = all 30 rated verbs, D29 = the 29 in the candidate pool, OWN = the verbs of D29 the model accepts, C26 = the 26 "
@@ -1150,7 +1157,7 @@ table(["Comparison", "Set", "Metric", "SGD, 358 core", "SGD, 381 core", "kNN, 35
 
 # Guardrail settings that change something the rule in use depends on (acceptance band, band for
 # levels per accepted verb, penalty strength or adequacy floor). Excluded: the baseline row, rows that
-# repeat baseline values, and stage-one cutoffs (used only by the round-2 two-stage form).
+# repeat baseline values, and stage-one cutoffs (used only by the first-revision two-stage form).
 g_base = rgd[rgd["setting"] == "baseline"].iloc[0]
 RULE_COLS = ["ACC_BAND", "ENAC_BAND", "PEN", "floor"]
 g_rule = rgd[rgd[RULE_COLS].astype(str).apply(tuple, axis=1) != tuple(str(g_base[c]) for c in RULE_COLS)]

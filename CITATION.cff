@@ -18,7 +18,7 @@ authors:
 repository-code: https://github.com/Adamsua-lab/Blooms-Taxonomy-Extension
 license: MIT
 version: 1.0.0
-# doi: the Zenodo DOI of this release (reserved through a manual Zenodo upload) is added here before the release is archived.
+# doi: the Zenodo DOI of this release is given on its Zenodo record.
 keywords:
   - Bloom's taxonomy
   - action verbs

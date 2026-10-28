@@ -9,7 +9,7 @@
    acceptance-band penalty, and acceptance is controlled by the threshold percentile,
    not by model quality. So the objective may be ranking models by how close their
    chosen threshold lands to the target rather than by structural coherence. This
-   re-compares every family at a COMMON acceptance level and re-tests the correlation
+   re-compares every family at a common acceptance level and re-tests the correlation
    with cross-validated generalization.
 
 3. Independent-encoder structural check. The structural metrics are computed in the
@@ -107,7 +107,7 @@ CVMAP = {"SGDClassifier": "SGD-hinge-1e4", "LogisticRegression": "LogReg-C1",
 
 w("The structural objective penalizes deviation from a target acceptance band, but")
 w("acceptance is set by the threshold percentile, not by model quality. Comparing")
-w("families at a COMMON acceptance removes that confound.")
+w("families at a common acceptance removes that confound.")
 w()
 for target in (0.80, 0.86):
     rows = []

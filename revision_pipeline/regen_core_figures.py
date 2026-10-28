@@ -11,8 +11,9 @@ least 10, low-frequency entries below 10 (135 and 472 assignments).
 Fig. 1: heatmaps of the high-frequency (a) and low-frequency (b) centroid distances on one shared
 cosine-distance colour scale, with the cell values printed (they equal Tables 3 and 4).
 Fig. 2: mean centroid distance d_n against the taxonomic gap n for all, high- and low-frequency core.
-(The original submission's Fig. 2 plotted Euclidean distances between unnormalized level means and
-labelled them 'nominal' distances; that export is superseded and kept in legacy/round2/.)
+(The original submission's Fig. 2 plotted Euclidean distances between unnormalized level means.
+The first-revision export, which used cosine distances but labelled them 'nominal' distances, is
+superseded and kept in legacy/round2/core_structure/.)
 
 Checks: the three distance matrices are compared with results/core_structure/T1_core_all.csv,
 T2_core_high.csv and T3_core_low.csv (Tables 2 to 4) and the script stops if any cell differs by

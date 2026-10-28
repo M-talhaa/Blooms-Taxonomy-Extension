@@ -1,16 +1,17 @@
-"""Structure of the delivered verb bank (paper Section 3.2, Table 9 and the gap-trend tables).
+"""Structure of the delivered verb bank (Section 3.2 and Table 9, and Section 3.3.1 and Table 10, of the article).
 
 Computes, for the delivered bank results/Verb List Classified by Model.csv:
   1. coverage and cardinality: acceptance, entries per level, verbs by number of levels,
-     primary-domain distribution, and BOTH density ratios (entries per input verb and entries per
-     accepted verb). The original-submission bank (git commit 2a87a33) is summarized the same way
-     when the git history is available, so the two versions can be compared like for like.
+     primary-domain distribution, and both density ratios (entries per input verb and entries per
+     accepted verb). The original-submission bank (legacy/original_submission_bank_v1.csv, a byte
+     copy of the bank at git commit 2a87a33) is summarized the same way, so the two versions can be
+     compared like for like.
   2. the extended-bank 6 x 6 cosine distance matrix between level centroids (Eq. 5 and 6: centroid =
      L2-normalized mean of the L2-normalized all-mpnet-base-v2 embeddings of the verbs holding a
      hard entry at that level; distance = 1 - cosine), the mean distance d_n at taxonomic gap n
      (Eq. 7), next to the same gap means of the 381-verb core (all, high-frequency freq >= 10,
      low-frequency freq < 10).
-  3. the gap trend: Spearman rho of d_n against n = 1..5 with the EXACT one-tailed p (share of the
+  3. the gap trend: Spearman rho of d_n against n = 1..5 with the exact one-tailed p (share of the
      120 orderings of five values whose rho is at least the observed one), for the delivered
      (post-collapse) labeling and for the pre-collapse labeling (cal_score >= threshold).
   4. the same gap trend in two encoders that played no part in training or selection
@@ -215,7 +216,7 @@ w()
 w("## 1. Coverage, cardinality and density (Table 9)")
 w()
 cols = [("v2", S2)] + ([("v1", S1)] if S1 else [])
-w("| Quantity | " + " | ".join("v2 delivered bank" if t == "v2" else f"v1 bank (commit {V1_COMMIT})" for t, _ in cols) + " |")
+w("| Quantity | " + " | ".join("Delivered bank" if t == "v2" else f"Original-submission bank (commit {V1_COMMIT})" for t, _ in cols) + " |")
 w("|---|" + "---|" * len(cols))
 w("| Input verbs | " + " | ".join(fmt_int(S["inputs"]) for _, S in cols) + " |")
 w("| Accepted (at least one level) | " + " | ".join(fmt_int(S["accepted"]) for _, S in cols) + " |")
@@ -233,10 +234,10 @@ for l in LEVELS + ["None"]:
     w(f"| {lab} | " + " | ".join(fmt_int(S["primary"][l]) for _, S in cols) + " |")
 w()
 if S1 is None:
-    w(f"The v1 bank could not be read from git commit {V1_COMMIT} ({v1_err}); only the v2 column is shown.")
+    w(f"The original-submission bank could not be read from legacy/original_submission_bank_v1.csv or git commit {V1_COMMIT} ({v1_err}); only the delivered-bank column is shown.")
 else:
-    w(f"The v1 manuscript (Table 6) reported entries per input verb ({S1['entries_per_input']:.3f}); the v2 manuscript "
-      f"reported entries per accepted verb ({S2['entries_per_accepted']:.2f}). Like for like, both ratios fell: per input "
+    w(f"The original submission (its Table 6) reported entries per input verb ({S1['entries_per_input']:.3f}); the article (Table 9) "
+      f"reports entries per accepted verb ({S2['entries_per_accepted']:.2f}). Like for like, both ratios fell: per input "
       f"{S1['entries_per_input']:.3f} to {S2['entries_per_input']:.3f}, per accepted {S1['entries_per_accepted']:.3f} to "
       f"{S2['entries_per_accepted']:.3f}.")
 w()

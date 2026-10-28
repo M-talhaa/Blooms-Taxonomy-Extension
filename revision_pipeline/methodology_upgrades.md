@@ -1,10 +1,14 @@
-# Methodology upgrade tests
+# Round-2 held-out evaluation (default configurations, outer split seed 13; kept for traceability)
 
-## A + B. Held-out full-pipeline evaluation with ordinal metrics
+The held-out results reported in the article (Table 11) are means over outer seeds 13 to 17 at
+matched configurations (`results/selection/matched_supervised.csv`, written by `supervised_eval.py`).
 
-Held-out core verbs pushed through the COMPLETE production pipeline (calibration,
+## Held-out full-pipeline evaluation with ordinal metrics
+
+Held-out core verbs are passed through the full production pipeline (calibration,
 P50 thresholds, top-2 collapse). All are known Bloom verbs, so the gate should
-accept them; 5-fold multi-label stratified, means over folds:
+accept them. Each model is at its round-2 default configuration; 5-fold multi-label
+stratified split with seed 13 (one repeat), means over the five folds:
 
 | Pipeline | Gate recall | Primary-in-labels | Within-1-level | Mean ordinal dist | macro F1 | macro AUC |
 |---|---|---|---|---|---|---|
@@ -15,7 +19,7 @@ accept them; 5-fold multi-label stratified, means over folds:
 | NearestCentroid | 0.882 | 0.597 | 0.736 | 0.81 | 0.479 | 0.722 |
 | kNN-21 | 0.924 | 0.600 | 0.784 | 0.74 | 0.477 | 0.719 |
 
-Reading guide: 'Gate recall' is the share of held-out KNOWN Bloom verbs that survive
-the acceptance gate; this is the first labeled test of the gate. 'Primary-in-labels'
+'Gate recall' is the share of held-out core verbs (all known Bloom verbs) that pass
+the acceptance gate. 'Primary-in-labels'
 scores the primary domain against the verb's published level set. 'Within-1-level'
 credits adjacent-level predictions, reflecting the ordinal nature of the taxonomy.

@@ -1,21 +1,22 @@
-"""Normalization pass over the raw candidate verb pool (plan item 22).
+"""Normalization pass over the raw candidate verb pool (Section 2.2.1 of the article).
 
 Inputs (both committed, so this runs on a fresh clone):
   raw_candidates_1824.txt    the 1,824 raw candidate verbs of the original submission, one per
-                             line, in the row order of the pre-revision bank (the Verb column of
-                             results/Verb List Classified by Model.csv at commit 2a87a33).
+                             line, in the row order of the original-submission bank (the Verb
+                             column of results/Verb List Classified by Model.csv at commit
+                             2a87a33).
   core_notebook_original.csv the 358-verb core of the original submission. Normalization was run
-                             against this core, BEFORE the core audit; the two verbs the audit
-                             added to the core ('break', 'practice') are removed from the pool
-                             afterwards by merge_core.py (1,652 -> 1,650).
+                             against this core, before the core was audited and merged; the two
+                             verbs that the merge with the Stanny and Newton lists added to the
+                             core ('break', 'practice') are removed from the pool afterwards by
+                             merge_core.py (1,652 -> 1,650).
 
 Rules, in order, each recorded in the audit trail:
 1. WordNet verb lemmatization (surface forms -> lemma), lowercase.
-2. British -ise/-yse spelling merged into the American -ize/-yze form ONLY when
+2. British -ise/-yse spelling merged into the American -ize/-yze form only when
    doing so resolves a real duplicate, that is, when the American form exists in
-   the core list or in the candidate pool. Never invents forms. (An earlier
-   version of this docstring also described a WordNet-synset condition; the code
-   never applied it, and the committed outputs were produced without it.)
+   the core list or in the candidate pool. Never invents forms. No WordNet-synset
+   condition is applied in this rule.
 3. Drop pure auxiliaries: be, have, do.
 4. Drop candidates whose normalized lemma is a core verb (leakage removal).
 5. Dedupe: multiple candidates collapsing to one lemma keep a single entry

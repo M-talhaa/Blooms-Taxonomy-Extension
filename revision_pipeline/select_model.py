@@ -17,8 +17,8 @@ WHAT THIS FILE DOES
      different rule can be switched on without touching the inputs.
 
 SELECTION RULE IN USE (SELECTION_RULE = "balanced_maximin", rule_balanced_maximin)
-  Pending the authors' final confirmation (round-3 decision: keep kNN-21, replace the
-  two-stage rule by a simpler balanced rule over the same three criteria).
+  Used since round 3 in place of the round-2 two-stage rule; it combines the same three
+  criteria in a single stage.
   (1) Eligibility: families that produce per-level scores calibrated by the out-of-fold
       empirical CDF, and can therefore run the production pipeline (per-level
       thresholds, top-2 margin collapse, soft tier): every one-vs-rest family of the
@@ -105,7 +105,8 @@ ELIGIBILITY_NOTE = {
              "scores, cannot run the production pipeline or be exported by retrain.py"),
 }
 
-# Production model (fixed by the authors; used as the McNemar / bootstrap reference).
+# Production model (kNN-21 at P50, the configuration selected by rule_balanced_maximin;
+# reference model of the McNemar tests and the paired bootstrap).
 PRODUCTION_FAMILY = "KNeighborsClassifier"
 PRODUCTION_PARAMS = {"n_neighbors": 21, "metric": "cosine", "weights": "distance", "algorithm": "brute"}
 PRODUCTION_PERCENTILE = 50
@@ -419,7 +420,7 @@ def _info(rule, ranked, score_col, extra=None):
 
 def rule_balanced_maximin(menu, floor=ADEQUACY_FLOOR, obj_col="PenalizedObj", auc_col="CV_macro_AUC_mean5",
                           ho_col="HO_within1_mean5", eligible_only=True):
-    """PROPOSED RULE (default). One-stage maximin over three min-max normalized criteria
+    """Selection rule in use (default). One-stage maximin over three min-max normalized criteria
     among the floor-passing eligible families; ties broken by PenalizedObj."""
     m = _pool(menu, floor, eligible_only, need=(auc_col, ho_col))
     if len(m) == 0:
@@ -535,7 +536,8 @@ def rule_epsilon_obj_given_auc(menu, eps=0.008, obj_col="PenalizedObj", auc_col=
 
 
 def rule_structural_only(menu, eligible_only=True, floor=-np.inf, **_):
-    """Round-1 style: maximize PenalizedObj (ties: SCS, acceptance), no supervised evidence."""
+    """Rule of the original submission: maximize PenalizedObj (ties: SCS, acceptance), no supervised
+    evidence."""
     m = _pool(menu, floor, eligible_only)
     m["score"] = m["PenalizedObj"]
     ranked = _rank(m, "score", ("SCS", "acceptance"))
@@ -556,7 +558,7 @@ def pareto_front(menu, criteria=("PenalizedObj", "CV_macro_AUC_mean5", "HO_withi
 
 
 RULES = {
-    "balanced_maximin": rule_balanced_maximin,     # proposed rule (default)
+    "balanced_maximin": rule_balanced_maximin,     # selection rule in use (default)
     "v2_two_stage": rule_v2_two_stage,
     "stage_one_maximin": rule_stage_one_maximin,
     "rank_sum": rule_rank_sum,
@@ -681,8 +683,8 @@ def md_table(df, cols, nd=6):
     return "\n".join(lines)
 
 
-# Round-2 default configurations (retrain.CV_NAME_MAP; cv_metrics.py / methodology_upgrades.py
-# evaluated each family only here, at P50).
+# Round-2 default configurations (CV_NAME_MAP of the round-2 retrain.py; cv_metrics.py /
+# methodology_upgrades.py evaluated each family only here, at P50).
 V2_CV_NAME = {"SGDClassifier": "SGD-hinge-1e4", "LogisticRegression": "LogReg-C1", "RidgeClassifier": "Ridge-a1",
               "LinearSVC": "LinearSVC-C1", "KNeighborsClassifier": "kNN-21", "NearestCentroid": "NearestCentroid",
               "PassiveAggressive": "PassiveAggressive-C1", "GaussianNB": "GaussianNB", "LDA": "LDA", "QDA": "QDA",
@@ -701,7 +703,8 @@ V2_DEFAULT_CFG = {
     "CalibratedSVC": 'CalibratedSVC|{"C": 0.5}',
 }
 # Families methodology_upgrades.py ran (held-out protocol), and the rows the round-2 code read
-# from heldout_results.csv (retrain.run_pipeline HO_MAP: LinearSVC missing, so stage two never ran).
+# from heldout_results.csv (HO_MAP of the round-2 retrain.run_pipeline: LinearSVC missing, so
+# stage two never ran).
 V2_HO_FAMILIES = ["KNeighborsClassifier", "CalibratedSVC", "LogisticRegression", "NearestCentroid", "LinearSVC"]
 V2_HO_MAP_CODE = {"KNeighborsClassifier": "kNN-21", "LogisticRegression": "LogReg-C1",
                   "NearestCentroid": "NearestCentroid", "CalibratedSVC": "CalibratedSVC"}
@@ -735,9 +738,9 @@ def v2_inputs(scan_menu, sup):
 
 def v2_reference(scan_menu, sup, out_csv):
     """Round-2 inputs (default configurations at P50) and the exact round-2 two-stage score, in
-    three variants: exact inputs; inputs rounded to 3 decimals as printed in Tables 8a/8b; and the
-    path the committed round-2 code actually took (its HO_MAP had no LinearSVC entry, so stage two
-    did not run; V2_HO_MAP_CODE reproduces that map)."""
+    three variants: exact inputs; inputs rounded to 3 decimals as printed in the round-2 manuscript
+    (its Tables 8a and 8b); and the path the committed round-2 code actually took (its HO_MAP had
+    no LinearSVC entry, so stage two did not run; V2_HO_MAP_CODE reproduces that map)."""
     hop = os.path.join(HERE, "heldout_results.csv")
     if not os.path.exists(hop):
         return None, "round-2 reference input heldout_results.csv missing"
@@ -841,8 +844,8 @@ def write_report(a, tab, ranked, info, info_v2, info_v2m, ref, ref_status, t5_ch
     w = L.append
     w("# Model selection (generated by select_model.py; do not edit by hand)")
     w("")
-    w(f"Rule in use: `{info['rule']}` (SELECTION_RULE in select_model.py). Status: proposed, pending the "
-      "authors' final confirmation.")
+    w(f"Rule in use: `{info['rule']}` (SELECTION_RULE in select_model.py). The default rule, `balanced_maximin`, "
+      "is the selection rule of the article (Section 2.3.5, Table 8).")
     w("")
     w("Rule, in words:")
     w("1. Eligible families: every one-vs-rest family of the model zoo, because each produces per-level scores "
@@ -897,8 +900,9 @@ def write_report(a, tab, ranked, info, info_v2, info_v2m, ref, ref_status, t5_ch
         w("## Legacy kNN (structural reference row, not eligible)")
         w("")
         w(f"Bug-fixed structural best: `{r['config']}`, PenalizedObj {r['PenalizedObj']:.10f}, SCS {r['SCS']:.10f}, "
-          f"acceptance {r['acceptance']:.6f}. It is above the adequacy floor but is not eligible: "
-          f"{ELIGIBILITY_NOTE[LEGACY]}.")
+          f"acceptance {r['acceptance']:.6f}. It is above the adequacy floor but is not eligible: it is a vote "
+          "rule with one global cutoff and no per-level calibrated scores, so it cannot run the production "
+          "pipeline or be exported by retrain.py.")
         if os.path.exists(TABLE5_CSV):
             t5 = pd.read_csv(TABLE5_CSV, float_precision="round_trip")
             t5l = t5[t5["Model"].str.startswith(LEGACY)]
@@ -912,7 +916,7 @@ def write_report(a, tab, ranked, info, info_v2, info_v2m, ref, ref_status, t5_ch
         w("Its supervised numbers (evaluation-only construction) and the effect of admitting it are reported in "
           "robustness_report.md.")
         w("")
-    w("## The round-2 two-stage rule on the same matched inputs (for disclosure)")
+    w("## The round-2 two-stage rule on the same matched inputs (for comparison)")
     w("")
     w(f"- Held-out seed 13 (as in round 2): winner **{info_v2['winner']}** with {info_v2['score']:.10f} "
       f"({info_v2.get('mechanism')}; shortlist {info_v2.get('shortlist')}).")

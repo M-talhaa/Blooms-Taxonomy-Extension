@@ -1,46 +1,48 @@
-"""methodology_upgrades.py - ROUND-2 held-out full-pipeline protocol, kept for traceability.
+"""methodology_upgrades.py - round-2 held-out full-pipeline protocol, kept for traceability.
 
 STATUS IN ROUND 3
-  This is the round-2 DEFAULT-CONFIGURATION protocol: five families at one fixed configuration
+  This is the round-2 default-configuration protocol: five families at one fixed configuration
   each (MODELS below), all at P50, one outer split (MultilabelStratifiedKFold seed 13), plus a
   three-member ensemble. For model selection it is superseded by supervised_eval.py (the same
   held-out protocol for every configuration of the model zoo at every percentile, outer seeds 13
   to 17, matched to each family's structural best; outputs in results/selection/). It is kept
-  because round-2 Table 11 and the round-2 two-stage selection read its output; the round-2
-  reference of select_model.py asserts that its exact seed-13 values round to heldout_results.csv.
+  because Table 11 of the first revision and the round-2 two-stage selection read its output;
+  the round-2 reference of select_model.py asserts that its exact seed-13 values round to
+  heldout_results.csv.
 
   Outputs (--out-dir, default revision_pipeline/):
     methodology_upgrades.md   the round-2 table
     heldout_results.csv       the same numbers as a table, rounded as printed (3 decimals; mean
-                              ordinal distance 2 decimals). Before round 3 this file had no
-                              producing script in the repository: the committed copy (written
-                              2026-08-13 20:21, between methup_v4.log and methup_v5.log) had a
-                              different ensemble row (gate 0.911, within-one 0.778) than
-                              methodology_upgrades.md and no LinearSVC-C1 row. This script now
-                              writes it; the four single-model rows read by the round-2 code
-                              (kNN-21, LogReg-C1, NearestCentroid, CalibratedSVC) are unchanged.
+                              ordinal distance 2 decimals). The copy committed in round 2 had
+                              no producing script, an ensemble row that did not match
+                              methodology_upgrades.md (gate 0.911, within-one 0.778) and no
+                              LinearSVC-C1 row. This script now writes it; the four single-model
+                              rows read by the round-2 code (kNN-21, LogReg-C1, NearestCentroid,
+                              CalibratedSVC) are unchanged.
   Row weights: the weighted one-vs-rest fit is attempted as in retrain.py; scikit-learn 1.9.0
   rejects sample_weight and the fit falls back to the unweighted fit, so the row weights reach
   only the threshold percentiles.
 
   USAGE (from the repository root):  python -I -B revision_pipeline/methodology_upgrades.py
 
-Three candidate methodology upgrades, tested with zero new human data.
+Three additions made in the first revision (round 2) to the evaluation of the original
+submission, computed from the existing labeled core verbs only (no new expert data).
 
-A. Held-out FULL-PIPELINE evaluation. The existing CV scores the classifier, but the
+A. Held-out full-pipeline evaluation. The existing CV scores the classifier, but the
    delivered bank is produced by classifier + calibration + thresholds + top-2 margin
-   collapse, and the accept/reject gate has never been tested on labeled data. Here,
-   held-out core verbs are pushed through the complete production pipeline as if they
-   were unseen candidates. Every one of them is a known Bloom verb, so gate recall
-   (how many survive) and level accuracy are both measurable.
+   collapse, and the accept/reject gate had not been tested on labeled data before this
+   evaluation. Here, held-out core verbs are pushed through the complete production
+   pipeline as if they were unseen candidates. Every one of them is a known Bloom verb,
+   so gate recall (how many survive) and level accuracy are both measurable.
 
 B. Ordinal-aware error metrics. Bloom levels are ordered; predicting Comprehension for
    a Knowledge verb is a smaller error than predicting Evaluation. Reports within-one-
    level accuracy and mean ordinal distance of the primary prediction.
 
 C. Score-averaging ensemble of the top families (kNN-21, LogisticRegression,
-   NearestCentroid). If their errors decorrelate, the ensemble should beat each member
-   on CV while keeping structure; tested on both axes.
+   NearestCentroid): calibrated scores averaged over the three members, a level kept
+   when at least two members assign it, then the same top-2 margin collapse; evaluated
+   with the same held-out protocol as the single models.
 """
 import argparse
 import os
@@ -172,13 +174,17 @@ for tr, te in mskf.split(X, Y):
 
 df = pd.DataFrame(recs).groupby("tag").mean(numeric_only=True)
 
-w("# Methodology upgrade tests")
+w("# Round-2 held-out evaluation (default configurations, outer split seed 13; kept for traceability)")
 w()
-w("## A + B. Held-out full-pipeline evaluation with ordinal metrics")
+w("The held-out results reported in the article (Table 11) are means over outer seeds 13 to 17 at")
+w("matched configurations (`results/selection/matched_supervised.csv`, written by `supervised_eval.py`).")
 w()
-w("Held-out core verbs pushed through the COMPLETE production pipeline (calibration,")
+w("## Held-out full-pipeline evaluation with ordinal metrics")
+w()
+w("Held-out core verbs are passed through the full production pipeline (calibration,")
 w("P50 thresholds, top-2 collapse). All are known Bloom verbs, so the gate should")
-w("accept them; 5-fold multi-label stratified, means over folds:")
+w("accept them. Each model is at its round-2 default configuration; 5-fold multi-label")
+w("stratified split with seed 13 (one repeat), means over the five folds:")
 w()
 w("| Pipeline | Gate recall | Primary-in-labels | Within-1-level | Mean ordinal dist | macro F1 | macro AUC |")
 w("|---|---|---|---|---|---|---|")
@@ -186,8 +192,8 @@ for tag, r in df.iterrows():
     w(f"| {tag} | {r['gate']:.3f} | {r['prim']:.3f} | {r['within1']:.3f} | "
       f"{r['mdist']:.2f} | {r['f1']:.3f} | {r['auc']:.3f} |")
 w()
-w("Reading guide: 'Gate recall' is the share of held-out KNOWN Bloom verbs that survive")
-w("the acceptance gate; this is the first labeled test of the gate. 'Primary-in-labels'")
+w("'Gate recall' is the share of held-out core verbs (all known Bloom verbs) that pass")
+w("the acceptance gate. 'Primary-in-labels'")
 w("scores the primary domain against the verb's published level set. 'Within-1-level'")
 w("credits adjacent-level predictions, reflecting the ordinal nature of the taxonomy.")
 

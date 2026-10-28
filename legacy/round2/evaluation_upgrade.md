@@ -1,4 +1,9 @@
-# Evaluation upgrades
+# Evaluation upgrades (first revision, superseded)
+
+Kept for reference; see `legacy/round2/README.md`. This report describes an interim first-revision
+model, not the production model, so its numbers differ from the article. The current gate analysis
+is in `results/expert/expert_report.md` and the independent-encoder gap trend is in
+`results/bank_structure/bank_structure.md`.
 
 ## 1. Rejection-aware expert evaluation
 
@@ -34,7 +39,7 @@ Rejected verbs in detail:
 
 The structural objective penalizes deviation from a target acceptance band, but
 acceptance is set by the threshold percentile, not by model quality. Comparing
-families at a COMMON acceptance removes that confound.
+families at a common acceptance removes that confound.
 
 ### At acceptance ~0.80
 
@@ -73,9 +78,9 @@ uses, so they partly measure that geometry rather than the assignments. Recomput
 the ordinal-separation trend in an encoder that played no part in training or
 selection gives evidence that is not circular.
 
-- mpnet (used in training): gap means [np.float64(0.1226), np.float64(0.1088), np.float64(0.0992), np.float64(0.1612), np.float64(0.1595)], Spearman rho = 0.50, exact one-tailed p = 0.2250
-- MiniLM (independent): gap means [np.float64(0.0739), np.float64(0.0671), np.float64(0.0568), np.float64(0.1046), np.float64(0.0999)], Spearman rho = 0.50, exact one-tailed p = 0.2250
-- distilroberta (independent): gap means [np.float64(0.0616), np.float64(0.055), np.float64(0.0446), np.float64(0.0876), np.float64(0.0834)], Spearman rho = 0.50, exact one-tailed p = 0.2250
+- mpnet (used in training): gap means [0.1226, 0.1088, 0.0992, 0.1612, 0.1595], Spearman rho = 0.50, exact one-tailed p = 0.2250
+- MiniLM (independent): gap means [0.0739, 0.0671, 0.0568, 0.1046, 0.0999], Spearman rho = 0.50, exact one-tailed p = 0.2250
+- distilroberta (independent): gap means [0.0616, 0.0550, 0.0446, 0.0876, 0.0834], Spearman rho = 0.50, exact one-tailed p = 0.2250
 
 If the monotone trend survives in encoders that were never used for training or
 model selection, the ordinal structure of the extended bank is a property of the
