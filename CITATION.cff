@@ -15,10 +15,10 @@ authors:
     given-names: Ahmed Jawad
     affiliation: University of Alberta
     orcid: https://orcid.org/0000-0002-6273-4451
-repository-code: https://github.com/Adamsua-lab/Blooms-Taxonomy-Extension
+repository-code: https://github.com/M-talhaa/Blooms-Taxonomy-Extension
 license: MIT
 version: 1.0.0
-# doi: the Zenodo DOI of this release is given on its Zenodo record.
+doi: 10.5281/zenodo.23733298
 keywords:
   - Bloom's taxonomy
   - action verbs
